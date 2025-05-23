@@ -1,37 +1,18 @@
 import { MongoClient } from 'mongodb';
 
-// 如果没有提供MongoDB URI，则使用内存模式
-const uri = process.env.MONGODB_URI || 'mongodb://memory-mode';
+// 检查MongoDB URI是否存在
+if (!process.env.MONGODB_URI) {
+  // 不再直接抛出错误，而是给出警告
+  console.warn(
+    '请在环境变量中设置MONGODB_URI。应用将尝试继续运行，但某些功能可能不可用。'
+  );
+}
+
+const uri = process.env.MONGODB_URI || '';
 const options = {};
 
 let client;
 let clientPromise: Promise<MongoClient>;
-
-// 在内存模式下提供一个假的Promise
-const createMemoryModeClient = () => {
-  console.warn('WARNING: Using memory mode for MongoDB. Data will not persist between restarts.');
-  
-  // 创建一个模拟的MongoDB客户端
-  const fakeClient = {
-    db: (dbName: string) => ({
-      collection: (collectionName: string) => ({
-        find: () => ({ 
-          sort: () => ({ 
-            toArray: async () => [] 
-          })
-        }),
-        findOne: async () => null,
-        insertOne: async (doc: any) => ({ insertedId: `memory-${Date.now()}` }),
-        insertMany: async (docs: any[]) => ({ insertedCount: docs.length }),
-        updateOne: async () => ({ matchedCount: 0 }),
-        countDocuments: async () => 0
-      })
-    }),
-    connect: () => Promise.resolve(fakeClient)
-  } as unknown as MongoClient;
-
-  return Promise.resolve(fakeClient);
-};
 
 if (process.env.NODE_ENV === 'development') {
   // In development mode, use a global variable so that the value
@@ -41,22 +22,20 @@ if (process.env.NODE_ENV === 'development') {
   };
 
   if (!globalWithMongo._mongoClientPromise) {
-    if (uri === 'mongodb://memory-mode') {
-      globalWithMongo._mongoClientPromise = createMemoryModeClient();
-    } else {
-      client = new MongoClient(uri, options);
-      globalWithMongo._mongoClientPromise = client.connect();
-    }
+    client = new MongoClient(uri, options);
+    globalWithMongo._mongoClientPromise = client.connect().catch(err => {
+      console.error('无法连接到MongoDB:', err);
+      throw new Error('无法连接到MongoDB数据库。请检查您的连接字符串和网络。');
+    });
   }
   clientPromise = globalWithMongo._mongoClientPromise;
 } else {
   // In production mode, it's best to not use a global variable.
-  if (uri === 'mongodb://memory-mode') {
-    clientPromise = createMemoryModeClient();
-  } else {
-    client = new MongoClient(uri, options);
-    clientPromise = client.connect();
-  }
+  client = new MongoClient(uri, options);
+  clientPromise = client.connect().catch(err => {
+    console.error('无法连接到MongoDB:', err);
+    throw new Error('无法连接到MongoDB数据库。请检查您的连接字符串和网络。');
+  });
 }
 
 // Export a module-scoped MongoClient promise. By doing this in a
