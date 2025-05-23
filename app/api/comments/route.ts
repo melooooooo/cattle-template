@@ -123,6 +123,13 @@ export async function GET(request: Request) {
   const sortBy = searchParams.get('sortBy') || 'latest';
   
   try {
+    // 调试信息 - 检查MongoDB URI是否存在
+    console.log('MongoDB连接状态:', {
+      uriExists: !!process.env.MONGODB_URI,
+      uriLength: process.env.MONGODB_URI ? process.env.MONGODB_URI.length : 0,
+      env: process.env.NODE_ENV
+    });
+
     // 连接到MongoDB
     const client = await clientPromise;
     const db = client.db('crazy-cattle');
