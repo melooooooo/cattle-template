@@ -18,9 +18,11 @@ async function generateZipFile(platform: string) {
     zip.file('game.exe', 'This is a placeholder for the game executable');
     zip.file('config.json', JSON.stringify({ platform, version: '1.0.0' }, null, 2));
     
-    // 创建assets目录
+    // 创建assets目录并添加文件
     const assets = zip.folder('assets');
-    assets.file('icon.png', 'Placeholder for icon data');
+    if (assets !== null) {
+      assets.file('icon.png', 'Placeholder for icon data');
+    }
     
     // 生成ZIP文件
     const zipContent = await zip.generateAsync({ type: 'nodebuffer' });

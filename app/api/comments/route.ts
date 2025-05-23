@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
-import { ObjectId } from 'mongodb';
+import { ObjectId, Document } from 'mongodb';
 
 // Define comment interface
 interface Comment {
@@ -50,14 +50,15 @@ let comments: Comment[] = [
 ];
 
 // Initial comment data, only imported on first use
-const initialComments: Comment[] = [
+const initialComments = [
   {
     name: 'Jack',
     email: 'jack@example.com',
     content: 'Really fun game! Love the physics and sheep mechanics!',
     date: '3 weeks ago',
     likes: 4,
-    dislikes: 4
+    dislikes: 4,
+    createdAt: new Date()
   },
   {
     name: 'mick',
@@ -65,7 +66,8 @@ const initialComments: Comment[] = [
     content: 'Amazing game of sheep! Love the crazy animations. 10/10 would play again.',
     date: '1 week ago',
     likes: 6,
-    dislikes: 3
+    dislikes: 3,
+    createdAt: new Date()
   },
   {
     name: 'marry',
@@ -73,7 +75,8 @@ const initialComments: Comment[] = [
     content: 'very amazing game',
     date: '1 month ago',
     likes: 8,
-    dislikes: 1
+    dislikes: 1,
+    createdAt: new Date()
   }
 ];
 
@@ -103,7 +106,7 @@ async function ensureCommentsCollection() {
     // If no data, initialize with sample comments
     if (count === 0) {
       console.log('Initializing comments collection...');
-      await commentsCollection.insertMany(initialComments);
+      await commentsCollection.insertMany(initialComments as any);
       console.log('Initial comment data added');
     }
     
