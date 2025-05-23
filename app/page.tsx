@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
@@ -23,19 +23,266 @@ import {
   Linkedin,
 } from "lucide-react"
 import Navigation from "@/components/navigation"
+import Head from 'next/head';
+import { defaultSeoConfig } from '@/lib/seo-config';
 
 export default function Home() {
-  const [searchQuery, setSearchQuery] = useState('');
+  // 用于规范URL的基础URL
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://crazy-cattle3d.org';
+  
+  const [downloadStatus, setDownloadStatus] = useState<{[key: string]: boolean}>({});
+  const [comments, setComments] = useState<any[]>([]);
+  const [commentForm, setCommentForm] = useState({
+    name: '',
+    email: '',
+    content: '',
+    agreeToTerms: false
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState<boolean | null>(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [sortOrder, setSortOrder] = useState('latest'); // 'latest', 'oldest', 'likes'
+  const [voteStatus, setVoteStatus] = useState<{[key: string]: boolean}>({});
 
-  const handleSearch = () => {
-    if (searchQuery.trim() === '') {
-      console.log('Search query is empty');
-      // Optionally, provide user feedback here, like an alert or a toast.
+  // Fetch comments
+  const fetchComments = async (currentSortOrder = sortOrder) => {
+    try {
+      console.log('获取评论列表，排序方式:', currentSortOrder);
+      const response = await fetch(`/api/comments?sortBy=${currentSortOrder}`);
+      if (response.ok) {
+        const data = await response.json();
+        console.log('获取到评论:', data.length, '条');
+        setComments(data);
+      } else {
+        console.error('获取评论失败:', response.statusText);
+      }
+    } catch (error) {
+      console.error('获取评论时发生错误:', error);
+    }
+  };
+
+  // Handle sort order change
+  const handleSortChange = (newSortOrder: string) => {
+    setSortOrder(newSortOrder);
+  };
+
+  // Load comments on page load and when sortOrder changes
+  useEffect(() => {
+    fetchComments(sortOrder);
+  }, [sortOrder]);
+
+  // Handle form field changes
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setCommentForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle checkbox changes
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCommentForm(prev => ({
+      ...prev,
+      agreeToTerms: e.target.checked
+    }));
+  };
+
+  // Submit comment
+  const handleCommentSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate form
+    if (!commentForm.name || !commentForm.email || !commentForm.content) {
+      setErrorMessage('Please fill in all required fields');
+      setSubmitSuccess(false);
       return;
     }
-    console.log('Search query:', searchQuery);
-    // Navigate to the search results page
-    window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;
+
+    if (!commentForm.agreeToTerms) {
+      setErrorMessage('Please agree to the terms and conditions');
+      setSubmitSuccess(false);
+      return;
+    }
+
+    setIsSubmitting(true);
+    setErrorMessage('');
+    
+    try {
+      const response = await fetch('/api/comments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: commentForm.name,
+          email: commentForm.email,
+          content: commentForm.content
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit comment');
+      }
+
+      // Get latest comments
+      await fetchComments();
+      
+      // Reset form
+      setCommentForm({
+        name: '',
+        email: '',
+        content: '',
+        agreeToTerms: false
+      });
+      
+      setSubmitSuccess(true);
+      
+      // Clear success message after 3 seconds
+      setTimeout(() => setSubmitSuccess(null), 3000);
+      
+    } catch (error) {
+      console.error('Failed to submit comment:', error);
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to submit comment. Please try again later.');
+      setSubmitSuccess(false);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Handle like/dislike
+  const handleVote = async (id: string | number, action: 'like' | 'dislike') => {
+    // 将ID统一转为字符串，确保一致的比较
+    const stringId = String(id);
+    
+    // 阻止重复点击
+    const voteKey = `${stringId}-${action}`;
+    if (voteStatus[voteKey]) {
+      return;
+    }
+    
+    // 设置加载状态
+    setVoteStatus(prev => ({ ...prev, [voteKey]: true }));
+    
+    try {
+      console.log(`尝试${action === 'like' ? '点赞' : '踩'} 评论ID: ${stringId}`);
+      
+      // 乐观更新UI - 立即更新点赞数，让用户感觉更快
+      setComments(prevComments => 
+        prevComments.map(comment => 
+          String(comment.id) === stringId
+            ? { 
+                ...comment, 
+                [action === 'like' ? 'likes' : 'dislikes']: (comment[action === 'like' ? 'likes' : 'dislikes'] || 0) + 1 
+              }
+            : comment
+        )
+      );
+      
+      // 发送请求到后端
+      const response = await fetch('/api/comments', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: stringId, action }),
+      });
+
+      const data = await response.json();
+      
+      if (response.ok) {
+        console.log('点赞/踩操作成功:', data);
+        
+        // 用服务器返回的实际数据更新UI
+        if (data.comment) {
+          setComments(prevComments => 
+            prevComments.map(comment => 
+              String(comment.id) === String(data.comment.id) || String(comment.id) === stringId
+                ? { 
+                    ...comment, 
+                    likes: data.comment.likes,
+                    dislikes: data.comment.dislikes
+                  }
+                : comment
+            )
+          );
+        }
+      } else {
+        console.error('点赞/踩操作失败:', data.error || response.statusText);
+        // 恢复UI显示的点赞数
+        setComments(prevComments => 
+          prevComments.map(comment => 
+            String(comment.id) === stringId
+              ? { 
+                  ...comment, 
+                  [action === 'like' ? 'likes' : 'dislikes']: (comment[action === 'like' ? 'likes' : 'dislikes'] || 1) - 1 
+                }
+              : comment
+          )
+        );
+        
+        // 使用更友好的错误提示
+        if (data.error === '找不到该评论') {
+          alert('无法为此评论点赞，该评论可能已被删除');
+        } else {
+          alert(`操作失败: ${data.error || '请稍后再试'}`);
+        }
+      }
+    } catch (error) {
+      console.error('处理点赞/踩时发生错误:', error);
+      // 恢复UI显示的点赞数
+      setComments(prevComments => 
+        prevComments.map(comment => 
+          String(comment.id) === stringId
+            ? { 
+                ...comment, 
+                [action === 'like' ? 'likes' : 'dislikes']: (comment[action === 'like' ? 'likes' : 'dislikes'] || 1) - 1 
+              }
+            : comment
+        )
+      );
+      alert('操作失败，请稍后再试');
+    } finally {
+      // 清除加载状态
+      setTimeout(() => {
+        setVoteStatus(prev => ({ ...prev, [voteKey]: false }));
+      }, 500); // 短暂延迟，防止用户快速多次点击
+    }
+  };
+
+  const handleDownload = async (platform: string) => {
+    const apiUrl = `/api/download?platform=${platform}`;
+    
+    if (downloadStatus[platform]) {
+      return; // Prevent repeated clicks
+    }
+
+    setDownloadStatus(prev => ({ ...prev, [platform]: true }));
+    
+    try {
+      // First get download link from API
+      const response = await fetch(apiUrl);
+      
+      if (!response.ok) {
+        throw new Error(`Server error (${response.status}), please try again later`);
+      }
+      
+      const data = await response.json();
+      
+      // Create download link
+      const link = document.createElement('a');
+      link.href = data.url;
+      link.download = data.filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Download failed:', error);
+      alert(error instanceof Error ? error.message : 'Download failed, please try again later');
+    } finally {
+      setDownloadStatus(prev => ({ ...prev, [platform]: false }));
+    }
   };
 
   return (
@@ -44,28 +291,6 @@ export default function Home() {
       <div className="w-full grassland-section">
         {/* Use the Navigation component */}
         <Navigation />
-
-        {/* Search Bar */}
-        <div className="w-full max-w-6xl mx-auto p-4 flex items-center gap-2 search-container rounded-md my-2">
-          <Input
-            placeholder="Ask me anything about Crazy Cattle 3D"
-            className="bg-[rgba(255,255,255,0.1)] border-[rgba(255,255,255,0.3)] text-white placeholder:text-gray-300"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleSearch();
-              }
-            }}
-          />
-          <Button 
-            size="icon" 
-            className="bg-green-500 hover:bg-green-600 rounded-full"
-            onClick={handleSearch}
-          >
-            <Search className="h-4 w-4" />
-          </Button>
-        </div>
 
         {/* Game Iframe */}
         <div id="play" className="w-full max-w-6xl mx-auto p-4 game-container rounded-md my-2">
@@ -128,7 +353,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           {/* Welcome Section */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6 text-center">Welcome to Crazy Cattle 3D</h2>
+            <h1 className="text-3xl font-bold mb-6 text-center">Welcome to Crazy Cattle 3D</h1>
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
                 <p className="mb-4">
@@ -374,17 +599,53 @@ export default function Home() {
           <section id="download">
             <h2 className="text-3xl font-bold mb-6 text-center">Download the Complete Crazy Cattle 3D Experience</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Button className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center">
-                <Download className="h-6 w-6 mb-2" />
-                <span className="text-lg font-semibold">Windows</span>
+              <Button 
+                className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center relative"
+                onClick={() => handleDownload('windows')}
+                disabled={downloadStatus['windows']}
+              >
+                {downloadStatus['windows'] ? (
+                  <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 rounded">
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-green-700"></div>
+                  </div>
+                ) : (
+                  <>
+                    <Download className="h-6 w-6 mb-2" />
+                    <span className="text-lg font-semibold">Windows</span>
+                  </>
+                )}
               </Button>
-              <Button className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center">
-                <Download className="h-6 w-6 mb-2" />
-                <span className="text-lg font-semibold">macOS</span>
+              <Button 
+                className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center relative"
+                onClick={() => handleDownload('macos')}
+                disabled={downloadStatus['macos']}
+              >
+                {downloadStatus['macos'] ? (
+                  <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 rounded">
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-green-700"></div>
+                  </div>
+                ) : (
+                  <>
+                    <Download className="h-6 w-6 mb-2" />
+                    <span className="text-lg font-semibold">macOS</span>
+                  </>
+                )}
               </Button>
-              <Button className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center">
-                <Download className="h-6 w-6 mb-2" />
-                <span className="text-lg font-semibold">Linux</span>
+              <Button 
+                className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center relative"
+                onClick={() => handleDownload('linux')}
+                disabled={downloadStatus['linux']}
+              >
+                {downloadStatus['linux'] ? (
+                  <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 rounded">
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-green-700"></div>
+                  </div>
+                ) : (
+                  <>
+                    <Download className="h-6 w-6 mb-2" />
+                    <span className="text-lg font-semibold">Linux</span>
+                  </>
+                )}
               </Button>
             </div>
             <p className="text-center text-green-100 text-sm mt-4">
@@ -459,141 +720,231 @@ export default function Home() {
       <div className="w-full light-green-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section id="reviews">
-            <h2 className="text-3xl font-bold mb-6 text-center">Crazy Cattle 3D Player Reactions</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-white shadow-md border-green-200 p-4">
-                <p className="text-green-600 mb-2 text-sm">★★★★★</p>
-                <p className="text-gray-700 mb-4">
-                  "I've been playing Crazy Cattle 3D for months now and I'm still discovering new secrets and
-                  strategies. The developers have created an incredibly deep and engaging experience!"
-                </p>
-                <p className="text-green-700 font-semibold">- SheepHerder42</p>
-              </Card>
-              <Card className="bg-white shadow-md border-green-200 p-4">
-                <p className="text-green-600 mb-2 text-sm">★★★★★</p>
-                <p className="text-gray-700 mb-4">
-                  "The physics in this game are incredible! The way the sheep move and interact with the environment
-                  feels so realistic. Plus, the multiplayer mode is super fun with friends."
-                </p>
-                <p className="text-green-700 font-semibold">- FarmLife99</p>
-              </Card>
-              <Card className="bg-white shadow-md border-green-200 p-4">
-                <p className="text-green-600 mb-2 text-sm">★★★★★</p>
-                <p className="text-gray-700 mb-4">
-                  "My kids and I play Crazy Cattle 3D together every weekend. It's educational, entertaining, and has
-                  actually taught them a lot about farm animals and responsibility!"
-                </p>
-                <p className="text-green-700 font-semibold">- FamilyGamer2023</p>
-              </Card>
+            <div className="bg-green-50 p-6 rounded-lg shadow-sm">
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-xl font-semibold text-green-800">Comments ({comments.length})</h3>
+                    <div className="text-sm flex items-center">
+                      <span className="text-green-600 mr-2">Sort by:</span>
+                      <select 
+                        value={sortOrder} 
+                        onChange={(e) => handleSortChange(e.target.value)} 
+                        className="p-1 border rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      >
+                        <option value="latest">Latest</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="likes">Most Liked</option>
+                      </select>
+                    </div>
+                  </div>
+              
+              {comments.length === 0 ? (
+                <div className="text-center py-8 text-green-600">
+                  No comments yet. Be the first to comment!
+                </div>
+              ) : (
+                <>
+                                    {/* Comments list */}
+                  {comments.map((comment) => (
+                    <div key={comment.id} className="mb-6 pb-6 border-b border-green-200">
+                      <div className="flex items-start gap-3">
+                        <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                          {comment.name.charAt(0).toUpperCase()}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-semibold text-green-800">{comment.name}</span>
+                            <span className="text-green-500 text-sm">{comment.date}</span>
+                          </div>
+                          <p className="text-green-700 mb-3">{comment.content}</p>
+                          <div className="flex items-center gap-5">
+                            <button className="flex items-center gap-1 text-green-600 hover:text-green-700">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
+                              </svg>
+                              <span>Reply</span>
+                            </button>
+                            <div className="flex items-center gap-3">
+                              <button 
+                                className={`flex items-center gap-1 text-green-600 hover:text-green-800 transition-all ${voteStatus[`${comment.id}-like`] ? 'opacity-50' : ''}`}
+                                onClick={() => !voteStatus[`${comment.id}-like`] && handleVote(comment.id, 'like')}
+                                disabled={voteStatus[`${comment.id}-like`]}
+                              >
+                                <svg 
+                                  className={`w-5 h-5 transition-transform duration-200 ${voteStatus[`${comment.id}-like`] ? 'scale-110' : 'scale-100'}`} 
+                                  fill="none" 
+                                  stroke="currentColor" 
+                                  viewBox="0 0 24 24" 
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                </svg>
+                                <span>{comment.likes || 0}</span>
+                              </button>
+                              <button 
+                                className={`flex items-center gap-1 text-green-600 hover:text-red-600 transition-all ${voteStatus[`${comment.id}-dislike`] ? 'opacity-50' : ''}`}
+                                onClick={() => !voteStatus[`${comment.id}-dislike`] && handleVote(comment.id, 'dislike')}
+                                disabled={voteStatus[`${comment.id}-dislike`]}
+                              >
+                                <svg 
+                                  className={`w-5 h-5 transition-transform duration-200 ${voteStatus[`${comment.id}-dislike`] ? 'scale-110' : 'scale-100'}`} 
+                                  fill="none" 
+                                  stroke="currentColor" 
+                                  viewBox="0 0 24 24" 
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2"></path>
+                                </svg>
+                                <span>{comment.dislikes || 0}</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              )}
+              
+              {comments.length > 0 && (
+                <button className="w-full py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors">
+                  Load more comments
+                </button>
+              )}
+              
+              {/* Comment Form */}
+              <form onSubmit={handleCommentSubmit} className="mt-8">
+                {submitSuccess === true && (
+                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                    Comment submitted successfully!
+                  </div>
+                )}
+                
+                {submitSuccess === false && errorMessage && (
+                  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                    {errorMessage}
+                  </div>
+                )}
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={commentForm.name}
+                    onChange={handleInputChange}
+                    placeholder="Name" 
+                    className="w-full px-4 py-2 bg-green-50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-300 placeholder-green-400"
+                  />
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={commentForm.email}
+                    onChange={handleInputChange}
+                    placeholder="Email" 
+                    className="w-full px-4 py-2 bg-green-50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-300 placeholder-green-400"
+                  />
+                </div>
+                <textarea 
+                  name="content"
+                  value={commentForm.content}
+                  onChange={handleInputChange}
+                  placeholder="Comment content" 
+                  rows={5} 
+                  className="w-full px-4 py-2 bg-green-50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-300 mb-4 placeholder-green-400"
+                ></textarea>
+                <div className="flex items-center mb-4">
+                  <input 
+                    type="checkbox" 
+                    id="terms" 
+                    checked={commentForm.agreeToTerms}
+                    onChange={handleCheckboxChange}
+                    className="mr-2 accent-green-600"
+                  />
+                  <label htmlFor="terms" className="text-sm text-green-700">
+                    I have read and agree to the terms and conditions.
+                  </label>
+                </div>
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-6 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors disabled:bg-green-300"
+                >
+                  {isSubmitting ? 'Submitting...' : 'Submit Comment'}
+                </button>
+              </form>
             </div>
           </section>
         </div>
       </div>
 
-      {/* Footer - Grassland */}
-      <div className="w-full grassland-section py-12">
+      {/* Footer - Dark Green */}
+      <div className="w-full dark-green-section py-12">
         <div className="max-w-6xl mx-auto px-4">
-          <footer className="w-full text-gray-200 rounded-lg">
+          <footer className="w-full rounded-lg">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
               <div>
-                <h3 className="text-white font-semibold mb-3">QUICK LINKS</h3>
+                <h3 className="font-semibold mb-3">QUICK LINKS</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="#" className="hover:text-green-300">
+                    <a href="#" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'})}} className="text-neutral-800 hover:text-green-600">
                       Home
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-green-300">
+                    <a href="#features" className="text-neutral-800 hover:text-green-600">
                       Features
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-green-300">
+                    <a href="#download" className="text-neutral-800 hover:text-green-600">
                       Download
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-green-300">
-                      Support
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-green-300">
-                      Contact
                     </a>
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-3">RESOURCES</h3>
+                <h3 className="font-semibold mb-3">RESOURCES</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="#" className="hover:text-green-300">
-                      Blog
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-green-300">
+                    <a href="#how-to-play" className="text-neutral-800 hover:text-green-600">
                       Tutorials
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-green-300">
+                    <a href="#faq" className="text-neutral-800 hover:text-green-600">
                       FAQ
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-green-300">
-                      Community
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-green-300">
-                      Updates
                     </a>
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-3">LEGAL</h3>
+                <h3 className="font-semibold mb-3">LEGAL</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="#" className="hover:text-green-300">
+                    <a href="/terms" className="text-neutral-800 hover:text-green-600">
                       Terms
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-green-300">
+                    <a href="/privacy" className="text-neutral-800 hover:text-green-600">
                       Privacy
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-green-300">
-                      Cookies
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-green-300">
-                      Licenses
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-green-300">
+                    <a href="#reviews" className="text-neutral-800 hover:text-green-600">
                       Contact
                     </a>
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-3">CONNECT</h3>
+                <h3 className="font-semibold mb-3">CONNECT</h3>
                 <p className="text-sm mb-4">Stay updated with the latest news and updates about Crazy Cattle 3D.</p>
                 <div className="flex gap-2">
                   <Input
                     placeholder="Your email"
-                    className="bg-[rgba(255,255,255,0.1)] border-[rgba(255,255,255,0.3)] text-white placeholder:text-gray-300 text-sm h-9"
+                    className="bg-[rgba(255,255,255,0.1)] border-[rgba(255,255,255,0.3)] text-neutral-800 placeholder:text-neutral-500 text-sm h-9"
                   />
-                  <Button size="sm" className="bg-green-600 hover:bg-green-700 h-9">
+                  <Button size="sm" className="bg-green-600 hover:bg-green-700 h-9 text-neutral-800">
                     Subscribe
                   </Button>
                 </div>

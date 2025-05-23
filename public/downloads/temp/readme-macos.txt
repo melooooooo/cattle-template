@@ -1,0 +1,1 @@
+这是Crazy Cattle 3D游戏的macOS版说明文件

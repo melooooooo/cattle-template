@@ -29,16 +29,16 @@ export default function Navigation() {
         <nav
           className={`${isMenuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row w-full md:w-auto items-center gap-4 md:gap-6 mt-4 md:mt-0 text-sm md:text-base`}
         >
-          <a href="#play" className="text-green-400 hover:text-green-300 font-medium">
+          <a href="#play" className="text-green-200 hover:text-white font-medium">
             Play
           </a>
           {/* <a href="#poland-map" className="text-white hover:text-gray-300">
             Poland Map
           </a> */}
-          <a href="#how-to-play" className="text-white hover:text-gray-300">
+          <a href="#how-to-play" className="text-green-50 hover:text-white">
             How to Play
           </a>
-          <a href="#features" className="text-white hover:text-gray-300">
+          <a href="#features" className="text-green-50 hover:text-white">
             Features
           </a>
           {/* <a href="#about" className="text-white hover:text-gray-300">
@@ -47,13 +47,13 @@ export default function Navigation() {
           {/* <a href="#guide" className="text-white hover:text-gray-300">
             Guide
           </a> */}
-          <a href="#download" className="text-white hover:text-gray-300">
+          <a href="#download" className="text-green-50 hover:text-white">
             Download
           </a>
-          <a href="#reviews" className="text-white hover:text-gray-300">
-            Reviews
+          <a href="#reviews" className="text-green-50 hover:text-white">
+            Comments
           </a>
-          <a href="#faq" className="text-white hover:text-gray-300">
+          <a href="#faq" className="text-green-50 hover:text-white">
             FAQ
           </a>
         </nav>

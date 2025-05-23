@@ -31,9 +31,9 @@ body {
 }
 
 .grassland-section {
-  background-color: #32CD32; /* 青草绿色 */
+  background: linear-gradient(to bottom, rgba(172, 255, 172, 0.8), #FFFFFF);
   position: relative;
-  color: white;
+  color: white; /* 初始文字颜色保持白色，可能需要根据渐变调整 */
 }
 
 .grassland-section::before {
@@ -43,7 +43,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */ /* 移除或调整深色遮罩 */
   z-index: 1;
 }
 
@@ -53,8 +53,29 @@ body {
 }
 
 .grassland-overlay {
-  background-color: rgba(34, 97, 54, 0.85);
+  background-color: rgba(112, 177, 112, 0.75); /* 浅绿色半透明 */
   backdrop-filter: blur(2px);
+}
+
+/* 添加导航链接默认样式，使其更深色 */
+.grassland-overlay a {
+  color: rgba(18, 54, 18, 0.9); /* 深绿色作为默认链接颜色 */
+  font-weight: 500; /* 稍微加粗字体 */
+  transition: color 0.2s ease;
+}
+
+.grassland-overlay a:hover {
+  color: #0a290a; /* 悬停时更深色 */
+}
+
+/* 允许自定义颜色覆盖默认样式 */
+.grassland-overlay .text-green-50,
+.grassland-overlay .text-green-200 {
+  color: #0c390c !important; /* 强制使用更深的绿色 */
+}
+
+.grassland-overlay a:hover.text-white {
+  color: #ffffff !important; /* 保留白色悬停效果 */
 }
 
 .white-section {
@@ -93,20 +114,28 @@ body {
 }
 
 .medium-green-section p {
-  color: #333;
+  color: #1b1717;
 }
 
 .dark-green-section {
-  background-color: #28a745;
-  color: white;
+  background-color: rgba(144, 238, 144, 0.8); /* 透明浅绿色 */
+  color: #050505; /* 页脚文字颜色调整为非常深的颜色 */
 }
 
 .dark-green-section h2 {
-  color: white;
+  color: #050505;
 }
 
 .dark-green-section p {
-  color: #f0f0f0;
+  color: #050505;
+}
+
+.dark-green-section h3 {
+  color: #050505;
+}
+
+.dark-green-section a {
+  color: #050505;
 }
 
 .social-buttons {
@@ -151,13 +180,13 @@ body {
 .search-container {
   background-color: rgba(34, 97, 54, 0.7);
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(28, 23, 23, 0.2);
 }
 
 .game-container {
   background-color: rgba(34, 97, 54, 0.7);
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(16, 13, 13, 0.2);
 }
 
 @layer base {
