@@ -52,15 +52,15 @@ platforms.forEach(platform => {
 // 定义游戏下载信息
 const downloadLinks = {
   windows: {
-    url: 'https://download.example.com/crazycattle/windows/CrazyCattle3D-Win-v1.0.zip',
+    url: '/downloads/CrazyCattle3D-windows.zip',
     filename: 'CrazyCattle3D-Win-v1.0.zip'
   },
   macos: {
-    url: 'https://download.example.com/crazycattle/macos/CrazyCattle3D-Mac-v1.0.dmg',
+    url: '/downloads/CrazyCattle3D-macos.zip',
     filename: 'CrazyCattle3D-Mac-v1.0.dmg'
   },
   linux: {
-    url: 'https://download.example.com/crazycattle/linux/CrazyCattle3D-Linux-v1.0.tar.gz',
+    url: '/downloads/CrazyCattle3D-linux.zip',
     filename: 'CrazyCattle3D-Linux-v1.0.tar.gz'
   }
 };

@@ -22,7 +22,7 @@ export default function TermsPage() {
             <p className="mb-4">Last updated: June 15, 2023</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">1. Introduction</h2>
-            <p>Welcome to Crazy Cattle 3D! These Terms of Service ("Terms") govern your use of our website located at <a href="https://crazy-cattle3d.org" className="text-green-600 hover:text-green-800">https://crazy-cattle3d.org</a> (the "Site") and our online and downloadable game Crazy Cattle 3D (the "Game"), operated by Crazy Cattle Studios. By accessing the Site or using the Game, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Site or use the Game.</p>
+            <p>Welcome to Crazy Cattle 3D! These Terms of Service ("Terms") govern your use of our website located at <a href="https://crazycattle3dx.com" className="text-green-600 hover:text-green-800">https://crazycattle3dx.com</a> (the "Site") and our online and downloadable game Crazy Cattle 3D (the "Game"), operated by Crazy Cattle Studios. By accessing the Site or using the Game, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Site or use the Game.</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">2. Intellectual Property Rights</h2>
             <p>The Site and the Game, including all content, features, and functionality thereof, are owned by Crazy Cattle Studios and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>

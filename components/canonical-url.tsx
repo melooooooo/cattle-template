@@ -13,7 +13,7 @@ interface CanonicalProps {
  */
 export default function CanonicalUrl({ path }: CanonicalProps) {
   const pathname = usePathname();
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://crazy-cattle3d.org';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://crazycattle3dx.com';
   
   // 使用提供的路径或当前路径
   const canonicalPath = path || pathname;

@@ -6,4 +6,4 @@ Allow: /
 Crawl-delay: 10
 
 # Sitemap location
-Sitemap: https://crazy-cattle3d.org/sitemap.xml 
+Sitemap: https://crazycattle3dx.com/sitemap.xml 

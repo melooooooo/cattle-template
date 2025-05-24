@@ -28,7 +28,7 @@ import { defaultSeoConfig } from '@/lib/seo-config';
 
 export default function Home() {
   // 用于规范URL的基础URL
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://crazy-cattle3d.org';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://crazycattle3dx.com';
   
   const [downloadStatus, setDownloadStatus] = useState<{[key: string]: boolean}>({});
   const [comments, setComments] = useState<any[]>([]);
@@ -314,31 +314,31 @@ export default function Home() {
         {/* Social Share Buttons */}
         <div className="w-full max-w-6xl mx-auto mb-8">
           <div className="social-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcrazy-cattle3d.org%2F" target="_blank" rel="noopener noreferrer" className="social-button facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcrazycattle3dx.com%2F" target="_blank" rel="noopener noreferrer" className="social-button facebook">
               <div className="flex justify-center items-center gap-2">
                 <Facebook className="h-4 w-4" />
                 <span className="hidden sm:inline">Facebook</span>
               </div>
             </a>
-            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcrazy-cattle3d.org%2F&text=Check%20out%20Crazy%20Cattle%203D%20-%20the%20most%20entertaining%20sheep%20combat%20simulation!" target="_blank" rel="noopener noreferrer" className="social-button twitter">
+            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcrazycattle3dx.com%2F&text=Check%20out%20Crazy%20Cattle%203D%20-%20the%20most%20entertaining%20sheep%20combat%20simulation!" target="_blank" rel="noopener noreferrer" className="social-button twitter">
               <div className="flex justify-center items-center gap-2">
                 <Twitter className="h-4 w-4" />
                 <span className="hidden sm:inline">Twitter</span>
               </div>
             </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcrazy-cattle3d.org%2F" target="_blank" rel="noopener noreferrer" className="social-button linkedin">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcrazycattle3dx.com%2F" target="_blank" rel="noopener noreferrer" className="social-button linkedin">
               <div className="flex justify-center items-center gap-2">
                 <Linkedin className="h-4 w-4" />
                 <span className="hidden sm:inline">LinkedIn</span>
               </div>
             </a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20Crazy%20Cattle%203D%20-%20the%20most%20entertaining%20sheep%20combat%20simulation!%20https%3A%2F%2Fcrazy-cattle3d.org%2F" target="_blank" rel="noopener noreferrer" className="social-button whatsapp">
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20Crazy%20Cattle%203D%20-%20the%20most%20entertaining%20sheep%20combat%20simulation!%20https%3A%2F%2Fcrazycattle3dx.com%2F" target="_blank" rel="noopener noreferrer" className="social-button whatsapp">
               <div className="flex justify-center items-center gap-2">
                 <Share2 className="h-4 w-4" />
                 <span className="hidden sm:inline">WhatsApp</span>
               </div>
             </a>
-            <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fcrazy-cattle3d.org%2F&title=Crazy%20Cattle%203D" target="_blank" rel="noopener noreferrer" className="social-button reddit">
+            <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fcrazycattle3dx.com%2F&title=Crazy%20Cattle%203D" target="_blank" rel="noopener noreferrer" className="social-button reddit">
               <div className="flex justify-center items-center gap-2">
                 <Share2 className="h-4 w-4" />
                 <span className="hidden sm:inline">Reddit</span>
