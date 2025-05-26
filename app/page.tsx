@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from 'next/link'
 import {
   Search,
   Play,
@@ -929,14 +930,14 @@ export default function Home() {
                 <h3 className="font-semibold mb-3">LEGAL</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="https://crazycattle3dx.com/terms" className="text-neutral-800 hover:text-green-600">
+                    <Link href="/terms" className="text-neutral-800 hover:text-green-600">
                       Terms
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="https://crazycattle3dx.com/privacy" className="text-neutral-800 hover:text-green-600">
+                    <Link href="/privacy" className="text-neutral-800 hover:text-green-600">
                       Privacy
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a href="https://crazycattle3dx.com/reviews" 
