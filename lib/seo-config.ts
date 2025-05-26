@@ -22,9 +22,9 @@ export const createCanonicalUrl = (path: string): string => {
 
 // 默认SEO设置
 export const defaultSeoConfig = {
-  title: "Crazy Cattle 3D - 刺激的牧场模拟游戏 | 免费3D农场冒险",
-  description: "体验Crazy Cattle 3D的刺激冒险，一款创新的3D农场模拟游戏。驾驭您的牛群，探索广阔世界，与朋友一起建造农场帝国！超逼真图形和物理效果，多样化游戏场景。免费下载，支持多平台，无需注册即可开始您的农场之旅。",
-  keywords: "Crazy Cattle 3D, 3D农场游戏, 农场模拟, 模拟游戏, 牛群管理, 在线游戏",
+  title: "Crazy Cattle 3D - Exciting Farm Simulation Game",
+  description: "Experience the thrilling adventure of Crazy Cattle 3D, an innovative 3D farm simulation game. Manage your herd of cattle, explore vast worlds, and build a farming empire with friends! Enjoy realistic graphics and physics, diverse gameplay scenarios. Download for free, multi-platform support, and start your farming journey without registration.",
+  keywords: "Crazy Cattle 3D, 3D farm game, farm simulation, simulation game, cattle management, online game",
   robots: "index, follow",
   viewport: "width=device-width, initial-scale=1",
   canonical: getBaseUrl(),
@@ -33,8 +33,8 @@ export const defaultSeoConfig = {
     locale: 'zh_CN',
     url: getBaseUrl(),
     site_name: 'Crazy Cattle 3D',
-    title: 'Crazy Cattle 3D - 刺激的牧场模拟游戏 | 免费3D农场冒险',
-    description: '体验Crazy Cattle 3D的刺激冒险，一款创新的3D农场模拟游戏。驾驭牛群，探索世界，与朋友一起建造农场帝国！超逼真图形，免费下载，支持多平台。',
+    title: 'Crazy Cattle 3D - Exciting Farm Simulation Game',
+    description: 'Experience the thrilling adventure of Crazy Cattle 3D, an innovative 3D farm simulation game. Manage your herd of cattle, explore vast worlds, and build a farming empire with friends! Enjoy realistic graphics and physics, diverse gameplay scenarios. Download for free, multi-platform support, and start your farming journey without registration.',
     images: [
       {
         url: `${getBaseUrl()}/og-image.jpg`,
@@ -48,6 +48,6 @@ export const defaultSeoConfig = {
     handle: '@CrazyCattle3D',
     site: '@CrazyCattle3D',
     cardType: 'summary_large_image',
-    title: 'Crazy Cattle 3D - 刺激的牧场模拟游戏 | 免费3D农场冒险',
+    title: 'Crazy Cattle 3D - Exciting Farm Simulation Game',
   },
 }; 
