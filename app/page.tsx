@@ -44,6 +44,15 @@ export default function Home() {
   const [sortOrder, setSortOrder] = useState('latest'); // 'latest', 'oldest', 'likes'
   const [voteStatus, setVoteStatus] = useState<{[key: string]: boolean}>({});
 
+  // 添加滚动到指定区域的函数
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   // Fetch comments
   const fetchComments = async (currentSortOrder = sortOrder) => {
     try {
@@ -366,10 +375,10 @@ export default function Home() {
                 </p>
                 <div className="flex gap-4">
                   <Button asChild className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-lg">
-                    <a href="/play">PLAY NOW</a>
+                    <a href="https://crazycattle3dx.com/play">PLAY NOW</a>
                   </Button>
                   <Button asChild className="bg-green-700 hover:bg-green-800 text-white px-8 py-6 text-lg">
-                    <a href="/download">DOWNLOAD CRAZY CATTLE 3D</a>
+                    <a href="https://crazycattle3dx.com/download" onClick={(e) => scrollToSection(e, "download")}>DOWNLOAD CRAZY CATTLE 3D</a>
                   </Button>
                 </div>
               </div>
@@ -885,17 +894,17 @@ export default function Home() {
                 <h3 className="font-semibold mb-3">QUICK LINKS</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="/" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'})}} className="text-neutral-800 hover:text-green-600">
+                    <a href="https://crazycattle3dx.com/" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'})}} className="text-neutral-800 hover:text-green-600">
                       Home
                     </a>
                   </li>
                   <li>
-                    <a href="/features" className="text-neutral-800 hover:text-green-600">
+                    <a href="https://crazycattle3dx.com/features" onClick={(e) => scrollToSection(e, "features")} className="text-neutral-800 hover:text-green-600">
                       Features
                     </a>
                   </li>
                   <li>
-                    <a href="/download" className="text-neutral-800 hover:text-green-600">
+                    <a href="https://crazycattle3dx.com/download" onClick={(e) => scrollToSection(e, "download")} className="text-neutral-800 hover:text-green-600">
                       Download
                     </a>
                   </li>
@@ -905,12 +914,12 @@ export default function Home() {
                 <h3 className="font-semibold mb-3">RESOURCES</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="/how-to-play" className="text-neutral-800 hover:text-green-600">
+                    <a href="https://crazycattle3dx.com/how-to-play" onClick={(e) => scrollToSection(e, "how-to-play")} className="text-neutral-800 hover:text-green-600">
                       Tutorials
                     </a>
                   </li>
                   <li>
-                    <a href="/faq" className="text-neutral-800 hover:text-green-600">
+                    <a href="https://crazycattle3dx.com/faq" onClick={(e) => scrollToSection(e, "faq")} className="text-neutral-800 hover:text-green-600">
                       FAQ
                     </a>
                   </li>
@@ -920,17 +929,25 @@ export default function Home() {
                 <h3 className="font-semibold mb-3">LEGAL</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="/terms" className="text-neutral-800 hover:text-green-600">
+                    <a href="https://crazycattle3dx.com/terms" className="text-neutral-800 hover:text-green-600">
                       Terms
                     </a>
                   </li>
                   <li>
-                    <a href="/privacy" className="text-neutral-800 hover:text-green-600">
+                    <a href="https://crazycattle3dx.com/privacy" className="text-neutral-800 hover:text-green-600">
                       Privacy
                     </a>
                   </li>
                   <li>
-                    <a href="/reviews" className="text-neutral-800 hover:text-green-600">
+                    <a href="https://crazycattle3dx.com/reviews" 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const reviewsSection = document.getElementById("reviews");
+                        if (reviewsSection) {
+                          reviewsSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }} 
+                      className="text-neutral-800 hover:text-green-600">
                       Contact
                     </a>
                   </li>
