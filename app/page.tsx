@@ -366,10 +366,10 @@ export default function Home() {
                 </p>
                 <div className="flex gap-4">
                   <Button asChild className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-lg">
-                    <a href="#play">PLAY NOW</a>
+                    <a href="/play">PLAY NOW</a>
                   </Button>
                   <Button asChild className="bg-green-700 hover:bg-green-800 text-white px-8 py-6 text-lg">
-                    <a href="#download">DOWNLOAD CRAZY CATTLE 3D</a>
+                    <a href="/download">DOWNLOAD CRAZY CATTLE 3D</a>
                   </Button>
                 </div>
               </div>
@@ -885,17 +885,17 @@ export default function Home() {
                 <h3 className="font-semibold mb-3">QUICK LINKS</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="#" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'})}} className="text-neutral-800 hover:text-green-600">
+                    <a href="/" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'})}} className="text-neutral-800 hover:text-green-600">
                       Home
                     </a>
                   </li>
                   <li>
-                    <a href="#features" className="text-neutral-800 hover:text-green-600">
+                    <a href="/features" className="text-neutral-800 hover:text-green-600">
                       Features
                     </a>
                   </li>
                   <li>
-                    <a href="#download" className="text-neutral-800 hover:text-green-600">
+                    <a href="/download" className="text-neutral-800 hover:text-green-600">
                       Download
                     </a>
                   </li>
@@ -905,12 +905,12 @@ export default function Home() {
                 <h3 className="font-semibold mb-3">RESOURCES</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="#how-to-play" className="text-neutral-800 hover:text-green-600">
+                    <a href="/how-to-play" className="text-neutral-800 hover:text-green-600">
                       Tutorials
                     </a>
                   </li>
                   <li>
-                    <a href="#faq" className="text-neutral-800 hover:text-green-600">
+                    <a href="/faq" className="text-neutral-800 hover:text-green-600">
                       FAQ
                     </a>
                   </li>
@@ -930,7 +930,7 @@ export default function Home() {
                     </a>
                   </li>
                   <li>
-                    <a href="#reviews" className="text-neutral-800 hover:text-green-600">
+                    <a href="/reviews" className="text-neutral-800 hover:text-green-600">
                       Contact
                     </a>
                   </li>
