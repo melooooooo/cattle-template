@@ -8,6 +8,16 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL || 'https://crazycattle3dx.com',
   },
+  // 添加重定向配置
+  async redirects() {
+    return [
+      {
+        source: '/reviews',
+        destination: '/comments',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig 

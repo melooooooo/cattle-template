@@ -1,11 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -17,6 +21,48 @@ export default function Navigation() {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      // 如果找不到元素，则导航到主页相应部分
+      window.location.href = `/#${sectionId}`
+    }
+  }
+
+  // 创建导航链接的渲染函数
+  const renderNavLink = (href: string, sectionId: string, label: string, className: string = "text-green-50 hover:text-white") => {
+    // 当前页面是否已经是目标页面
+    const isCurrentPage = pathname === `/${sectionId}` || 
+                         (pathname === '/play' && sectionId === 'play') ||
+                         (pathname === '/how-to-play' && sectionId === 'how-to-play') ||
+                         (pathname === '/features' && sectionId === 'features') ||
+                         (pathname === '/download' && sectionId === 'download') ||
+                         (pathname === '/comments' && sectionId === 'comments') ||
+                         (pathname === '/faq' && sectionId === 'faq');
+    
+    if (isHomePage) {
+      // 在主页上使用滚动功能
+      return (
+        <a 
+          href={href} 
+          onClick={(e) => scrollToSection(e, sectionId)} 
+          className={className}
+        >
+          {label}
+        </a>
+      )
+    } else if (isCurrentPage) {
+      // 如果已经在目标页面，点击时不做任何操作
+      return (
+        <span className={`${className} cursor-default opacity-75`}>
+          {label}
+        </span>
+      )
+    } else {
+      // 在其他页面上直接使用href链接
+      return (
+        <a href={href} className={className}>
+          {label}
+        </a>
+      )
     }
   }
 
@@ -25,10 +71,10 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-3">
         <div className="w-full md:w-auto flex items-center justify-between">
           <div className="flex items-center">
-            <span className="text-2xl font-bold">
+            <Link href="/" className="text-2xl font-bold">
               <span className="text-purple-400">CRAZY</span> <span className="text-green-400">CATTLE</span>{" "}
               <span className="text-yellow-500">3D</span>
-            </span>
+            </Link>
           </div>
           <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
             <Menu className="h-6 w-6" />
@@ -38,57 +84,12 @@ export default function Navigation() {
         <nav
           className={`${isMenuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row w-full md:w-auto items-center gap-4 md:gap-6 mt-4 md:mt-0 text-sm md:text-base`}
         >
-          <a 
-            href="https://crazycattle3dx.com/play" 
-            onClick={(e) => scrollToSection(e, "play")} 
-            className="text-green-200 hover:text-white font-medium"
-          >
-            Play
-          </a>
-          {/* <a href="#poland-map" className="text-white hover:text-gray-300">
-            Poland Map
-          </a> */}
-          <a 
-            href="https://crazycattle3dx.com/how-to-play" 
-            onClick={(e) => scrollToSection(e, "how-to-play")} 
-            className="text-green-50 hover:text-white"
-          >
-            How to Play
-          </a>
-          <a 
-            href="https://crazycattle3dx.com/features" 
-            onClick={(e) => scrollToSection(e, "features")} 
-            className="text-green-50 hover:text-white"
-          >
-            Features
-          </a>
-          {/* <a href="#about" className="text-white hover:text-gray-300">
-            About
-          </a> */}
-          {/* <a href="#guide" className="text-white hover:text-gray-300">
-            Guide
-          </a> */}
-          <a 
-            href="https://crazycattle3dx.com/download" 
-            onClick={(e) => scrollToSection(e, "download")} 
-            className="text-green-50 hover:text-white"
-          >
-            Download
-          </a>
-          <a 
-            href="https://crazycattle3dx.com/reviews" 
-            onClick={(e) => scrollToSection(e, "reviews")} 
-            className="text-green-50 hover:text-white"
-          >
-            Comments
-          </a>
-          <a 
-            href="https://crazycattle3dx.com/faq" 
-            onClick={(e) => scrollToSection(e, "faq")} 
-            className="text-green-50 hover:text-white"
-          >
-            FAQ
-          </a>
+          {renderNavLink("https://crazycattle3dx.com/play", "play", "Play", "text-green-200 hover:text-white font-medium")}
+          {renderNavLink("https://crazycattle3dx.com/how-to-play", "how-to-play", "How to Play")}
+          {renderNavLink("https://crazycattle3dx.com/features", "features", "Features")}
+          {renderNavLink("https://crazycattle3dx.com/download", "download", "Download")}
+          {renderNavLink("https://crazycattle3dx.com/comments", "comments", "Comments")}
+          {renderNavLink("https://crazycattle3dx.com/faq", "faq", "FAQ")}
         </nav>
       </div>
     </header>

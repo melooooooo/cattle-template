@@ -729,7 +729,7 @@ export default function Home() {
       {/* Player Reactions - Light Green */}
       <div className="w-full light-green-section py-12">
         <div className="max-w-6xl mx-auto px-4">
-          <section id="reviews">
+          <section id="comments">
             <div className="bg-green-50 p-6 rounded-lg shadow-sm">
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="text-xl font-semibold text-green-800">Comments ({comments.length})</h3>
@@ -895,7 +895,7 @@ export default function Home() {
                 <h3 className="font-semibold mb-3">QUICK LINKS</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="https://crazycattle3dx.com/" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'})}} className="text-neutral-800 hover:text-green-600">
+                    <a href="https://crazycattle3dx.com" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'})}} className="text-neutral-800 hover:text-green-600">
                       Home
                     </a>
                   </li>
@@ -940,12 +940,12 @@ export default function Home() {
                     </Link>
                   </li>
                   <li>
-                    <a href="https://crazycattle3dx.com/reviews" 
+                    <a href="https://crazycattle3dx.com/comments" 
                       onClick={(e) => {
                         e.preventDefault();
-                        const reviewsSection = document.getElementById("reviews");
-                        if (reviewsSection) {
-                          reviewsSection.scrollIntoView({ behavior: 'smooth' });
+                        const commentsSection = document.getElementById("comments");
+                        if (commentsSection) {
+                          commentsSection.scrollIntoView({ behavior: 'smooth' });
                         }
                       }} 
                       className="text-neutral-800 hover:text-green-600">

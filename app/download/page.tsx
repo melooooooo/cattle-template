@@ -45,28 +45,28 @@ export default function DownloadPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center">
-      {/* Top Grassland Section */}
-      <div className="w-full grassland-section">
+      {/* 整个页面使用grassland-section类 */}
+      <div className="w-full grassland-section min-h-screen">
         {/* Use the Navigation component */}
         <Navigation />
 
         {/* Download Title */}
         <div className="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
-          <h1 className="text-3xl font-bold text-center text-white">Download Crazy Cattle 3D</h1>
-          <p className="text-center text-green-100 mt-2">
+          <h1 className="text-3xl font-bold text-center text-green-800">Download Crazy Cattle 3D</h1>
+          <p className="text-center text-green-700 mt-2">
             Experience the full game on your preferred platform
           </p>
         </div>
 
         {/* Download Options */}
         <div className="w-full max-w-6xl mx-auto p-4 my-6">
-          <div className="bg-green-50 bg-opacity-10 p-8 rounded-lg">
-            <h2 className="text-xl font-bold text-white mb-6 text-center">Select Your Platform</h2>
+          <div className="bg-green-100 p-8 rounded-lg shadow-md">
+            <h2 className="text-xl font-bold text-green-800 mb-6 text-center">Select Your Platform</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-green-800 bg-opacity-30 p-6 rounded-lg text-center">
-                <h3 className="text-lg font-bold text-white mb-4">Windows</h3>
-                <p className="text-green-100 mb-4 text-sm">
+              <div className="bg-green-200 p-6 rounded-lg text-center shadow-sm">
+                <h3 className="text-lg font-bold text-green-800 mb-4">Windows</h3>
+                <p className="text-green-700 mb-4 text-sm">
                   Optimized for Windows 10 and 11<br />
                   Requires DirectX 11 compatible GPU<br />
                   500MB free disk space
@@ -89,9 +89,9 @@ export default function DownloadPage() {
                 </Button>
               </div>
               
-              <div className="bg-green-800 bg-opacity-30 p-6 rounded-lg text-center">
-                <h3 className="text-lg font-bold text-white mb-4">macOS</h3>
-                <p className="text-green-100 mb-4 text-sm">
+              <div className="bg-green-200 p-6 rounded-lg text-center shadow-sm">
+                <h3 className="text-lg font-bold text-green-800 mb-4">macOS</h3>
+                <p className="text-green-700 mb-4 text-sm">
                   Compatible with macOS 10.14+<br />
                   Optimized for Apple Silicon<br />
                   500MB free disk space
@@ -114,9 +114,9 @@ export default function DownloadPage() {
                 </Button>
               </div>
               
-              <div className="bg-green-800 bg-opacity-30 p-6 rounded-lg text-center">
-                <h3 className="text-lg font-bold text-white mb-4">Linux</h3>
-                <p className="text-green-100 mb-4 text-sm">
+              <div className="bg-green-200 p-6 rounded-lg text-center shadow-sm">
+                <h3 className="text-lg font-bold text-green-800 mb-4">Linux</h3>
+                <p className="text-green-700 mb-4 text-sm">
                   Works on Ubuntu 18.04+<br />
                   Compatible with most distros<br />
                   500MB free disk space
@@ -141,7 +141,7 @@ export default function DownloadPage() {
             </div>
             
             <div className="text-center">
-              <p className="text-green-100 mb-6">
+              <p className="text-green-700 mb-6">
                 All downloads include the full game with all features unlocked. No registration required.
               </p>
               

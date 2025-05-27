@@ -15,8 +15,8 @@ export default function FAQPage() {
 
         {/* FAQ Title */}
         <div className="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
-          <h1 className="text-3xl font-bold text-center text-white">Frequently Asked Questions</h1>
-          <p className="text-center text-green-100 mt-2">
+          <h1 className="text-3xl font-bold text-center text-green-800">Frequently Asked Questions</h1>
+          <p className="text-center text-green-700 mt-2">
             Everything you need to know about Crazy Cattle 3D
           </p>
         </div>
