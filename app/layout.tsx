@@ -62,6 +62,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2660471109682751"
+     crossOrigin="anonymous"></script>
         <link rel="icon" href="/sheep-icon.svg" sizes="any" />
         {/* 添加规范URL标签 */}
         <link rel="canonical" href={baseUrl} />
