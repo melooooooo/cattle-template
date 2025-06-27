@@ -28,7 +28,7 @@ export default function Navigation() {
   }
 
   // 创建导航链接的渲染函数
-  const renderNavLink = (href: string, sectionId: string, label: string, className: string = "text-green-50 hover:text-white") => {
+  const renderNavLink = (href: string, sectionId: string, label: string, className: string = "text-green-50 hover:text-white", isPage: boolean = false) => {
     // 当前页面是否已经是目标页面
     const isCurrentPage = pathname === `/${sectionId}` || 
                          (pathname === '/play' && sectionId === 'play') ||
@@ -36,7 +36,18 @@ export default function Navigation() {
                          (pathname === '/features' && sectionId === 'features') ||
                          (pathname === '/download' && sectionId === 'download') ||
                          (pathname === '/comments' && sectionId === 'comments') ||
-                         (pathname === '/faq' && sectionId === 'faq');
+                         (pathname === '/faq' && sectionId === 'faq') ||
+                         (pathname === '/blog' && sectionId === 'blog') ||
+                         (pathname.startsWith('/blog/') && sectionId === 'blog');
+    
+    // 如果是独立页面（如blog），直接使用链接导航
+    if (isPage) {
+      return (
+        <Link href={`/${sectionId}`} className={`${className} ${isCurrentPage ? 'opacity-75' : ''}`}>
+          {label}
+        </Link>
+      )
+    }
     
     if (isHomePage) {
       // 在主页上使用滚动功能
@@ -90,6 +101,7 @@ export default function Navigation() {
           {renderNavLink("https://crazycattle3dx.com/download", "download", "Download")}
           {renderNavLink("https://crazycattle3dx.com/comments", "comments", "Comments")}
           {renderNavLink("https://crazycattle3dx.com/faq", "faq", "FAQ")}
+          {renderNavLink("https://crazycattle3dx.com/blog", "blog", "Blog", "text-green-50 hover:text-white", true)}
         </nav>
       </div>
     </header>

@@ -924,6 +924,11 @@ export default function Home() {
                       FAQ
                     </a>
                   </li>
+                  <li>
+                    <a href="https://crazycattle3dx.com/blog" className="text-neutral-800 hover:text-green-600">
+                      Blog
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div>
