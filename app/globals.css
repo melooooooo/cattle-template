@@ -3,37 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --background: 260 60% 5%;
-  --foreground: 0 0% 100%;
-  --card: 260 60% 10%;
-  --card-foreground: 0 0% 100%;
-  --popover: 260 60% 10%;
-  --popover-foreground: 0 0% 100%;
-  --primary: 260 60% 50%;
+  --background: 240 37% 6%;
+  --foreground: 220 40% 92%;
+  --card: 240 29% 10%;
+  --card-foreground: 220 40% 92%;
+  --popover: 240 29% 12%;
+  --popover-foreground: 220 40% 92%;
+  --primary: 280 53% 52%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 260 30% 20%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 260 30% 20%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --accent: 260 30% 20%;
+  --secondary: 260 28% 18%;
+  --secondary-foreground: 210 32% 88%;
+  --muted: 240 24% 18%;
+  --muted-foreground: 220 19% 72%;
+  --accent: 330 65% 48%;
   --accent-foreground: 0 0% 100%;
-  --destructive: 0 62.8% 30.6%;
+  --destructive: 0 72% 40%;
   --destructive-foreground: 0 0% 100%;
-  --border: 260 30% 30%;
-  --input: 260 30% 30%;
-  --ring: 260 60% 50%;
+  --border: 240 22% 22%;
+  --input: 240 22% 22%;
+  --ring: 280 53% 52%;
   --radius: 0.5rem;
 }
 
 body {
-  color: white;
-  background-color: #e6f7e9; /* 将深紫色背景改为浅绿色 */
+  color: #d7d9f5;
+  background-color: #05050b;
 }
 
 .grassland-section {
-  background: linear-gradient(to bottom, rgba(144, 238, 144, 0.9), rgba(220, 255, 220, 0.8));
+  background: radial-gradient(circle at top, rgba(35, 32, 52, 0.95), rgba(8, 9, 20, 0.95));
   position: relative;
-  color: white;
+  color: #e8e9ff;
 }
 
 .grassland-section::before {
@@ -43,7 +43,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  /* 移除深色遮罩，保持浅绿色渐变 */
+  background: radial-gradient(circle at center, rgba(120, 35, 68, 0.25), rgba(6, 7, 15, 0.75));
   z-index: 1;
 }
 
@@ -53,89 +53,69 @@ body {
 }
 
 .grassland-overlay {
-  background-color: rgba(112, 177, 112, 0.75); /* 浅绿色半透明 */
-  backdrop-filter: blur(2px);
+  background-color: rgba(8, 9, 18, 0.88);
+  backdrop-filter: blur(6px);
 }
 
-/* 添加导航链接默认样式，使其更深色 */
 .grassland-overlay a {
-  color: rgba(18, 54, 18, 0.9); /* 深绿色作为默认链接颜色 */
-  font-weight: 500; /* 稍微加粗字体 */
+  color: rgba(185, 188, 233, 0.85);
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .grassland-overlay a:hover {
-  color: #0a290a; /* 悬停时更深色 */
-}
-
-/* 允许自定义颜色覆盖默认样式 */
-.grassland-overlay .text-green-50,
-.grassland-overlay .text-green-200 {
-  color: #0c390c !important; /* 强制使用更深的绿色 */
-}
-
-.grassland-overlay a:hover.text-white {
-  color: #ffffff !important; /* 保留白色悬停效果 */
+  color: #f7f2ff;
 }
 
 .white-section {
-  background-color: #ffffff;
-  color: #333;
+  background-color: #0f1018;
+  color: #d7d9f5;
 }
 
 .white-section h2 {
-  color: #226136;
+  color: #e86f88;
 }
 
 .white-section p {
-  color: #333;
+  color: #c6c8e3;
 }
 
 .light-green-section {
-  background-color: #e6f7e9;
-  color: #333;
+  background-color: #14141f;
+  color: #d7d9f5;
 }
 
 .light-green-section h2 {
-  color: #0e5c1e;
+  color: #ba8bff;
 }
 
 .light-green-section p {
-  color: #333;
+  color: #c6c8e3;
 }
 
 .medium-green-section {
-  background-color: #c3e6cb;
-  color: #333;
+  background-color: #181a24;
+  color: #d7d9f5;
 }
 
 .medium-green-section h2 {
-  color: #0e5c1e;
+  color: #e86f88;
 }
 
 .medium-green-section p {
-  color: #1b1717;
+  color: #c6c8e3;
 }
 
 .dark-green-section {
-  background-color: rgba(144, 238, 144, 0.8); /* 透明浅绿色 */
-  color: #050505; /* 页脚文字颜色调整为非常深的颜色 */
+  background-color: rgba(9, 10, 16, 0.95);
+  color: #d7d9f5;
 }
 
-.dark-green-section h2 {
-  color: #050505;
-}
-
-.dark-green-section p {
-  color: #050505;
-}
-
-.dark-green-section h3 {
-  color: #050505;
-}
-
+.dark-green-section h2,
+.dark-green-section h3,
+.dark-green-section p,
 .dark-green-section a {
-  color: #050505;
+  color: #d7d9f5;
 }
 
 .social-buttons {
@@ -143,51 +123,101 @@ body {
   width: 100%;
   overflow: hidden;
   border-radius: 0.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
 }
 
 .social-button {
   flex: 1;
   padding: 0.5rem;
   text-align: center;
-  color: white;
-  transition: all 0.3s ease;
+  color: #f8f5ff;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .social-button:hover {
-  opacity: 0.9;
+  opacity: 0.95;
+  transform: translateY(-2px);
 }
 
 .facebook {
-  background-color: #3b5998;
+  background: linear-gradient(135deg, #1b2548, #324786);
 }
 
 .twitter {
-  background-color: #1da1f2;
+  background: linear-gradient(135deg, #0d223a, #1d4b70);
 }
 
 .linkedin {
-  background-color: #0077b5;
+  background: linear-gradient(135deg, #0c181f, #146b8f);
 }
 
 .whatsapp {
-  background-color: #25d366;
+  background: linear-gradient(135deg, #10241d, #24705a);
 }
 
 .reddit {
-  background-color: #ff4500;
+  background: linear-gradient(135deg, #2c120d, #742b1a);
 }
 
 .search-container {
-  background-color: rgba(34, 97, 54, 0.7);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(28, 23, 23, 0.2);
+  background-color: rgba(33, 26, 56, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(109, 65, 132, 0.35);
 }
 
 .game-container {
-  background-color: rgba(34, 97, 54, 0.7);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(16, 13, 13, 0.2);
+  background-color: rgba(19, 17, 34, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(92, 55, 106, 0.35);
 }
+
+/* Override legacy green utility classes with a nocturnal palette */
+.text-green-800 { color: #f1b8ff !important; }
+.text-green-700 { color: #dca4ff !important; }
+.text-green-600 { color: #c68ef5 !important; }
+.text-green-500 { color: #b079e4 !important; }
+.text-green-400 { color: #9a63cf !important; }
+.text-green-200 { color: #7a54b6 !important; }
+.text-green-100 { color: #f3dffb !important; }
+
+.bg-green-50 { background-color: rgba(33, 26, 56, 0.65) !important; }
+.bg-green-100 { background-color: rgba(122, 52, 99, 0.25) !important; }
+.bg-green-200 { background-color: rgba(122, 52, 99, 0.35) !important; }
+.bg-green-500 { background-color: #933469 !important; }
+.bg-green-600 { background-color: #6a1d50 !important; }
+.bg-green-700 { background-color: #521542 !important; }
+.bg-green-800 { background-color: #3a0f32 !important; }
+
+.border-green-200 { border-color: rgba(110, 66, 148, 0.45) !important; }
+.border-green-300 { border-color: rgba(140, 86, 176, 0.5) !important; }
+.border-green-400 { border-color: rgba(197, 115, 214, 0.6) !important; }
+
+.placeholder-green-400 { color: rgba(168, 122, 211, 0.6) !important; }
+.focus\:ring-green-500:focus { box-shadow: 0 0 0 3px rgba(156, 67, 146, 0.45) !important; }
+.focus\:ring-green-300:focus { box-shadow: 0 0 0 3px rgba(196, 118, 199, 0.35) !important; }
+
+.text-green-800:hover { color: #f9cdfc !important; }
+.hover\:text-green-600:hover { color: #f4b8ff !important; }
+.hover\:text-green-700:hover { color: #fce0ff !important; }
+.hover\:text-green-800:hover { color: #ffe8ff !important; }
+
+.accent-green-600 { accent-color: #6a1d50 !important; }
+.border-green-200\/50 { border-color: rgba(110, 66, 148, 0.25) !important; }
+
+.focus\:ring-green-500 { --tw-ring-color: rgba(156, 67, 146, 0.45) !important; }
+.focus\:ring-green-300 { --tw-ring-color: rgba(196, 118, 199, 0.35) !important; }
+
+.text-neutral-800 { color: #c7c9e7 !important; }
+.text-neutral-800:hover { color: #f3bde7 !important; }
+
+.bg-white { background-color: #14111d !important; }
+.text-gray-700 { color: #bcbedd !important; }
+.text-gray-200 { color: #e1e2f7 !important; }
+.text-gray-500 { color: #a7a8c7 !important; }
+.bg-green-700:hover { background-color: #7a205a !important; }
+.bg-green-600:hover { background-color: #7a205a !important; }
+.bg-green-500:hover { background-color: #a43c7c !important; }
+.hover\:bg-gray-100:hover { background-color: rgba(59, 51, 90, 0.65) !important; }
 
 @layer base {
   * {

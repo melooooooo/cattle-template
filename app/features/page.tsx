@@ -15,8 +15,8 @@ export default function FeaturesPage() {
 
         {/* Features Title */}
         <div className="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
-          <h1 className="text-3xl font-bold text-center text-green-800">The Tooth Fae Feature Spotlight</h1>
-          <p className="text-center text-green-700 mt-2">
+          <h1 className="text-3xl font-bold text-center text-slate-100">The Tooth Fae Feature Spotlight</h1>
+          <p className="text-center text-neutral-300 mt-2">
             Study the systems that turn every tooth extraction into a tense, story-driven heist.
           </p>
         </div>

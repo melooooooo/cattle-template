@@ -363,14 +363,16 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           {/* Welcome Section */}
           <section className="mb-12">
-            <h1 className="text-3xl font-bold mb-6 text-center">Welcome to The Tooth Fae</h1>
+            <h1 className="text-3xl font-bold mb-6 text-center text-slate-100">Welcome to The Tooth Fae</h1>
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
-                <p className="mb-4">
-                  Step into the magical world of The Tooth Fae, where you play as a mystical fairy on a quest to collect lost teeth from children around the world.
+                <p className="mb-4 text-neutral-200">
+                  Slip through darkened hallways as the Queen’s favored collector. Every home is a heist, every tooth a whispered
+                  relic waiting to be freed from mortal gums.
                 </p>
-                <p className="mb-6">
-                  The Tooth Fae combines enchanting storytelling with engaging gameplay. Navigate through whimsical dreamscapes, solve tooth-themed puzzles, and spread joy to children while building your magical tooth collection. Become the ultimate Tooth Fae in this charming adventure!
+                <p className="mb-6 text-neutral-200">
+                  The Tooth Fae blends stealth horror with tense resource management. Map donor traits, throttle Lucidity, Pain, and
+                  Fear, and feed the Queen’s cabinet with pristine trophies before the household stirs.
                 </p>
                 <div className="flex gap-4">
                   <Button asChild className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-lg">
@@ -402,23 +404,23 @@ export default function Home() {
       <div className="w-full light-green-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section id="how-to-play">
-            <h2 className="text-3xl font-bold mb-6 text-center">How to Play The Tooth Fae</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center text-slate-100">Field Briefing: Surviving the Heist</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="bg-white shadow-md border-gray-200 p-4">
                 <h3 className="text-xl font-semibold text-green-800 mb-2 flex items-center gap-2">
                   <div className="bg-green-500 p-2 rounded-full">
                     <Play className="h-4 w-4 text-white" />
                   </div>
-                  Game Objective
+                  Primary Directive
                 </h3>
                 <p className="text-gray-700">
-                  Play as the Tooth Fae and collect lost teeth from sleeping children
+                  Harvest 16 unique teeth to complete the Queen’s "Perfect Lovelies" cabinet.
                   <br />
-                  Navigate through magical dreamscapes and avoid obstacles
+                  Target donors whose traits align with rare drops—Sparkling, Gemini, Watcher, Key, and more.
                   <br />
-                  Exchange teeth for coins and unlock special fairy abilities
+                  Enter silently, extract quickly, and vanish before Lucidity peaks or shock kills the donor.
                   <br />
-                  Complete levels to bring joy to children around the world
+                  Failures leave cracked trophies and earn the Queen’s ire. Planning is survival.
                 </p>
               </Card>
               <Card className="bg-white shadow-md border-gray-200 p-4">
@@ -428,31 +430,30 @@ export default function Home() {
                   </div>
                   Controls
                 </h3>
-                <p className="text-gray-700">
-                  Arrow Keys/WASD: Move the Tooth Fae
-                  <br />
-                  Mouse: Interact with objects
-                  <br />
-                  Space: Jump and fly
-                  <br />
-                  Click: Collect teeth and coins
-                </p>
+                <ul className="text-gray-700 space-y-2">
+                  <li><span className="font-semibold">Glide Forward:</span> W</li>
+                  <li><span className="font-semibold">Drift Back:</span> S</li>
+                  <li><span className="font-semibold">Strafe Left / Right:</span> A / D</li>
+                  <li><span className="font-semibold">Creep (Silent Step):</span> C or Left Ctrl</li>
+                  <li><span className="font-semibold">Interact / Extract:</span> E or Left Mouse Click</li>
+                  <li><span className="font-semibold">Survey the Room:</span> Mouse movement</li>
+                </ul>
               </Card>
               <Card className="bg-white shadow-md border-gray-200 p-4">
                 <h3 className="text-xl font-semibold text-green-800 mb-2 flex items-center gap-2">
                   <div className="bg-green-500 p-2 rounded-full">
                     <Award className="h-4 w-4 text-white" />
                   </div>
-                  Game Mechanics
+                  Meter Management
                 </h3>
                 <p className="text-gray-700">
-                  Collect teeth while children sleep peacefully
+                  Lucidity is the alarm—dust after every loud action to keep it low.
                   <br />
-                  Avoid waking the children or household pets
+                  Pain feeds failure. Pulse the drill and inject anesthetic around the 75% mark.
                   <br />
-                  Trade teeth for magical coins and power-ups
+                  Fear accelerates Lucidity. Never let it surge unchecked.
                   <br />
-                  Complete tooth collection challenges for bonus rewards
+                  Repeat the mantra: “Drill a bit, dust a bit.” Greed wakes the room.
                 </p>
               </Card>
               <Card className="bg-white shadow-md border-gray-200 p-4">
@@ -460,22 +461,23 @@ export default function Home() {
                   <div className="bg-green-500 p-2 rounded-full">
                     <Zap className="h-4 w-4 text-white" />
                   </div>
-                  Tips & Tricks
+                  Trait Intel
                 </h3>
                 <p className="text-gray-700">
-                  Multiple magical worlds to explore with unique challenges
+                  Heavy Sleepers forgive longer drills; Night Owls wake if you hesitate.
                   <br />
-                  Each level features different house layouts and obstacles
+                  Tough donors demand extra anesthetic. Fragile or Brittle teeth shatter under pressure.
                   <br />
-                  Earn stars for perfect tooth collections
+                  Vampires, Eldritch, and Ancient households warp the meters—enter stocked with Dust.
                   <br />
-                  Use your fairy magic wisely to overcome difficult situations
+                  Log every rare pull so the Queen trusts your progress through the collection.
                 </p>
               </Card>
             </div>
             <div className="mt-4 p-4 bg-green-100 border border-green-300 rounded-md">
               <p className="text-green-800 text-sm">
-                <strong>Pro Tip:</strong> Be gentle and quiet! The key to being a successful Tooth Fae is to collect teeth without disturbing anyone's dreams. Time your movements carefully and use your magical abilities strategically.
+                <strong>Field Note:</strong> Keep the rhythm tight—two seconds of drilling, dust, reassess. Let the meters dictate
+                your pace, not impatience. The only loud noise should be the latch closing as you disappear.
               </p>
             </div>
           </section>
@@ -486,36 +488,36 @@ export default function Home() {
       <div className="w-full white-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section>
-            <h2 className="text-3xl font-bold mb-6 text-center">Discover the Magic of The Tooth Fae</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center text-slate-100">Why the Queen Sends You</h2>
             <p className="text-xl text-center text-gray-600 mb-10 px-4">
-              Experience what makes The Tooth Fae the most enchanting tooth fairy adventure ever created!
+              Every corridor, every meter, every tooth—master them, and the Queen keeps your wings. Fail, and she sends another.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="bg-green-50 shadow-md border-green-200 p-4 flex flex-col items-center text-center">
                 <div className="bg-green-600 p-3 rounded-full mb-3">
                   <Sparkles className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-green-800 mb-2">Magical Worlds</h3>
+                <h3 className="text-lg font-semibold text-green-800 mb-2">Night Houses</h3>
                 <p className="text-gray-700">
-                  The Tooth Fae features beautifully crafted dreamscapes filled with wonder, each with unique challenges and magical surprises.
+                  Each neighborhood reshapes itself nightly—creaking boards, whispering vents, wandering pets. Learn their patterns or lose your mark.
                 </p>
               </Card>
               <Card className="bg-green-50 shadow-md border-green-200 p-4 flex flex-col items-center text-center">
                 <div className="bg-green-600 p-3 rounded-full mb-3">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-green-800 mb-2">Charming Characters</h3>
+                <h3 className="text-lg font-semibold text-green-800 mb-2">Donor Profiles</h3>
                 <p className="text-gray-700">
-                  Meet delightful characters in The Tooth Fae, from sleeping children to friendly pets, each adding charm to your fairy adventure.
+                  Trait combos matter: Insomniac teens thrash at faint sounds, Eldritch children warp the UI, and Vampires open their eyes the moment you hesitate.
                 </p>
               </Card>
               <Card className="bg-green-50 shadow-md border-green-200 p-4 flex flex-col items-center text-center">
                 <div className="bg-green-600 p-3 rounded-full mb-3">
                   <Shield className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-green-800 mb-2">Family-Friendly Fun</h3>
+                <h3 className="text-lg font-semibold text-green-800 mb-2">Clean Exits</h3>
                 <p className="text-gray-700">
-                  The Tooth Fae is designed for players of all ages, offering wholesome entertainment that brings magic to tooth fairy traditions.
+                  Banish every trace of your visit—snuff the candles, slow the breathing, and leave only an empty pillowcase behind.
                 </p>
               </Card>
             </div>
@@ -527,16 +529,16 @@ export default function Home() {
       <div className="w-full medium-green-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section id="features">
-            <h2 className="text-3xl font-bold mb-6 text-center">The Tooth Fae Features</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center text-slate-100">Systems That Keep You Alive</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-md">
                 <div className="bg-green-600 p-2 rounded-full shrink-0 mt-1">
                   <BarChart className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Enchanting Gameplay</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Meter-Oriented Stealth</h3>
                   <p className="text-gray-700 text-sm">
-                    Experience magical tooth collection missions that blend stealth, strategy, and fairy tale charm!
+                    Balance Lucidity, Pain, and Fear in real time. Push too far with the drill and the donor jerks awake; hesitate and your trophy rots.
                   </p>
                 </div>
               </div>
@@ -545,9 +547,9 @@ export default function Home() {
                   <Shield className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Whimsical Adventures</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Living Floorplans</h3>
                   <p className="text-gray-700 text-sm">
-                    Navigate through beautifully designed dream worlds filled with wonder and gentle challenges.
+                    Houses breathe, creak, and retaliate. Memorize escape routes, crawling pets, and creaky boards before committing to an extraction.
                   </p>
                 </div>
               </div>
@@ -556,9 +558,9 @@ export default function Home() {
                   <Sparkles className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Delightful Experience</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Relentless Progression</h3>
                   <p className="text-gray-700 text-sm">
-                    Perfect blend of relaxing gameplay and engaging puzzles that will keep you coming back for more!
+                    Each successful pull unlocks new intel, rare donor spawns, and harder heists. The Queen always hungers for rarer teeth.
                   </p>
                 </div>
               </div>
@@ -567,9 +569,9 @@ export default function Home() {
                   <Gamepad2 className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Magical Customization</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Loadout Tuning</h3>
                   <p className="text-gray-700 text-sm">
-                    Unlock charming outfits and magical accessories to personalize your Tooth Fae character.
+                    Swap Dust potency, drill bit temper, and anesthetic dosage to suit your target. Preparation is the quiet difference between art and failure.
                   </p>
                 </div>
               </div>
@@ -578,9 +580,9 @@ export default function Home() {
                   <Users className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Family-Friendly</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Trait Codex</h3>
                   <p className="text-gray-700 text-sm">
-                    Safe and enjoyable content suitable for players of all ages, bringing families together.
+                    Maintain dossiers on Heavy Sleepers, Tough mortals, Insomniacs, Vampires, Ancients, and Eldritch children. Each changes the rhythm of extraction.
                   </p>
                 </div>
               </div>
@@ -589,9 +591,9 @@ export default function Home() {
                   <Play className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Free-to-Play</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">No Grind, Just Precision</h3>
                   <p className="text-gray-700 text-sm">
-                    Enjoy the complete magical experience with no pay-to-win mechanics, just pure fairy fun.
+                    No paywalls, no gacha—only your mastery over the meters determines success. Practice, adapt, and bring home intact trophies.
                   </p>
                 </div>
               </div>
@@ -604,7 +606,7 @@ export default function Home() {
       <div className="w-full dark-green-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section id="download">
-            <h2 className="text-3xl font-bold mb-6 text-center">Download the Complete The Tooth Fae Experience</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center text-slate-100">Download the Field Training Build</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Button 
                 className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center relative"
@@ -656,7 +658,8 @@ export default function Home() {
               </Button>
             </div>
             <p className="text-center text-green-100 text-sm mt-4">
-              All files are scanned for viruses and malware. Please check your system requirements before downloading.
+              Training zips mirror live builds but ship with placeholder binaries. Review the included readme for trait drills and
+              meter practice scenarios before stepping into a real neighborhood.
             </p>
           </section>
         </div>
@@ -666,48 +669,52 @@ export default function Home() {
       <div className="w-full white-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section id="faq">
-            <h2 className="text-3xl font-bold mb-6 text-center">Frequently Asked Questions About The Tooth Fae</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center text-slate-100">Frequently Asked Nightmares</h2>
             <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-green-200">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1" className="border-green-200">
                   <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    Is The Tooth Fae suitable for children?
+                    Is The Tooth Fae meant for kids?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 px-4 py-3">
-                    Yes, The Tooth Fae is designed to be family-friendly and appropriate for players of all ages. The game features gentle, wholesome content that celebrates the magic of childhood and tooth fairy traditions.
+                    Not this briefing. The Tooth Fae leans into stealth horror—managing pain, fear, and the risk of waking donors. Expect tense
+                    scenarios, sudden failures, and unnerving lore rather than bedtime stories.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2" className="border-green-200">
                   <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    Can I play The Tooth Fae offline?
+                    Do I need to stay online during a heist?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 px-4 py-3">
-                    Yes, The Tooth Fae can be played completely offline in single-player mode. An internet connection is only needed for downloading the game and accessing online features.
+                    The sole operative campaign and training contracts run offline. Connect only to pull down updates, share cabinet data, or
+                    submit leaderboard runs.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3" className="border-green-200">
                   <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    What are the system requirements for The Tooth Fae?
+                    What hardware keeps the build stable?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 px-4 py-3">
-                    The Tooth Fae is optimized to run on most modern devices. Minimum requirements include:
-                    Windows 10/macOS 10.14/Ubuntu 18.04, Intel Core i3 or equivalent, 4GB RAM, and any graphics card with 1GB VRAM. The game also runs smoothly in most modern web browsers.
+                    Windows 10/macOS 10.14/Ubuntu 18.04, an i3/Ryzen 3 class CPU, 4GB RAM, and any GPU with 1GB VRAM are enough. SSD storage
+                    shortens nightly load times. The browser build mirrors these requirements.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4" className="border-green-200">
                   <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    Are there in-app purchases in The Tooth Fae?
+                    Are there monetization traps?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 px-4 py-3">
-                    The complete game experience is free to play. Optional cosmetic items and character customizations are available for purchase, but they do not affect gameplay or progress.
+                    None. The Queen rewards precision, not wallets. Optional vanity wings and cabinet dioramas exist, but the extraction loop
+                    remains untouched.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-5" className="border-green-200">
                   <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    How often does The Tooth Fae receive updates?
+                    How often are new heists added?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 px-4 py-3">
-                    The development team regularly releases updates with new content, including seasonal events and new magical worlds to explore. Bug fixes and improvements are deployed as needed to ensure the best experience.
+                    Expect quarterly drops featuring new donor archetypes, tooth variants, and lore events. Hotfixes roll out as meter
+                    exploits or trait bugs surface.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

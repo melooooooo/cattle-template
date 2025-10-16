@@ -52,9 +52,9 @@ export default function DownloadPage() {
 
         {/* Download Title */}
         <div className="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
-          <h1 className="text-3xl font-bold text-center text-green-800">Download The Tooth Fae Companion Build</h1>
-          <p className="text-center text-green-700 mt-2">
-            Grab the latest training client for your preferred platform and practice extractions offline.
+          <h1 className="text-3xl font-bold text-center text-slate-100">Download The Tooth Fae Companion Build</h1>
+          <p className="text-center text-neutral-300 mt-2">
+            Pull the latest field-training client for your platform. Drill the meters offline before stepping into a live target zone.
           </p>
         </div>
 
@@ -67,9 +67,9 @@ export default function DownloadPage() {
               <div className="bg-green-200 p-6 rounded-lg text-center shadow-sm">
                 <h3 className="text-lg font-bold text-green-800 mb-4">Windows</h3>
                 <p className="text-green-700 mb-4 text-sm">
-                  Optimized for Windows 10 and 11<br />
-                  Includes full extraction tutorial scenarios<br />
-                  Requires 500MB of free disk space
+                  Verified on Windows 10/11<br />
+                  Bundled with Lucidity/Pain/Fear drill scenarios<br />
+                  Reserve ~500MB for logs and replay data
                 </p>
                 <Button 
                   className="bg-green-500 hover:bg-green-600 text-white w-full relative"
@@ -92,9 +92,9 @@ export default function DownloadPage() {
               <div className="bg-green-200 p-6 rounded-lg text-center shadow-sm">
                 <h3 className="text-lg font-bold text-green-800 mb-4">macOS</h3>
                 <p className="text-green-700 mb-4 text-sm">
-                  Compatible with macOS 10.14+<br />
-                  Native build for both Apple Silicon and Intel<br />
-                  Ships with high-resolution tooth cabinet art
+                  Runs on macOS 10.14+ (Intel & Apple Silicon)<br />
+                  Includes high-res cabinet renders for trophy tracking<br />
+                  Ships with haptics-tuned drill profiles
                 </p>
                 <Button 
                   className="bg-green-500 hover:bg-green-600 text-white w-full relative"
@@ -117,9 +117,9 @@ export default function DownloadPage() {
               <div className="bg-green-200 p-6 rounded-lg text-center shadow-sm">
                 <h3 className="text-lg font-bold text-green-800 mb-4">Linux</h3>
                 <p className="text-green-700 mb-4 text-sm">
-                  Works on Ubuntu 18.04+ and most modern distros<br />
-                  Includes CLI logging for practice runs<br />
-                  500MB free disk space recommended
+                  Tested on Ubuntu 18.04+ and major distros<br />
+                  CLI logging enabled for meter review sessions<br />
+                  Keep 500MB free for mission replays and mod packs
                 </p>
                 <Button 
                   className="bg-green-500 hover:bg-green-600 text-white w-full relative"
@@ -142,7 +142,7 @@ export default function DownloadPage() {
             
             <div className="text-center">
               <p className="text-green-700 mb-6">
-                Every package ships with the full single-player extraction loop, offline practice cases, and the latest patch notes.
+                Every build mirrors the single-operative loop, includes offline practice contracts, and bundles the latest tooth trait dossiers.
               </p>
               
               <Button asChild className="bg-green-700 hover:bg-green-800 text-white">

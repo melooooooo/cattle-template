@@ -71,12 +71,13 @@ export default function RootLayout({
         {/* 手动添加meta描述标签，确保长度正确 */}
         <meta
           name="description"
-          content="Play The Tooth Fae, a magical tooth fairy adventure. Collect teeth, explore dreamscapes, spread joy. Family-friendly fun. Play now!"
+          content="The Tooth Fae is a nocturnal horror heist—stalk sleepers, manage Lucidity, Pain, and Fear, and deliver rare trophies to the Queen before anyone wakes."
         />
 
         {/* 手动添加OpenGraph和Twitter元标签 */}
-        <meta property="og:description" content="Play The Tooth Fae, a magical tooth fairy adventure. Collect teeth, explore dreamscapes. Family-friendly fun!" />
-        <meta property="twitter:description" content="Play The Tooth Fae, a magical tooth fairy adventure. Family-friendly fun for all ages." />
+        <meta property="og:description" content="Plan nightmare heists, siphon rare teeth, and survive the Queen's demands in The Tooth Fae." />
+        <meta property="twitter:description" content="Take command of a tooth fae operative in this dark fantasy extraction game."
+        />
         
         {/* 添加结构化数据 JSON-LD */}
         <script
@@ -89,7 +90,7 @@ export default function RootLayout({
               description: defaultSeoConfig.description,
               image: `${baseUrl}/og-image.jpg`,
               url: baseUrl,
-              genre: ['Adventure', 'Family', 'Fantasy'],
+              genre: ['Horror', 'Stealth', 'Dark Fantasy'],
               applicationCategory: 'Game',
               operatingSystem: ['Windows', 'macOS', 'Linux', 'Browser'],
               author: {
@@ -115,7 +116,7 @@ export default function RootLayout({
       <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
           storageKey="tooth-fae-theme"

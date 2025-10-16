@@ -28,7 +28,7 @@ export default function Navigation() {
   }
 
   // 创建导航链接的渲染函数
-  const renderNavLink = (href: string, sectionId: string, label: string, className: string = "text-green-50 hover:text-white", isPage: boolean = false) => {
+  const renderNavLink = (href: string, sectionId: string, label: string, className: string = "text-slate-200 hover:text-rose-300", isPage: boolean = false) => {
     // 当前页面是否已经是目标页面
     const isCurrentPage = pathname === `/${sectionId}` || 
                          (pathname === '/play' && sectionId === 'play') ||
@@ -82,9 +82,9 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-3">
         <div className="w-full md:w-auto flex items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-green-50">
-              <span className="text-purple-200">THE</span> <span className="text-teal-200">TOOTH</span>{" "}
-              <span className="text-rose-200">FAE</span>
+            <Link href="/" className="text-2xl font-bold text-slate-100">
+              <span className="text-rose-400">THE</span> <span className="text-violet-300">TOOTH</span>{" "}
+              <span className="text-slate-200">FAE</span>
             </Link>
           </div>
           <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
@@ -95,13 +95,13 @@ export default function Navigation() {
         <nav
           className={`${isMenuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row w-full md:w-auto items-center gap-4 md:gap-6 mt-4 md:mt-0 text-sm md:text-base`}
         >
-          {renderNavLink("https://thetoothfae.com/play", "play", "Play", "text-green-200 hover:text-white font-medium")}
-          {renderNavLink("https://thetoothfae.com/how-to-play", "how-to-play", "How to Play")}
-          {renderNavLink("https://thetoothfae.com/features", "features", "Features")}
-          {renderNavLink("https://thetoothfae.com/download", "download", "Download")}
-          {renderNavLink("https://thetoothfae.com/comments", "comments", "Comments")}
-          {renderNavLink("https://thetoothfae.com/faq", "faq", "FAQ")}
-          {renderNavLink("https://thetoothfae.com/blog", "blog", "Blog", "text-green-50 hover:text-white", true)}
+          {renderNavLink("https://thetoothfae.com/play", "play", "Play", "text-rose-300 hover:text-white font-medium")}
+          {renderNavLink("https://thetoothfae.com/how-to-play", "how-to-play", "How to Play", "text-slate-200 hover:text-white")}
+          {renderNavLink("https://thetoothfae.com/features", "features", "Features", "text-slate-200 hover:text-white")}
+          {renderNavLink("https://thetoothfae.com/download", "download", "Download", "text-slate-200 hover:text-white")}
+          {renderNavLink("https://thetoothfae.com/comments", "comments", "Comments", "text-slate-200 hover:text-white")}
+          {renderNavLink("https://thetoothfae.com/faq", "faq", "FAQ", "text-slate-200 hover:text-white")}
+          {renderNavLink("https://thetoothfae.com/blog", "blog", "Blog", "text-slate-100 hover:text-rose-300", true)}
         </nav>
       </div>
     </header>

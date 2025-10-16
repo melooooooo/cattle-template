@@ -22,9 +22,9 @@ export const createCanonicalUrl = (path: string): string => {
 
 // 默认SEO设置
 export const defaultSeoConfig = {
-  title: "The Tooth Fae - Magical Tooth Fairy Adventure Game",
-  description: "Experience the enchanting world of The Tooth Fae, a delightful fairy adventure game. Collect lost teeth from sleeping children, navigate magical dreamscapes, and spread joy around the world! Family-friendly gameplay with charming characters and whimsical worlds. Play for free in your browser or download now!",
-  keywords: "The Tooth Fae, tooth fairy game, fairy adventure, family game, children's game, magical game, online game",
+  title: "The Tooth Fae - Nocturnal Tooth Heist Experience",
+  description: "Descend into the horror-touched world of The Tooth Fae, a stealth extraction experience where every house hides a new nightmare. Harvest rare teeth, manage Lucidity, Pain, and Fear, and complete the Queen's macabre collection before the mortals wake.",
+  keywords: "The Tooth Fae, horror game, stealth tooth fairy, dark fantasy, extraction game, Lucidity meter, indie horror",
   robots: "index, follow",
   viewport: "width=device-width, initial-scale=1",
   canonical: getBaseUrl(),
@@ -33,8 +33,8 @@ export const defaultSeoConfig = {
     locale: 'en_US',
     url: getBaseUrl(),
     site_name: 'The Tooth Fae',
-    title: 'The Tooth Fae - Magical Tooth Fairy Adventure Game',
-    description: 'Experience the enchanting world of The Tooth Fae, a delightful fairy adventure game. Collect lost teeth from sleeping children, navigate magical dreamscapes, and spread joy around the world! Family-friendly gameplay with charming characters and whimsical worlds. Play for free in your browser or download now!',
+    title: 'The Tooth Fae - Nocturnal Tooth Heist Experience',
+    description: 'Descend into the horror-touched world of The Tooth Fae. Plan heists, siphon teeth from restless sleepers, and survive the Queen’s collection trials in this dark fantasy extraction game.',
     images: [
       {
         url: `${getBaseUrl()}/og-image.jpg`,
@@ -48,6 +48,6 @@ export const defaultSeoConfig = {
     handle: '@TheToothFae',
     site: '@TheToothFae',
     cardType: 'summary_large_image',
-    title: 'The Tooth Fae - Magical Tooth Fairy Adventure Game',
+    title: 'The Tooth Fae - Nocturnal Tooth Heist Experience',
   },
 }; 

@@ -17,7 +17,7 @@ export default function PlayPage() {
         <div className="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
           <h1 className="text-3xl font-bold text-center text-white">Play The Tooth Fae</h1>
           <p className="text-center text-green-100 mt-2">
-            Embark on a magical tooth collection adventure as the enchanting Tooth Fae!
+            Infiltrate silent bedrooms, balance Lucidity, Pain, and Fear, and deliver rare trophies to the Queen before anyone wakes.
           </p>
         </div>
 
@@ -42,15 +42,32 @@ export default function PlayPage() {
 
         {/* Game Instructions */}
         <div className="w-full max-w-6xl mx-auto p-4 my-6">
-          <h2 className="text-xl font-bold text-white mb-4">Quick Game Instructions</h2>
-          <ul className="list-disc list-inside text-green-100 space-y-2">
-            <li>Use arrow keys or WASD to move the Tooth Fae</li>
-            <li>Click or interact with objects to collect teeth</li>
-            <li>Press Space to jump and fly through dream worlds</li>
-            <li>Avoid waking children or household pets</li>
-            <li>Trade collected teeth for magical coins</li>
-            <li>Complete levels to unlock new magical worlds!</li>
-          </ul>
+          <h2 className="text-xl font-bold text-white mb-4">Taking Command: The Controls</h2>
+          <p className="text-sm text-neutral-300 mb-4">
+            Disclaimer: These bindings match the standard browser build on keyboard and mouse. Some versions may surface
+            slight variations—check the in-game sheet before a live run.
+          </p>
+          <div className="overflow-hidden rounded-lg border border-green-200 bg-green-50">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              {[
+                { action: 'Glide Forward', input: 'W' },
+                { action: 'Drift Back', input: 'S' },
+                { action: 'Strafe Left', input: 'A' },
+                { action: 'Strafe Right', input: 'D' },
+                { action: 'Creep / Sneak', input: 'C or Left Ctrl' },
+                { action: 'Interact / Extract', input: 'E or Left Mouse Click' },
+                { action: 'Survey the Room', input: 'Mouse Movement' },
+              ].map(entry => (
+                <div
+                  key={entry.action}
+                  className="flex flex-col md:flex-row md:items-center justify-between px-4 py-3 border-b border-green-200/50 last:border-b-0"
+                >
+                  <span className="text-sm font-semibold text-green-700 uppercase tracking-wide">{entry.action}</span>
+                  <span className="text-sm text-green-500 md:text-right">{entry.input}</span>
+                </div>
+              ))}
+            </div>
+          </div>
           
           <div className="flex gap-4 justify-center mt-8">
             <Button asChild className="bg-green-500 hover:bg-green-600 text-white">
