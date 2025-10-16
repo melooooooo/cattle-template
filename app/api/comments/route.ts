@@ -22,30 +22,30 @@ let comments: Comment[] = [
     _id: '1',
     name: 'Jack',
     email: 'jack@example.com',
-    content: 'Really fun game! Love the physics and sheep mechanics!',
+    content: 'Pulled my first Sparkling tooth thanks to the drill-dust rhythm. The guide here is gold!',
     date: '3 weeks ago',
     likes: 4,
-    dislikes: 4
+    dislikes: 1
   },
   {
     id: '2',
     _id: '2',
-    name: 'mick',
-    email: 'mick@example.com',
-    content: 'Amazing game of sheep! Love the crazy animations. 10/10 would play again.',
+    name: 'Mina',
+    email: 'mina@example.com',
+    content: 'Night Owl targets terrified me until I read the meter breakdown—now they fall asleep mid-drill.',
     date: '1 week ago',
     likes: 6,
-    dislikes: 3
+    dislikes: 2
   },
   {
     id: '3',
     _id: '3',
-    name: 'marry',
-    email: 'marry@example.com',
-    content: 'very amazing game',
+    name: 'Ravi',
+    email: 'ravi@example.com',
+    content: 'The rare trait dossier finally helped me nab that Watcher tooth. Long live the Queen!',
     date: '1 month ago',
-    likes: 8,
-    dislikes: 1
+    likes: 9,
+    dislikes: 0
   }
 ];
 
@@ -54,28 +54,28 @@ const initialComments = [
   {
     name: 'Jack',
     email: 'jack@example.com',
-    content: 'Really fun game! Love the physics and sheep mechanics!',
+    content: 'Pulled my first Sparkling tooth thanks to the drill-dust rhythm. The guide here is gold!',
     date: '3 weeks ago',
     likes: 4,
-    dislikes: 4,
+    dislikes: 1,
     createdAt: new Date()
   },
   {
-    name: 'mick',
-    email: 'mick@example.com',
-    content: 'Amazing game of sheep! Love the crazy animations. 10/10 would play again.',
+    name: 'Mina',
+    email: 'mina@example.com',
+    content: 'Night Owl targets terrified me until I read the meter breakdown—now they fall asleep mid-drill.',
     date: '1 week ago',
     likes: 6,
-    dislikes: 3,
+    dislikes: 2,
     createdAt: new Date()
   },
   {
-    name: 'marry',
-    email: 'marry@example.com',
-    content: 'very amazing game',
+    name: 'Ravi',
+    email: 'ravi@example.com',
+    content: 'The rare trait dossier finally helped me nab that Watcher tooth. Long live the Queen!',
     date: '1 month ago',
-    likes: 8,
-    dislikes: 1,
+    likes: 9,
+    dislikes: 0,
     createdAt: new Date()
   }
 ];

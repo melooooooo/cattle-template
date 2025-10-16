@@ -19,13 +19,13 @@ export default function TermsPage() {
           <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
           
           <div className="prose prose-green max-w-none">
-            <p className="mb-4">Last updated: June 15, 2023</p>
+            <p className="mb-4">Last updated: October 17, 2024</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">1. Introduction</h2>
-            <p>Welcome to Crazy Cattle 3D! These Terms of Service ("Terms") govern your use of our website located at <a href="https://crazycattle3dx.com" className="text-green-600 hover:text-green-800">https://crazycattle3dx.com</a> (the "Site") and our online and downloadable game Crazy Cattle 3D (the "Game"), operated by Crazy Cattle Studios. By accessing the Site or using the Game, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Site or use the Game.</p>
+            <p>Welcome to The Tooth Fae! These Terms of Service ("Terms") govern your use of our website located at <a href="https://thetoothfae.com" className="text-green-600 hover:text-green-800">https://thetoothfae.com</a> (the "Site") and our online and downloadable game The Tooth Fae (the "Game"), operated by the Tooth Fae Collective. By accessing the Site or using the Game, you agree to be bound by these Terms. If you disagree with any part of the terms, do not access the Site or use the Game.</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">2. Intellectual Property Rights</h2>
-            <p>The Site and the Game, including all content, features, and functionality thereof, are owned by Crazy Cattle Studios and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+            <p>The Site and the Game, including all content, features, and functionality thereof, are owned by the Tooth Fae Collective and are protected by international copyright, trademark, trade secret, and other intellectual property laws.</p>
             <p>You are permitted to use the Site and Game for your personal, non-commercial use only. You must not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Site or Game, except as follows:</p>
             <ul className="list-disc ml-6 my-4">
               <li>Your computer may temporarily store copies of such materials in RAM incidental to your accessing and viewing those materials.</li>
@@ -52,7 +52,7 @@ export default function TermsPage() {
             </ul>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">6. Limitation of Liability</h2>
-            <p>In no event shall Crazy Cattle Studios, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Site or Game; (ii) any conduct or content of any third party on the Site or Game; (iii) any content obtained from the Site or Game; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage.</p>
+            <p>In no event shall the Tooth Fae Collective, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Site or Game; (ii) any conduct or content of any third party on the Site or Game; (iii) any content obtained from the Site or Game; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, regardless of notice of the possibility of such damage.</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">7. Governing Law</h2>
             <p>These Terms shall be governed and construed in accordance with the laws of the United States, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>

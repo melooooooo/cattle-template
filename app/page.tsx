@@ -29,7 +29,7 @@ import { defaultSeoConfig } from '@/lib/seo-config';
 
 export default function Home() {
   // 用于规范URL的基础URL
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://crazycattle3dx.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://thetoothfae.com';
   
   const [downloadStatus, setDownloadStatus] = useState<{[key: string]: boolean}>({});
   const [comments, setComments] = useState<any[]>([]);
@@ -324,31 +324,31 @@ export default function Home() {
         {/* Social Share Buttons */}
         <div className="w-full max-w-6xl mx-auto mb-8">
           <div className="social-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcrazycattle3dx.com%2F" target="_blank" rel="noopener noreferrer" className="social-button facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthetoothfae.com%2F" target="_blank" rel="noopener noreferrer" className="social-button facebook">
               <div className="flex justify-center items-center gap-2">
                 <Facebook className="h-4 w-4" />
                 <span className="hidden sm:inline">Facebook</span>
               </div>
             </a>
-            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcrazycattle3dx.com%2F&text=Check%20out%20Crazy%20Cattle%203D%20-%20the%20most%20entertaining%20sheep%20combat%20simulation!" target="_blank" rel="noopener noreferrer" className="social-button twitter">
+            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fthetoothfae.com%2F&text=Learn%20the%20secrets%20of%20The%20Tooth%20Fae%20%E2%80%94%20the%20grim%20fairy%20heist%20adventure!" target="_blank" rel="noopener noreferrer" className="social-button twitter">
               <div className="flex justify-center items-center gap-2">
                 <Twitter className="h-4 w-4" />
                 <span className="hidden sm:inline">Twitter</span>
               </div>
             </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcrazycattle3dx.com%2F" target="_blank" rel="noopener noreferrer" className="social-button linkedin">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthetoothfae.com%2F" target="_blank" rel="noopener noreferrer" className="social-button linkedin">
               <div className="flex justify-center items-center gap-2">
                 <Linkedin className="h-4 w-4" />
                 <span className="hidden sm:inline">LinkedIn</span>
               </div>
             </a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20Crazy%20Cattle%203D%20-%20the%20most%20entertaining%20sheep%20combat%20simulation!%20https%3A%2F%2Fcrazycattle3dx.com%2F" target="_blank" rel="noopener noreferrer" className="social-button whatsapp">
+            <a href="https://api.whatsapp.com/send?text=Join%20me%20in%20The%20Tooth%20Fae%20%E2%80%94%20a%20dark%20fantasy%20tooth%20heist!%20https%3A%2F%2Fthetoothfae.com%2F" target="_blank" rel="noopener noreferrer" className="social-button whatsapp">
               <div className="flex justify-center items-center gap-2">
                 <Share2 className="h-4 w-4" />
                 <span className="hidden sm:inline">WhatsApp</span>
               </div>
             </a>
-            <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fcrazycattle3dx.com%2F&title=Crazy%20Cattle%203D" target="_blank" rel="noopener noreferrer" className="social-button reddit">
+            <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fthetoothfae.com%2F&title=The%20Tooth%20Fae%20%E2%80%94%20The%20Ultimate%20Tooth%20Collection%20Guide" target="_blank" rel="noopener noreferrer" className="social-button reddit">
               <div className="flex justify-center items-center gap-2">
                 <Share2 className="h-4 w-4" />
                 <span className="hidden sm:inline">Reddit</span>
@@ -885,17 +885,17 @@ export default function Home() {
                 <h3 className="font-semibold mb-3">QUICK LINKS</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="https://crazycattle3dx.com" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'})}} className="text-neutral-800 hover:text-green-600">
+                    <a href="https://thetoothfae.com" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'})}} className="text-neutral-800 hover:text-green-600">
                       Home
                     </a>
                   </li>
                   <li>
-                    <a href="https://crazycattle3dx.com/features" onClick={(e) => scrollToSection(e, "features")} className="text-neutral-800 hover:text-green-600">
+                    <a href="https://thetoothfae.com/#features" onClick={(e) => scrollToSection(e, "features")} className="text-neutral-800 hover:text-green-600">
                       Features
                     </a>
                   </li>
                   <li>
-                    <a href="https://crazycattle3dx.com/download" onClick={(e) => scrollToSection(e, "download")} className="text-neutral-800 hover:text-green-600">
+                    <a href="https://thetoothfae.com/#download" onClick={(e) => scrollToSection(e, "download")} className="text-neutral-800 hover:text-green-600">
                       Download
                     </a>
                   </li>
@@ -905,17 +905,17 @@ export default function Home() {
                 <h3 className="font-semibold mb-3">RESOURCES</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="https://crazycattle3dx.com/how-to-play" onClick={(e) => scrollToSection(e, "how-to-play")} className="text-neutral-800 hover:text-green-600">
+                    <a href="https://thetoothfae.com/#how-to-play" onClick={(e) => scrollToSection(e, "how-to-play")} className="text-neutral-800 hover:text-green-600">
                       Tutorials
                     </a>
                   </li>
                   <li>
-                    <a href="https://crazycattle3dx.com/faq" onClick={(e) => scrollToSection(e, "faq")} className="text-neutral-800 hover:text-green-600">
+                    <a href="https://thetoothfae.com/#faq" onClick={(e) => scrollToSection(e, "faq")} className="text-neutral-800 hover:text-green-600">
                       FAQ
                     </a>
                   </li>
                   <li>
-                    <a href="https://crazycattle3dx.com/blog" className="text-neutral-800 hover:text-green-600">
+                    <a href="https://thetoothfae.com/blog" className="text-neutral-800 hover:text-green-600">
                       Blog
                     </a>
                   </li>
@@ -935,7 +935,7 @@ export default function Home() {
                     </Link>
                   </li>
                   <li>
-                    <a href="https://crazycattle3dx.com/comments" 
+                    <a href="https://thetoothfae.com/#comments" 
                       onClick={(e) => {
                         e.preventDefault();
                         const commentsSection = document.getElementById("comments");
@@ -951,7 +951,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="font-semibold mb-3">CONNECT</h3>
-                <p className="text-sm mb-4">Stay updated with the latest news and updates about Crazy Cattle 3D.</p>
+                <p className="text-sm mb-4">Stay updated with the latest strategy notes and patch news for The Tooth Fae.</p>
                 <div className="flex gap-2">
                   <Input
                     placeholder="Your email"

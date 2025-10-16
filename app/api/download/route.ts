@@ -8,14 +8,14 @@ async function generateZipFile(platform: string) {
   try {
     const zip = new JSZip();
     const downloadsDir = path.join(process.cwd(), 'public', 'downloads');
-    const outputPath = path.join(downloadsDir, `CrazyCattle3D-${platform}.zip`);
+    const outputPath = path.join(downloadsDir, `TheToothFae-${platform}.zip`);
     
     // 添加README文件
-    const readmeContent = `这是Crazy Cattle 3D游戏的${platform}版本, 感谢您的下载！\n\n游戏说明：\n- 这是一个物理引擎驱动的游戏\n- 使用WASD控制移动\n- 使用鼠标控制视角\n- 目标是成为最后幸存的绵羊`;
+    const readmeContent = `这是The Tooth Fae的${platform}版本示例包，感谢您的关注！\n\n玩法速览：\n- 这是一款分成“目标侦查 + 盗取执行”两阶段的潜行游戏\n- 使用鼠标观察捐献者特质，规划牙齿战利品\n- 操作界面中要平衡清醒值、疼痛值和恐惧值\n- 合理搭配仙尘、麻醉针和牙钻，避免惊醒目标`;
     zip.file('README.txt', readmeContent);
     
     // 添加假的游戏文件
-    zip.file('game.exe', 'This is a placeholder for the game executable');
+    zip.file('the-tooth-fae.exe', 'This is a placeholder for the game executable');
     zip.file('config.json', JSON.stringify({ platform, version: '1.0.0' }, null, 2));
     
     // 创建assets目录并添加文件
@@ -52,16 +52,16 @@ platforms.forEach(platform => {
 // 定义游戏下载信息
 const downloadLinks = {
   windows: {
-    url: '/downloads/CrazyCattle3D-windows.zip',
-    filename: 'CrazyCattle3D-Win-v1.0.zip'
+    url: '/downloads/TheToothFae-windows.zip',
+    filename: 'TheToothFae-Win-v1.0.zip'
   },
   macos: {
-    url: '/downloads/CrazyCattle3D-macos.zip',
-    filename: 'CrazyCattle3D-Mac-v1.0.dmg'
+    url: '/downloads/TheToothFae-macos.zip',
+    filename: 'TheToothFae-Mac-v1.0.dmg'
   },
   linux: {
-    url: '/downloads/CrazyCattle3D-linux.zip',
-    filename: 'CrazyCattle3D-Linux-v1.0.tar.gz'
+    url: '/downloads/TheToothFae-linux.zip',
+    filename: 'TheToothFae-Linux-v1.0.tar.gz'
   }
 };
 

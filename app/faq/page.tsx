@@ -17,7 +17,7 @@ export default function FAQPage() {
         <div className="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
           <h1 className="text-3xl font-bold text-center text-green-800">Frequently Asked Questions</h1>
           <p className="text-center text-green-700 mt-2">
-            Everything you need to know about Crazy Cattle 3D
+            Everything recruits ask about mastering The Tooth Fae.
           </p>
         </div>
       </div>
@@ -29,50 +29,48 @@ export default function FAQPage() {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1" className="border-green-200">
                 <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                  Is Crazy Cattle 3D suitable for beginners?
+                  Is The Tooth Fae approachable for new players?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 px-4 py-3">
-                  Yes, Crazy Cattle 3D is designed to be accessible for players of all skill levels. The game includes
-                  a comprehensive tutorial system and gradually introduces new mechanics as you progress.
+                  Absolutely. Start with Heavy Sleeper households to learn the drill–dust rhythm at a relaxed pace, then
+                  graduate to trickier traits once you’re comfortable juggling Lucidity, Pain, and Fear.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2" className="border-green-200">
                 <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                  Can I play Crazy Cattle 3D offline?
+                  Do I need to be online to practice extractions?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 px-4 py-3">
-                  Yes, the single-player campaign and most game modes can be played completely offline. Only the
-                  multiplayer features and leaderboard submissions require an internet connection.
+                  The campaign, training contracts, and cabinet management all run offline. Only leaderboard sync and
+                  community challenge uploads require a connection.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3" className="border-green-200">
                 <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                  What is the minimum hardware requirement for running Crazy Cattle 3D?
+                  What hardware do I need to run the training build?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 px-4 py-3">
-                  Crazy Cattle 3D is optimized to run on a wide range of hardware. Minimum requirements include:
-                  Windows 10/macOS 10.14/Ubuntu 18.04, Intel Core i3 or equivalent, 4GB RAM, and any DirectX 11
-                  compatible graphics card with 1GB VRAM.
+                  The Tooth Fae runs on lightweight hardware: Windows 10/macOS 10.14/Ubuntu 18.04, an Intel Core i3 (or
+                  equivalent), 4GB RAM, and any GPU with basic OpenGL support. SSD storage shortens load times during
+                  rapid contract hopping.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4" className="border-green-200">
                 <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                  Are there in-app purchases in Crazy Cattle 3D?
+                  Are there microtransactions or paywalls?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 px-4 py-3">
-                  The core game experience is completely free to play. Optional in-app purchases are available for
-                  cosmetic items, additional level packs, and premium sheep customizations that do not affect gameplay
-                  balance.
+                  No pay-to-win hooks here. Optional cosmetics like wing patterns and cabinet dioramas support ongoing
+                  updates, but every gameplay system and tooth in the collection is available from the start.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5" className="border-green-200">
                 <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                  How often does Crazy Cattle 3D receive updates?
+                  How frequently does the team patch the game?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 px-4 py-3">
-                  The development team releases major content updates quarterly, with smaller patches and bug fixes
-                  deployed monthly. Seasonal events are also introduced throughout the year to keep the gameplay fresh
-                  and engaging.
+                  Expect quarterly content drops with new donor archetypes and cabinet lore, plus monthly balance passes
+                  that tweak trait behavior, tool cooldowns, and tooth spawn logic based on community data.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

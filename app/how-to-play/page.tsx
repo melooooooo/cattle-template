@@ -16,9 +16,9 @@ export default function HowToPlayPage() {
 
         {/* How to Play Title */}
         <div className="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
-          <h1 className="text-3xl font-bold text-center text-green-800">How to Play Crazy Cattle 3D</h1>
+          <h1 className="text-3xl font-bold text-center text-green-800">How to Play The Tooth Fae</h1>
           <p className="text-center text-green-700 mt-2">
-            Master the basics and become the last sheep standing!
+            Learn the rhythms of tooth thievery and keep every mortal dreaming.
           </p>
         </div>
       </div>
@@ -35,13 +35,13 @@ export default function HowToPlayPage() {
                 Game Objective
               </h3>
               <p className="text-gray-700">
-                Control your sheep and survive until you're the last one remaining
+                Serve the Queen by collecting 16 unique “Perfect Lovelies” teeth across every age group.
                 <br />
-                Knock other sheep off the map by ramming into them
+                Each night begins on the town map—study households, note their traits, and select the optimal mark.
                 <br />
-                Watch out for fences and edges - touching them means elimination!
+                During extraction, maintain control of Lucidity, Pain, and Fear; losing any meter means the job fails.
                 <br />
-                Win trophies by completing each level
+                Secure rare teeth by targeting trait combinations like Fragile children or Eldritch dwellers.
               </p>
             </Card>
             <Card className="bg-white shadow-md border-gray-200 p-4">
@@ -49,16 +49,16 @@ export default function HowToPlayPage() {
                 <div className="bg-green-500 p-2 rounded-full">
                   <Gamepad2 className="h-4 w-4 text-white" />
                 </div>
-                Controls
+                Interface & Meters
               </h3>
               <p className="text-gray-700">
-                WASD/Arrow Keys: Move your sheep
+                <strong>Lucidity (yellow):</strong> the wake-up meter. Keep it low with gentle timing and Fairy Dust.
                 <br />
-                Mouse: Control camera direction
+                <strong>Pain (red):</strong> rising pain risks lethal shock—stagger the drill and syringe to calm it.
                 <br />
-                Space: Jump/Ram into other sheep
+                <strong>Fear (purple):</strong> amplifies Lucidity growth; never let panic spiral out of control.
                 <br />
-                Shift: Sprint for faster movement
+                Master the rhythm: short drill bursts, dust to soothe, syringe only when pain nears 80%.
               </p>
             </Card>
             <Card className="bg-white shadow-md border-gray-200 p-4">
@@ -66,16 +66,16 @@ export default function HowToPlayPage() {
                 <div className="bg-green-500 p-2 rounded-full">
                   <Award className="h-4 w-4 text-white" />
                 </div>
-                Game Mechanics
+                Essential Toolkit
               </h3>
               <p className="text-gray-700">
-                Your sheep will explode if knocked over by another sheep
+                <strong>Fairy Dust:</strong> the safest panic button—drops Lucidity and Fear instantly.
                 <br />
-                Information about eliminated sheep appears at the top of the screen
+                <strong>Hook:</strong> opens the mouth; expect a small Lucidity spike the moment you pry.
                 <br />
-                Remaining sheep count is shown in the bottom left corner
+                <strong>Anesthetic Syringe:</strong> resets pain, ideal for Tough donors or multi-tooth attempts.
                 <br />
-                The game is all about physics - use momentum to your advantage!
+                <strong>Dental Drill & Forceps:</strong> loosen teeth carefully and extract only once meters are stable.
               </p>
             </Card>
             <Card className="bg-white shadow-md border-gray-200 p-4">
@@ -83,23 +83,23 @@ export default function HowToPlayPage() {
                 <div className="bg-green-500 p-2 rounded-full">
                   <Zap className="h-4 w-4 text-white" />
                 </div>
-                Hints
+                Trait Intelligence
               </h3>
               <p className="text-gray-700">
-                There are three unique maps to unlock by progressing through the game
+                Heavy Sleepers forgive greedy drilling—perfect for students of the craft.
                 <br />
-                Each map has different scenery and varying sheep counts
+                Tough donors need constant dust + anesthetic cycles to survive long extractions.
                 <br />
-                Earn trophies for each map you complete, displayed in the bottom right
+                Night Owls start half awake; tap the drill, dust immediately, and never linger.
                 <br />
-                Adapt your strategy for each unique map layout
+                Eldritch, Vampire, and Ancient abodes hide unearthly teeth—prepare for bespoke twists.
               </p>
             </Card>
           </div>
           <div className="mt-4 p-4 bg-green-100 border border-green-300 rounded-md">
             <p className="text-green-800 text-sm">
-              <strong>Pro Tip:</strong> The chaotic physics are intentional! Learn to control your momentum and use it
-              to your advantage. Sometimes letting other sheep eliminate each other is the best strategy for victory.
+              <strong>Field Note:</strong> The best Tooth Fae mantra is “drill a bit, dust a bit.” Push the drill only in
+              short pulses, calm every spike with dust, and save your syringe for when pain threatens to end the run.
             </p>
           </div>
           

@@ -1,85 +1,79 @@
-# Crazy Cattle 3D
+# The Tooth Fae – Unofficial Field Manual
 
-Welcome to the Crazy Cattle 3D game website project - a battle royale rage game about sheep!
+Welcome to the companion site for **The Tooth Fae**, a grim fairy stealth game about harvesting unique teeth from sleeping mortals. This project replaces the previous Crazy Cattle 3D template with fresh copy, guides, and resources tailored to the new game.
 
-## About the Project
+## About the Game
 
-Crazy Cattle 3D is a physics-based game where players control explosive sheep in unique environments. The game combines chaotic physics with strategic gameplay to create an addictive and entertaining experience.
+The Tooth Fae drops you into a two-phase heist loop:
 
-## Technologies Used
+- **Target Scouting (Town Map):** Hover over homes to learn each occupant’s age group and traits before committing to an extraction.
+- **Extraction Interface:** Manage three tension meters while working:  
+  - **Lucidity (yellow):** When it maxes out, the target wakes and the run is over.  
+  - **Pain (red):** Too much agony risks killing the donor.  
+  - **Fear (purple):** High fear accelerates lucidity, so keep them calm.  
 
-- Next.js 13 (App Router)
-- React
-- Tailwind CSS
-- Shadcn UI Components
-- MongoDB for comments storage
+Your long-term objective is to collect all 16 unique teeth for the **“My Perfect Lovelies”** cabinet. Common teeth are plentiful, but the rarest specimens demand careful trait hunting and precise execution.
+
+### Toolkit Overview
+
+- **Fairy Dust:** Calms lucidity and fear – your primary crowd-control loop.  
+- **Hook:** Pries the mouth open and starts every operation; raises pain and lucidity slightly.  
+- **Anesthetic Syringe:** Resets pain spikes; crucial against tough donors or multi-tooth runs.  
+- **Dental Drill:** Loosens the target tooth quickly but ramps every meter – use in short bursts.  
+- **Forceps:** The finishing move to claim your prize once the tooth is free.
+
+### Advanced Planning Tips
+
+- **Trait-based tactics:**  
+  - *Heavy Sleeper* donors barely stir, perfect for practicing drill rhythm.  
+  - *Tough* mortals demand long drill windows – stagger dust and anesthetic carefully.  
+  - *Night Owl / Insomniac* targets start half-awake; work in quick cycles and dust immediately.  
+  - *Fragile / Brittle* teeth shatter under pressure; keep drill exposure minimal.  
+  - *Vampire / Ancient / Eldritch* encounters have bespoke quirks and hide unearthly rewards.
+- **Anesthetic cadence:** Save it for extended drills, multi-tooth extractions, or whenever pain climbs beyond ~75%.
+- **Golden rule:** *“Drill a bit, dust a bit.”* Greed wakes donors faster than anything else.
+
+### Tooth Collection Index
+
+Every tooth has a trigger condition. Highlights include:
+
+- **Sparkling (Rare):** Child + Fragile trait.  
+- **Glass (Rare):** Teen + Brittle trait.  
+- **Sharp (Unearthly):** Vampire donors.  
+- **Gemini (Unearthly):** Adults with both Fragile and Brittle traits.  
+- **Watcher / Key (Unearthly):** Ancient and Eldritch homes hide the weirdest finds.  
+- **Cracked / Dirty / Wooden:** Failure states or special traits that add color to the collection.
+
+Refer to `help.md` for the full 16-item table and acquisition notes.
+
+## Project Structure & Tech
+
+- **Framework:** Next.js 15 (App Router), React 19, TypeScript.  
+- **UI:** Tailwind CSS, Shadcn UI, Radix primitives.  
+- **Data Layer:** MongoDB (with in-memory fallbacks for local development).  
+- **Content:** Updated pages, blog posts, and downloads themed around The Tooth Fae.
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 16.8+ 
-- npm or yarn
-
-### Installation
-
-1. Clone the repository
 ```bash
-git clone https://github.com/your-username/crazy-cattle-3d.git
-cd crazy-cattle-3d
+pnpm install
+pnpm dev
 ```
 
-2. Install dependencies
-```bash
-npm install
-# or
-yarn
-```
+Environment variables (`.env.local`):
 
-3. Set up environment variables  
-Create a `.env.local` file in the root directory with the following variables:
 ```
 MONGODB_URI=your_mongodb_connection_string
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
+NEXT_PUBLIC_BASE_URL=https://thetoothfae.com
 ```
 
-4. Run the development server
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Deploying
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Deploying on Vercel
-
-The easiest way to deploy this app is to use the [Vercel Platform](https://vercel.com):
-
-1. Push your code to a GitHub repository
-2. Import the project into Vercel
-3. Set the environment variables in the Vercel dashboard
-4. Deploy!
-
-## Project Structure
-
-- `/app` - Application routes and pages
-- `/components` - Reusable UI components
-- `/lib` - Utility functions and libraries
-- `/public` - Static assets
-
-## Features
-
-- Interactive game iframe
-- Comprehensive game information
-- Downloadable game clients
-- User comments system
-- Responsive design
+1. Push to GitHub.
+2. Import the repo into Vercel (or your preferred host).
+3. Configure the environment variables above.
+4. Deploy and enjoy your eldritch tooth-harvesting hub.
 
 ## License
 
-This project is proprietary software.
-
-## Contact
-
-For questions and support, please use the contact form on the website. 
+This project remains proprietary. Please contact the maintainers before reusing assets or copy.

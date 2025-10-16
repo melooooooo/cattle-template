@@ -82,9 +82,9 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-3">
         <div className="w-full md:w-auto flex items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold">
-              <span className="text-purple-400">CRAZY</span> <span className="text-green-400">CATTLE</span>{" "}
-              <span className="text-yellow-500">3D</span>
+            <Link href="/" className="text-2xl font-bold text-green-50">
+              <span className="text-purple-200">THE</span> <span className="text-teal-200">TOOTH</span>{" "}
+              <span className="text-rose-200">FAE</span>
             </Link>
           </div>
           <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
@@ -95,13 +95,13 @@ export default function Navigation() {
         <nav
           className={`${isMenuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row w-full md:w-auto items-center gap-4 md:gap-6 mt-4 md:mt-0 text-sm md:text-base`}
         >
-          {renderNavLink("https://crazycattle3dx.com/play", "play", "Play", "text-green-200 hover:text-white font-medium")}
-          {renderNavLink("https://crazycattle3dx.com/how-to-play", "how-to-play", "How to Play")}
-          {renderNavLink("https://crazycattle3dx.com/features", "features", "Features")}
-          {renderNavLink("https://crazycattle3dx.com/download", "download", "Download")}
-          {renderNavLink("https://crazycattle3dx.com/comments", "comments", "Comments")}
-          {renderNavLink("https://crazycattle3dx.com/faq", "faq", "FAQ")}
-          {renderNavLink("https://crazycattle3dx.com/blog", "blog", "Blog", "text-green-50 hover:text-white", true)}
+          {renderNavLink("https://thetoothfae.com/play", "play", "Play", "text-green-200 hover:text-white font-medium")}
+          {renderNavLink("https://thetoothfae.com/how-to-play", "how-to-play", "How to Play")}
+          {renderNavLink("https://thetoothfae.com/features", "features", "Features")}
+          {renderNavLink("https://thetoothfae.com/download", "download", "Download")}
+          {renderNavLink("https://thetoothfae.com/comments", "comments", "Comments")}
+          {renderNavLink("https://thetoothfae.com/faq", "faq", "FAQ")}
+          {renderNavLink("https://thetoothfae.com/blog", "blog", "Blog", "text-green-50 hover:text-white", true)}
         </nav>
       </div>
     </header>

@@ -52,9 +52,9 @@ export default function DownloadPage() {
 
         {/* Download Title */}
         <div className="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
-          <h1 className="text-3xl font-bold text-center text-green-800">Download Crazy Cattle 3D</h1>
+          <h1 className="text-3xl font-bold text-center text-green-800">Download The Tooth Fae Companion Build</h1>
           <p className="text-center text-green-700 mt-2">
-            Experience the full game on your preferred platform
+            Grab the latest training client for your preferred platform and practice extractions offline.
           </p>
         </div>
 
@@ -68,8 +68,8 @@ export default function DownloadPage() {
                 <h3 className="text-lg font-bold text-green-800 mb-4">Windows</h3>
                 <p className="text-green-700 mb-4 text-sm">
                   Optimized for Windows 10 and 11<br />
-                  Requires DirectX 11 compatible GPU<br />
-                  500MB free disk space
+                  Includes full extraction tutorial scenarios<br />
+                  Requires 500MB of free disk space
                 </p>
                 <Button 
                   className="bg-green-500 hover:bg-green-600 text-white w-full relative"
@@ -93,8 +93,8 @@ export default function DownloadPage() {
                 <h3 className="text-lg font-bold text-green-800 mb-4">macOS</h3>
                 <p className="text-green-700 mb-4 text-sm">
                   Compatible with macOS 10.14+<br />
-                  Optimized for Apple Silicon<br />
-                  500MB free disk space
+                  Native build for both Apple Silicon and Intel<br />
+                  Ships with high-resolution tooth cabinet art
                 </p>
                 <Button 
                   className="bg-green-500 hover:bg-green-600 text-white w-full relative"
@@ -117,9 +117,9 @@ export default function DownloadPage() {
               <div className="bg-green-200 p-6 rounded-lg text-center shadow-sm">
                 <h3 className="text-lg font-bold text-green-800 mb-4">Linux</h3>
                 <p className="text-green-700 mb-4 text-sm">
-                  Works on Ubuntu 18.04+<br />
-                  Compatible with most distros<br />
-                  500MB free disk space
+                  Works on Ubuntu 18.04+ and most modern distros<br />
+                  Includes CLI logging for practice runs<br />
+                  500MB free disk space recommended
                 </p>
                 <Button 
                   className="bg-green-500 hover:bg-green-600 text-white w-full relative"
@@ -142,7 +142,7 @@ export default function DownloadPage() {
             
             <div className="text-center">
               <p className="text-green-700 mb-6">
-                All downloads include the full game with all features unlocked. No registration required.
+                Every package ships with the full single-player extraction loop, offline practice cases, and the latest patch notes.
               </p>
               
               <Button asChild className="bg-green-700 hover:bg-green-800 text-white">

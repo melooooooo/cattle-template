@@ -15,9 +15,9 @@ export default function FeaturesPage() {
 
         {/* Features Title */}
         <div className="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
-          <h1 className="text-3xl font-bold text-center text-green-800">Crazy Cattle 3D Features</h1>
+          <h1 className="text-3xl font-bold text-center text-green-800">The Tooth Fae Feature Spotlight</h1>
           <p className="text-center text-green-700 mt-2">
-            Discover what makes Crazy Cattle 3D the most entertaining sheep combat simulation!
+            Study the systems that turn every tooth extraction into a tense, story-driven heist.
           </p>
         </div>
 
@@ -30,9 +30,9 @@ export default function FeaturesPage() {
                   <BarChart className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Rage-Inducing Physics</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Twin-Phase Heists</h3>
                   <p className="text-gray-700 text-sm">
-                    Our intentionally chaotic physics engine will have you screaming at your screen and coming back for more!
+                    Scout homes on the town map, study traits, then dive into a tense extraction scene where every click can wake the donor or win a priceless tooth.
                   </p>
                 </div>
               </div>
@@ -41,9 +41,9 @@ export default function FeaturesPage() {
                   <Shield className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Battle Royale Mayhem</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Meter Management Mastery</h3>
                   <p className="text-gray-700 text-sm">
-                    Fight with up to 100 other sheep in a physics-driven battle to be the last one standing.
+                    Balance Lucidity, Pain, and Fear in real time—push too hard with the drill and the mortal wakes; hesitate and the tooth slips away forever.
                   </p>
                 </div>
               </div>
@@ -52,9 +52,9 @@ export default function FeaturesPage() {
                   <Sparkles className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Addictive Frustration</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Signature Toolkit</h3>
                   <p className="text-gray-700 text-sm">
-                    The perfect balance of challenge and fun, creating that 'just one more game' feeling.
+                    Juggle Fairy Dust, Hooks, Syringes, Drills, and Forceps in short loops—“drill a bit, dust a bit” is the golden rule for surviving elite targets.
                   </p>
                 </div>
               </div>
@@ -63,9 +63,9 @@ export default function FeaturesPage() {
                   <Gamepad2 className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Customizable Sheep</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Trait-Driven Encounters</h3>
                   <p className="text-gray-700 text-sm">
-                    Unlock hundreds of accessories and outfits to make your rage-filled sheep uniquely yours.
+                    Heavy Sleepers, Tough mortals, Vampires, and Eldritch beings each demand a bespoke rhythm, turning every house call into a fresh puzzle.
                   </p>
                 </div>
               </div>
@@ -74,9 +74,9 @@ export default function FeaturesPage() {
                   <Users className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Competitive Multiplayer</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Collection Endgame</h3>
                   <p className="text-gray-700 text-sm">
-                    Cross-platform play lets you rage with friends on any device across all global servers.
+                    Hunt the 16 “Perfect Lovelies” teeth—from Sparkling child molars to the uneartly Key tooth—and complete the cabinet for the true ending.
                   </p>
                 </div>
               </div>
@@ -85,9 +85,9 @@ export default function FeaturesPage() {
                   <Play className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Free-to-Play</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">High Replay Value</h3>
                   <p className="text-gray-700 text-sm">
-                    No pay-to-win mechanics, just pure skill-based (and luck-based) sheep combat.
+                    Randomized traits, rare donor locations, and multi-tooth runs keep every session unpredictable and perfect for theorycrafting.
                   </p>
                 </div>
               </div>

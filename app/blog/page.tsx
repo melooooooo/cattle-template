@@ -15,9 +15,9 @@ export default function BlogPage() {
 
         {/* Blog Title */}
         <div className="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
-          <h1 className="text-3xl font-bold text-center text-green-800">Crazy Cattle 3D Blog</h1>
+          <h1 className="text-3xl font-bold text-center text-green-800">The Tooth Fae Field Notes</h1>
           <p className="text-center text-green-700 mt-2">
-            Latest news, updates and insights about Crazy Cattle 3D
+            Dispatches, strategies, and lore updates from the Queen’s favorite collectors.
           </p>
         </div>
       </div>
@@ -29,13 +29,13 @@ export default function BlogPage() {
             {/* Blog Post 1 */}
             <Card className="bg-white shadow-lg border border-green-200 p-6">
               <div className="mb-4">
-                <div className="text-green-600 text-sm mb-2">January 20, 2025</div>
-                <h2 className="text-xl font-bold text-green-800 mb-3">What are the Best Free-to-Play Battle Royale Games in 2025?</h2>
+                <div className="text-green-600 text-sm mb-2">March 12, 2025</div>
+                <h2 className="text-xl font-bold text-green-800 mb-3">Meter Management 101: Reading Lucidity, Pain, and Fear</h2>
                 <p className="text-gray-700 mb-4">
-                  Discover the evolving landscape of free-to-play battle royale games and why Crazy Cattle 3D stands out with its unique sheep-on-sheep combat mechanics.
+                  Break down the three extraction meters, learn why Lucidity is the true fail state, and drill smarter with timing patterns straight from veteran fae.
                 </p>
                 <Button asChild className="bg-green-600 hover:bg-green-700 text-white">
-                  <Link href="/blog/best-free-battle-royale-games-2025">Read More</Link>
+                  <Link href="/blog/meter-management-101">Read More</Link>
                 </Button>
               </div>
             </Card>
@@ -43,13 +43,13 @@ export default function BlogPage() {
             {/* Blog Post 2 */}
             <Card className="bg-white shadow-lg border border-green-200 p-6">
               <div className="mb-4">
-                <div className="text-green-600 text-sm mb-2">January 18, 2025</div>
-                <h2 className="text-xl font-bold text-green-800 mb-3">Looking for a Free Game That's Both Wild and Skillful? Try Crazy Cattle 3D!</h2>
+                <div className="text-green-600 text-sm mb-2">March 5, 2025</div>
+                <h2 className="text-xl font-bold text-green-800 mb-3">Rare Traits Field Report: How to Secure Unearthly Teeth</h2>
                 <p className="text-gray-700 mb-4">
-                  Discover why Crazy Cattle 3D is the perfect blend of chaotic fun and competitive skill-based gameplay in the free-to-play battle royale market.
+                  From Vampires to Eldritch children, this dossier maps every rare trait combo to the tooth it unlocks—and the safe way to take it.
                 </p>
                 <Button asChild className="bg-green-600 hover:bg-green-700 text-white">
-                  <Link href="/blog/free-game-wild-skillful-crazy-cattle-3d">Read More</Link>
+                  <Link href="/blog/rare-traits-field-report">Read More</Link>
                 </Button>
               </div>
             </Card>
@@ -57,13 +57,13 @@ export default function BlogPage() {
             {/* Blog Post 3 */}
             <Card className="bg-white shadow-lg border border-green-200 p-6">
               <div className="mb-4">
-                <div className="text-green-600 text-sm mb-2">January 16, 2025</div>
-                <h2 className="text-xl font-bold text-green-800 mb-3">Your First Steps into Crazy Cattle 3D: A Quick Start Guide</h2>
+                <div className="text-green-600 text-sm mb-2">February 28, 2025</div>
+                <h2 className="text-xl font-bold text-green-800 mb-3">Rookie Heist Checklist: Tools, Targets, and Common Mistakes</h2>
                 <p className="text-gray-700 mb-4">
-                  Ready to dive into the chaotic yet incredibly fun world of Crazy Cattle 3D? This comprehensive guide covers everything from basic controls to essential strategies.
+                  A practical pre-mission checklist covering trait scouting, loadout choices, and the fatal errors that wake donors every single time.
                 </p>
                 <Button asChild className="bg-green-600 hover:bg-green-700 text-white">
-                  <Link href="/blog/first-steps-crazy-cattle-3d-quick-start-guide">Read More</Link>
+                  <Link href="/blog/rookie-heist-checklist">Read More</Link>
                 </Button>
               </div>
             </Card>

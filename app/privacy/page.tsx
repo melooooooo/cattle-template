@@ -19,10 +19,10 @@ export default function PrivacyPage() {
           <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
           
           <div className="prose prose-green max-w-none">
-            <p className="mb-4">Last updated: June 15, 2023</p>
+            <p className="mb-4">Last updated: October 17, 2024</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">1. Introduction</h2>
-            <p>Crazy Cattle Studios ("we," "our," or "us") respects your privacy and is committed to protecting it through our compliance with this Privacy Policy. This policy describes the types of information we may collect from you or that you may provide when you visit our website <a href="https://crazycattle3dx.com" className="text-green-600 hover:text-green-800">https://crazycattle3dx.com</a> (the "Site") or play our game Crazy Cattle 3D (the "Game") and our practices for collecting, using, maintaining, protecting, and disclosing that information.</p>
+            <p>The Tooth Fae Collective ("we," "our," or "us") respects your privacy and is committed to protecting it through this Privacy Policy. This policy describes the types of information we may collect from you or that you may provide when you visit our website <a href="https://thetoothfae.com" className="text-green-600 hover:text-green-800">https://thetoothfae.com</a> (the "Site") or play our game The Tooth Fae (the "Game") and our practices for collecting, using, maintaining, protecting, and disclosing that information.</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">2. Information We Collect</h2>
             <p>We collect several types of information from and about users of our Site and Game, including information:</p>
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
             <ul className="list-disc ml-6 my-4">
               <li>To our subsidiaries and affiliates.</li>
               <li>To contractors, service providers, and other third parties we use to support our business.</li>
-              <li>To a buyer or other successor in the event of a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Crazy Cattle Studios' assets.</li>
+              <li>To a buyer or other successor in the event of a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of the Tooth Fae Collective's assets.</li>
               <li>To fulfill the purpose for which you provide it.</li>
               <li>For any other purpose disclosed by us when you provide the information.</li>
               <li>With your consent.</li>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
             <p>It is our policy to post any changes we make to our privacy policy on this page. If we make material changes to how we treat our users' personal information, we will notify you through a notice on the Site home page. The date the privacy policy was last revised is identified at the top of the page. You are responsible for ensuring we have an up-to-date active and deliverable email address for you, and for periodically visiting our Site and this privacy policy to check for any changes.</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">8. Contact Information</h2>
-            <p>To ask questions or comment about this privacy policy and our privacy practices, contact us at: <a href="mailto:privacy@crazycattle3dx.com" className="text-green-600 hover:text-green-800">privacy@crazycattle3dx.com</a></p>
+            <p>To ask questions or comment about this privacy policy and our privacy practices, contact us at: <a href="mailto:privacy@thetoothfae.com" className="text-green-600 hover:text-green-800">privacy@thetoothfae.com</a></p>
           </div>
 
           <div className="mt-10">
