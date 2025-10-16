@@ -306,14 +306,14 @@ export default function Home() {
         <div id="play" className="w-full max-w-6xl mx-auto p-4 game-container rounded-md my-2">
           <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
             <iframe
-              src="https://crazy-cattle3d.org/game/crazycattle3d/"
+              src="https://html.itch.zone/html/15168109/index.html"
               className="absolute top-0 left-0 w-full h-full border-0"
-              title="Crazy Cattle 3D Game"
+              title="The Tooth Fae Game"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </div>
           <div className="flex justify-between items-center mt-2 text-sm text-gray-200">
-            <div>Controls: WASD to move | Mouse to aim | Space for special ability</div>
+            <div>Click to start your magical tooth collection adventure!</div>
             <Button variant="ghost" size="sm" className="text-gray-200 flex items-center gap-1">
               <Maximize className="h-4 w-4" />
               Fullscreen
@@ -363,32 +363,30 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           {/* Welcome Section */}
           <section className="mb-12">
-            <h1 className="text-3xl font-bold mb-6 text-center">Welcome to Crazy Cattle 3D</h1>
+            <h1 className="text-3xl font-bold mb-6 text-center">Welcome to The Tooth Fae</h1>
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
                 <p className="mb-4">
-                  A battle royale rage game about sheep; will you have what it takes to survive in Crazy Cattle 3D?
+                  Step into the magical world of The Tooth Fae, where you play as a mystical fairy on a quest to collect lost teeth from children around the world.
                 </p>
                 <p className="mb-6">
-                  Crazy Cattle 3D combines physics with chaos, skill with strategy. Control your explosive sheep in
-                  Crazy Cattle 3D across three unique environments. Master momentum, use terrain, and become the last
-                  sheep standing in the chaotic world of Crazy Cattle 3D!
+                  The Tooth Fae combines enchanting storytelling with engaging gameplay. Navigate through whimsical dreamscapes, solve tooth-themed puzzles, and spread joy to children while building your magical tooth collection. Become the ultimate Tooth Fae in this charming adventure!
                 </p>
                 <div className="flex gap-4">
                   <Button asChild className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-lg">
-                    <a href="https://crazycattle3dx.com/play">PLAY NOW</a>
+                    <a href="/play">PLAY NOW</a>
                   </Button>
                   <Button asChild className="bg-green-700 hover:bg-green-800 text-white px-8 py-6 text-lg">
-                    <a href="https://crazycattle3dx.com/download" onClick={(e) => scrollToSection(e, "download")}>DOWNLOAD CRAZY CATTLE 3D</a>
+                    <a href="/download" onClick={(e) => scrollToSection(e, "download")}>DOWNLOAD THE TOOTH FAE</a>
                   </Button>
                 </div>
               </div>
               <div className="flex-1">
                 <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                   <iframe
-                    src="https://www.youtube.com/embed/qYF-efFnx9A"
+                    src="https://www.youtube.com/embed/GmfED4NCbSc"
                     className="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
-                    title="CrazyCattle3D"
+                    title="The Tooth Fae"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
@@ -404,7 +402,7 @@ export default function Home() {
       <div className="w-full light-green-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section id="how-to-play">
-            <h2 className="text-3xl font-bold mb-6 text-center">How to Play Crazy Cattle 3D</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">How to Play The Tooth Fae</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="bg-white shadow-md border-gray-200 p-4">
                 <h3 className="text-xl font-semibold text-green-800 mb-2 flex items-center gap-2">
@@ -414,13 +412,13 @@ export default function Home() {
                   Game Objective
                 </h3>
                 <p className="text-gray-700">
-                  Control your sheep and survive until you're the last one remaining
+                  Play as the Tooth Fae and collect lost teeth from sleeping children
                   <br />
-                  Knock other sheep off the map by ramming into them
+                  Navigate through magical dreamscapes and avoid obstacles
                   <br />
-                  Watch out for fences and edges - touching them means elimination!
+                  Exchange teeth for coins and unlock special fairy abilities
                   <br />
-                  Win trophies by completing each level
+                  Complete levels to bring joy to children around the world
                 </p>
               </Card>
               <Card className="bg-white shadow-md border-gray-200 p-4">
@@ -431,13 +429,13 @@ export default function Home() {
                   Controls
                 </h3>
                 <p className="text-gray-700">
-                  WASD/Arrow Keys: Move your sheep
+                  Arrow Keys/WASD: Move the Tooth Fae
                   <br />
-                  Mouse: Control camera direction
+                  Mouse: Interact with objects
                   <br />
-                  Space: Jump/Ram into other sheep
+                  Space: Jump and fly
                   <br />
-                  Shift: Sprint for faster movement
+                  Click: Collect teeth and coins
                 </p>
               </Card>
               <Card className="bg-white shadow-md border-gray-200 p-4">
@@ -448,13 +446,13 @@ export default function Home() {
                   Game Mechanics
                 </h3>
                 <p className="text-gray-700">
-                  Your sheep will explode if knocked over by another sheep
+                  Collect teeth while children sleep peacefully
                   <br />
-                  Information about eliminated sheep appears at the top of the screen
+                  Avoid waking the children or household pets
                   <br />
-                  Remaining sheep count is shown in the bottom left corner
+                  Trade teeth for magical coins and power-ups
                   <br />
-                  The game is all about physics - use momentum to your advantage!
+                  Complete tooth collection challenges for bonus rewards
                 </p>
               </Card>
               <Card className="bg-white shadow-md border-gray-200 p-4">
@@ -462,23 +460,22 @@ export default function Home() {
                   <div className="bg-green-500 p-2 rounded-full">
                     <Zap className="h-4 w-4 text-white" />
                   </div>
-                  Hints
+                  Tips & Tricks
                 </h3>
                 <p className="text-gray-700">
-                  There are three unique maps to unlock by progressing through the game
+                  Multiple magical worlds to explore with unique challenges
                   <br />
-                  Each map has different scenery and varying sheep counts
+                  Each level features different house layouts and obstacles
                   <br />
-                  Earn trophies for each map you complete, displayed in the bottom right
+                  Earn stars for perfect tooth collections
                   <br />
-                  Adapt your strategy for each unique map layout
+                  Use your fairy magic wisely to overcome difficult situations
                 </p>
               </Card>
             </div>
             <div className="mt-4 p-4 bg-green-100 border border-green-300 rounded-md">
               <p className="text-green-800 text-sm">
-                <strong>Pro Tip:</strong> The chaotic physics are intentional! Learn to control your momentum and use it
-                to your advantage. Sometimes letting other sheep eliminate each other is the best strategy for victory.
+                <strong>Pro Tip:</strong> Be gentle and quiet! The key to being a successful Tooth Fae is to collect teeth without disturbing anyone's dreams. Time your movements carefully and use your magical abilities strategically.
               </p>
             </div>
           </section>
@@ -489,36 +486,36 @@ export default function Home() {
       <div className="w-full white-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section>
-            <h2 className="text-3xl font-bold mb-6 text-center">Discover the Magic of Crazy Cattle 3D</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">Discover the Magic of The Tooth Fae</h2>
             <p className="text-xl text-center text-gray-600 mb-10 px-4">
-              Experience what makes Crazy Cattle 3D the most entertaining sheep combat simulation ever created!
+              Experience what makes The Tooth Fae the most enchanting tooth fairy adventure ever created!
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="bg-green-50 shadow-md border-green-200 p-4 flex flex-col items-center text-center">
                 <div className="bg-green-600 p-3 rounded-full mb-3">
                   <Sparkles className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-green-800 mb-2">Revolutionary Physics</h3>
+                <h3 className="text-lg font-semibold text-green-800 mb-2">Magical Worlds</h3>
                 <p className="text-gray-700">
-                  Crazy Cattle 3D introduces a groundbreaking physics engine specifically designed for authentic sheep movement and explosive collisions.
+                  The Tooth Fae features beautifully crafted dreamscapes filled with wonder, each with unique challenges and magical surprises.
                 </p>
               </Card>
               <Card className="bg-green-50 shadow-md border-green-200 p-4 flex flex-col items-center text-center">
                 <div className="bg-green-600 p-3 rounded-full mb-3">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-green-800 mb-2">Three Unique Environments</h3>
+                <h3 className="text-lg font-semibold text-green-800 mb-2">Charming Characters</h3>
                 <p className="text-gray-700">
-                  Each location in Crazy Cattle 3D features distinctive terrain that fundamentally changes how you approach combat and survival.
+                  Meet delightful characters in The Tooth Fae, from sleeping children to friendly pets, each adding charm to your fairy adventure.
                 </p>
               </Card>
               <Card className="bg-green-50 shadow-md border-green-200 p-4 flex flex-col items-center text-center">
                 <div className="bg-green-600 p-3 rounded-full mb-3">
                   <Shield className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-green-800 mb-2">Skill-Based Advancement</h3>
+                <h3 className="text-lg font-semibold text-green-800 mb-2">Family-Friendly Fun</h3>
                 <p className="text-gray-700">
-                  Unlike many modern games, Crazy Cattle 3D focuses entirely on player skill rather than unlocks or upgrades.
+                  The Tooth Fae is designed for players of all ages, offering wholesome entertainment that brings magic to tooth fairy traditions.
                 </p>
               </Card>
             </div>
@@ -530,16 +527,16 @@ export default function Home() {
       <div className="w-full medium-green-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section id="features">
-            <h2 className="text-3xl font-bold mb-6 text-center">Crazy Cattle 3D Features</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">The Tooth Fae Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-md">
                 <div className="bg-green-600 p-2 rounded-full shrink-0 mt-1">
                   <BarChart className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Rage-Inducing Physics</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Enchanting Gameplay</h3>
                   <p className="text-gray-700 text-sm">
-                    Our intentionally chaotic physics engine will have you screaming at your screen and coming back for more!
+                    Experience magical tooth collection missions that blend stealth, strategy, and fairy tale charm!
                   </p>
                 </div>
               </div>
@@ -548,9 +545,9 @@ export default function Home() {
                   <Shield className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Battle Royale Mayhem</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Whimsical Adventures</h3>
                   <p className="text-gray-700 text-sm">
-                    Fight with up to 100 other sheep in a physics-driven battle to be the last one standing.
+                    Navigate through beautifully designed dream worlds filled with wonder and gentle challenges.
                   </p>
                 </div>
               </div>
@@ -559,9 +556,9 @@ export default function Home() {
                   <Sparkles className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Addictive Frustration</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Delightful Experience</h3>
                   <p className="text-gray-700 text-sm">
-                    The perfect balance of challenge and fun, creating that 'just one more game' feeling.
+                    Perfect blend of relaxing gameplay and engaging puzzles that will keep you coming back for more!
                   </p>
                 </div>
               </div>
@@ -570,9 +567,9 @@ export default function Home() {
                   <Gamepad2 className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Customizable Sheep</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Magical Customization</h3>
                   <p className="text-gray-700 text-sm">
-                    Unlock hundreds of accessories and outfits to make your rage-filled sheep uniquely yours.
+                    Unlock charming outfits and magical accessories to personalize your Tooth Fae character.
                   </p>
                 </div>
               </div>
@@ -581,9 +578,9 @@ export default function Home() {
                   <Users className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Competitive Multiplayer</h3>
+                  <h3 className="text-lg font-semibold text-green-800 mb-1">Family-Friendly</h3>
                   <p className="text-gray-700 text-sm">
-                    Cross-platform play lets you rage with friends on any device across all global servers.
+                    Safe and enjoyable content suitable for players of all ages, bringing families together.
                   </p>
                 </div>
               </div>
@@ -594,7 +591,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-lg font-semibold text-green-800 mb-1">Free-to-Play</h3>
                   <p className="text-gray-700 text-sm">
-                    No pay-to-win mechanics, just pure skill-based (and luck-based) sheep combat.
+                    Enjoy the complete magical experience with no pay-to-win mechanics, just pure fairy fun.
                   </p>
                 </div>
               </div>
@@ -607,7 +604,7 @@ export default function Home() {
       <div className="w-full dark-green-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section id="download">
-            <h2 className="text-3xl font-bold mb-6 text-center">Download the Complete Crazy Cattle 3D Experience</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">Download the Complete The Tooth Fae Experience</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Button 
                 className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center relative"
@@ -669,55 +666,48 @@ export default function Home() {
       <div className="w-full white-section py-12">
         <div className="max-w-6xl mx-auto px-4">
           <section id="faq">
-            <h2 className="text-3xl font-bold mb-6 text-center">Frequently Asked Questions About Crazy Cattle 3D</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">Frequently Asked Questions About The Tooth Fae</h2>
             <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-green-200">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1" className="border-green-200">
                   <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    Is Crazy Cattle 3D suitable for beginners?
+                    Is The Tooth Fae suitable for children?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 px-4 py-3">
-                    Yes, Crazy Cattle 3D is designed to be accessible for players of all skill levels. The game includes
-                    a comprehensive tutorial system and gradually introduces new mechanics as you progress.
+                    Yes, The Tooth Fae is designed to be family-friendly and appropriate for players of all ages. The game features gentle, wholesome content that celebrates the magic of childhood and tooth fairy traditions.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2" className="border-green-200">
                   <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    Can I play Crazy Cattle 3D offline?
+                    Can I play The Tooth Fae offline?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 px-4 py-3">
-                    Yes, the single-player campaign and most game modes can be played completely offline. Only the
-                    multiplayer features and leaderboard submissions require an internet connection.
+                    Yes, The Tooth Fae can be played completely offline in single-player mode. An internet connection is only needed for downloading the game and accessing online features.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3" className="border-green-200">
                   <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    What is the minimum hardware requirement for running Crazy Cattle 3D?
+                    What are the system requirements for The Tooth Fae?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 px-4 py-3">
-                    Crazy Cattle 3D is optimized to run on a wide range of hardware. Minimum requirements include:
-                    Windows 10/macOS 10.14/Ubuntu 18.04, Intel Core i3 or equivalent, 4GB RAM, and any DirectX 11
-                    compatible graphics card with 1GB VRAM.
+                    The Tooth Fae is optimized to run on most modern devices. Minimum requirements include:
+                    Windows 10/macOS 10.14/Ubuntu 18.04, Intel Core i3 or equivalent, 4GB RAM, and any graphics card with 1GB VRAM. The game also runs smoothly in most modern web browsers.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4" className="border-green-200">
                   <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    Are there in-app purchases in Crazy Cattle 3D?
+                    Are there in-app purchases in The Tooth Fae?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 px-4 py-3">
-                    The core game experience is completely free to play. Optional in-app purchases are available for
-                    cosmetic items, additional level packs, and premium sheep customizations that do not affect gameplay
-                    balance.
+                    The complete game experience is free to play. Optional cosmetic items and character customizations are available for purchase, but they do not affect gameplay or progress.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-5" className="border-green-200">
                   <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    How often does Crazy Cattle 3D receive updates?
+                    How often does The Tooth Fae receive updates?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 px-4 py-3">
-                    The development team releases major content updates quarterly, with smaller patches and bug fixes
-                    deployed monthly. Seasonal events are also introduced throughout the year to keep the gameplay fresh
-                    and engaging.
+                    The development team regularly releases updates with new content, including seasonal events and new magical worlds to explore. Bug fixes and improvements are deployed as needed to ensure the best experience.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -974,7 +964,7 @@ export default function Home() {
               </div>
             </div>
             <div className="border-t border-[rgba(255,255,255,0.2)] pt-6 text-center text-sm">
-              <p>© 2025 Crazy Cattle 3D. All rights reserved.</p>
+              <p>© 2025 The Tooth Fae. All rights reserved.</p>
             </div>
           </footer>
         </div>

@@ -117,10 +117,26 @@ async function ensureCommentsCollection() {
   }
 }
 
-// GET 请求处理函数 - 获取评论列表
+// GET 请求处理函数 - 获取评论列表（支持无MongoDB时的内存降级）
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const sortBy = searchParams.get('sortBy') || 'latest';
+
+  const sortMemory = (list: Comment[]) => {
+    const copy = [...list];
+    if (sortBy === 'likes') {
+      return copy.sort((a, b) => (b.likes || 0) - (a.likes || 0));
+    }
+    if (sortBy === 'oldest') {
+      return copy; // 内存示例数据无createdAt，按原始顺序即可
+    }
+    return copy; // latest 同上
+  };
+
+  // 如果没有配置MongoDB，直接使用内存数据
+  if (!process.env.MONGODB_URI) {
+    return NextResponse.json(sortMemory(comments.map(formatComment)));
+  }
   
   try {
     // 调试信息 - 检查MongoDB URI是否存在
@@ -136,7 +152,7 @@ export async function GET(request: Request) {
     const commentsCollection = db.collection('comments');
     
     // 定义排序条件
-    let sortOptions = {};
+    let sortOptions = {} as any;
     
     switch (sortBy) {
       case 'oldest':
@@ -152,13 +168,13 @@ export async function GET(request: Request) {
     }
     
     // 获取评论列表
-    const comments = await commentsCollection
+    const list = await commentsCollection
       .find({})
       .sort(sortOptions)
       .toArray();
       
     // 格式化日期
-    const formattedComments = comments.map(comment => {
+    const formattedComments = list.map(comment => {
       const date = comment.createdAt 
         ? new Date(comment.createdAt).toLocaleDateString('en-US', {
             year: 'numeric',
@@ -176,15 +192,12 @@ export async function GET(request: Request) {
     
     return NextResponse.json(formattedComments);
   } catch (error) {
-    console.error('获取评论失败:', error);
-    return NextResponse.json(
-      { error: '获取评论失败，请稍后再试' },
-      { status: 500 }
-    );
+    console.error('获取评论失败，使用内存数据降级:', error);
+    return NextResponse.json(comments.map(formatComment));
   }
 }
 
-// POST 请求处理函数 - 添加新评论
+// POST 请求处理函数 - 添加新评论（支持无MongoDB时的内存降级）
 export async function POST(request: Request) {
   try {
     const { name, email, content } = await request.json();
@@ -195,6 +208,24 @@ export async function POST(request: Request) {
         { error: '请填写所有必填字段' },
         { status: 400 }
       );
+    }
+
+    // 无MongoDB时，写入内存并返回
+    if (!process.env.MONGODB_URI) {
+      const id = Date.now().toString();
+      const newCommentMem: Comment = {
+        id,
+        _id: id,
+        name,
+        email,
+        content,
+        likes: 0,
+        dislikes: 0,
+        date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
+        createdAt: new Date()
+      };
+      comments.unshift(newCommentMem);
+      return NextResponse.json({ message: '评论提交成功(内存)', id });
     }
     
     // 连接到MongoDB
@@ -221,15 +252,34 @@ export async function POST(request: Request) {
       id: result.insertedId,
     });
   } catch (error) {
-    console.error('添加评论失败:', error);
-    return NextResponse.json(
-      { error: '添加评论失败，请稍后再试' },
-      { status: 500 }
-    );
+    console.error('添加评论失败，降级为内存:', error);
+    // 降级：尝试写入内存
+    try {
+      const id = Date.now().toString();
+      const { name, email, content } = await request.json();
+      const newCommentMem: Comment = {
+        id,
+        _id: id,
+        name,
+        email,
+        content,
+        likes: 0,
+        dislikes: 0,
+        date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
+        createdAt: new Date()
+      };
+      comments.unshift(newCommentMem);
+      return NextResponse.json({ message: '评论提交成功(内存)', id });
+    } catch (e) {
+      return NextResponse.json(
+        { error: '添加评论失败，请稍后再试' },
+        { status: 500 }
+      );
+    }
   }
 }
 
-// PUT 请求处理函数 - 点赞/踩评论
+// PUT 请求处理函数 - 点赞/踩评论（支持无MongoDB时的内存降级）
 export async function PUT(request: Request) {
   try {
     const { id, action } = await request.json();
@@ -240,6 +290,29 @@ export async function PUT(request: Request) {
         { error: '无效的请求参数' },
         { status: 400 }
       );
+    }
+
+    // 无MongoDB时，直接更新内存
+    if (!process.env.MONGODB_URI) {
+      const stringId = String(id);
+      const comment = comments.find(
+        c => String(c.id) === stringId || String(c._id) === stringId
+      );
+      if (!comment) {
+        return NextResponse.json(
+          { error: '找不到该评论' },
+          { status: 404 }
+        );
+      }
+      if (action === 'like') {
+        comment.likes = (comment.likes || 0) + 1;
+      } else {
+        comment.dislikes = (comment.dislikes || 0) + 1;
+      }
+      return NextResponse.json({
+        message: `${action === 'like' ? '点赞' : '踩'}操作成功(内存)`,
+        comment: formatComment(comment)
+      });
     }
     
     // 连接到MongoDB
@@ -291,11 +364,35 @@ export async function PUT(request: Request) {
       }
     });
   } catch (error) {
-    console.error('更新评论失败:', error);
-    return NextResponse.json(
-      { error: '更新评论失败，请稍后再试' },
-      { status: 500 }
-    );
+    console.error('更新评论失败，降级为内存:', error);
+    // 降级：尝试更新内存
+    try {
+      const { id, action } = await request.json();
+      const stringId = String(id);
+      const comment = comments.find(
+        c => String(c.id) === stringId || String(c._id) === stringId
+      );
+      if (!comment) {
+        return NextResponse.json(
+          { error: '找不到该评论' },
+          { status: 404 }
+        );
+      }
+      if (action === 'like') {
+        comment.likes = (comment.likes || 0) + 1;
+      } else {
+        comment.dislikes = (comment.dislikes || 0) + 1;
+      }
+      return NextResponse.json({
+        message: `${action === 'like' ? '点赞' : '踩'}操作成功(内存)`,
+        comment: formatComment(comment)
+      });
+    } catch (e) {
+      return NextResponse.json(
+        { error: '更新评论失败，请稍后再试' },
+        { status: 500 }
+      );
+    }
   }
 }
 

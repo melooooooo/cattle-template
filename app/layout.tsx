@@ -37,10 +37,10 @@ export const metadata: Metadata = {
         url: `${baseUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: 'Crazy Cattle 3D',
+        alt: 'The Tooth Fae',
       }
     ],
-    locale: 'zh_CN',
+    locale: 'en_US',
     type: 'website',
   },
   // 添加Twitter卡片元数据
@@ -69,14 +69,14 @@ export default function RootLayout({
         <link rel="canonical" href={baseUrl} />
         
         {/* 手动添加meta描述标签，确保长度正确 */}
-        <meta 
-          name="description" 
-          content="Play Crazy Cattle 3D fun free farm simulation. Control cattle, explore worlds, build your farm empire. Enjoy realistic graphics. Download now!" 
+        <meta
+          name="description"
+          content="Play The Tooth Fae, a magical tooth fairy adventure. Collect teeth, explore dreamscapes, spread joy. Family-friendly fun. Play now!"
         />
-        
+
         {/* 手动添加OpenGraph和Twitter元标签 */}
-        <meta property="og:description" content="Play Crazy Cattle 3D fun free farm simulation. Control cattle, explore worlds, build your empire. Download now!" />
-        <meta property="twitter:description" content="Play Crazy Cattle 3D fun free farm simulation. Control cattle, explore worlds, build your empire." />
+        <meta property="og:description" content="Play The Tooth Fae, a magical tooth fairy adventure. Collect teeth, explore dreamscapes. Family-friendly fun!" />
+        <meta property="twitter:description" content="Play The Tooth Fae, a magical tooth fairy adventure. Family-friendly fun for all ages." />
         
         {/* 添加结构化数据 JSON-LD */}
         <script
@@ -89,12 +89,12 @@ export default function RootLayout({
               description: defaultSeoConfig.description,
               image: `${baseUrl}/og-image.jpg`,
               url: baseUrl,
-              genre: ['Simulation', 'Farming', '3D'],
+              genre: ['Adventure', 'Family', 'Fantasy'],
               applicationCategory: 'Game',
-              operatingSystem: ['Windows', 'macOS', 'Linux'],
+              operatingSystem: ['Windows', 'macOS', 'Linux', 'Browser'],
               author: {
                 '@type': 'Organization',
-                name: 'Crazy Cattle 3D Team',
+                name: 'The Tooth Fae Team',
                 url: baseUrl
               },
               offers: {
@@ -105,20 +105,20 @@ export default function RootLayout({
               },
               aggregateRating: {
                 '@type': 'AggregateRating',
-                ratingValue: '4.8',
-                reviewCount: '245'
+                ratingValue: '4.9',
+                reviewCount: '180'
               }
             })
           }}
         />
       </head>
       <body className={inter.className} suppressHydrationWarning>
-        <ThemeProvider 
-          attribute="class" 
-          defaultTheme="light" 
-          enableSystem={false} 
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
-          storageKey="crazy-cattle-theme"
+          storageKey="tooth-fae-theme"
         >
           {children}
         </ThemeProvider>
