@@ -36,14 +36,14 @@ export default function Home() {
   const [commentForm, setCommentForm] = useState({
     name: '',
     email: '',
-    content: '',
-    agreeToTerms: false
+    content: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState<boolean | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [sortOrder, setSortOrder] = useState('latest'); // 'latest', 'oldest', 'likes'
   const [voteStatus, setVoteStatus] = useState<{[key: string]: boolean}>({});
+  const [replyingTo, setReplyingTo] = useState<{id: string, name: string} | null>(null);
 
   // Scroll helper for in-page navigation
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
@@ -90,27 +90,37 @@ export default function Home() {
     }));
   };
 
-  // Handle checkbox changes
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Handle reply to comment
+  const handleReply = (commentId: string, commentName: string) => {
+    setReplyingTo({ id: commentId, name: commentName });
+    // Scroll to comment form
+    const commentsSection = document.getElementById('comments');
+    if (commentsSection) {
+      commentsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Pre-fill content with mention
     setCommentForm(prev => ({
       ...prev,
-      agreeToTerms: e.target.checked
+      content: `@${commentName} `
+    }));
+  };
+
+  // Cancel reply
+  const cancelReply = () => {
+    setReplyingTo(null);
+    setCommentForm(prev => ({
+      ...prev,
+      content: ''
     }));
   };
 
   // Submit comment
   const handleCommentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate form
     if (!commentForm.name || !commentForm.email || !commentForm.content) {
       setErrorMessage('Please fill in all required fields');
-      setSubmitSuccess(false);
-      return;
-    }
-
-    if (!commentForm.agreeToTerms) {
-      setErrorMessage('Please agree to the terms and conditions');
       setSubmitSuccess(false);
       return;
     }
@@ -138,15 +148,15 @@ export default function Home() {
 
       // Get latest comments
       await fetchComments();
-      
-      // Reset form
+
+      // Reset form and reply state
       setCommentForm({
         name: '',
         email: '',
-        content: '',
-        agreeToTerms: false
+        content: ''
       });
-      
+      setReplyingTo(null);
+
       setSubmitSuccess(true);
       
       // Clear success message after 3 seconds
@@ -309,7 +319,10 @@ export default function Home() {
               src="https://html.itch.zone/html/15168109/index.html"
               className="absolute top-0 left-0 w-full h-full border-0"
               title="The Tooth Fae Game"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+              allowFullScreen
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+              loading="lazy"
             ></iframe>
           </div>
           <div className="flex justify-between items-center mt-2 text-sm text-gray-200">
@@ -651,7 +664,10 @@ export default function Home() {
                             </div>
                             <p className="text-sm text-neutral-200 leading-relaxed">{comment.content}</p>
                             <div className="flex items-center gap-4 text-xs text-neutral-400">
-                              <button className="flex items-center gap-1 hover:text-slate-200">
+                              <button
+                                className="flex items-center gap-1 hover:text-slate-200"
+                                onClick={() => handleReply(comment.id, comment.name)}
+                              >
                                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
                                 </svg>
@@ -709,6 +725,19 @@ export default function Home() {
                 )}
 
                 <form onSubmit={handleCommentSubmit} className="space-y-4">
+                  {replyingTo && (
+                    <div className="rounded-md border border-rose-400/40 bg-[#1a0f16] px-4 py-3 text-sm text-rose-200 flex items-center justify-between">
+                      <span>Replying to <strong>@{replyingTo.name}</strong></span>
+                      <button
+                        type="button"
+                        onClick={cancelReply}
+                        className="text-rose-300 hover:text-rose-100"
+                      >
+                        ✕ Cancel
+                      </button>
+                    </div>
+                  )}
+
                   {submitSuccess === true && (
                     <div className="rounded-md border border-emerald-400/40 bg-[#13211d] px-4 py-3 text-sm text-emerald-200">
                       Comment submitted successfully!
@@ -747,15 +776,6 @@ export default function Home() {
                     rows={4}
                     className="w-full rounded-md border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-4 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-400/40"
                   ></textarea>
-                  <label className="flex items-center gap-2 text-xs text-neutral-400">
-                    <input
-                      type="checkbox"
-                      checked={commentForm.agreeToTerms}
-                      onChange={handleCheckboxChange}
-                      className="accent-rose-400"
-                    />
-                    I have read and agree to the terms.
-                  </label>
                   <button
                     type="submit"
                     disabled={isSubmitting}
