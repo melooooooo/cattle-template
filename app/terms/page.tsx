@@ -22,7 +22,7 @@ export default function TermsPage() {
             <p className="mb-4">Last updated: October 17, 2024</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">1. Introduction</h2>
-            <p>Welcome to The Tooth Fae! These Terms of Service ("Terms") govern your use of our website located at <a href="https://thetoothfae.com" className="text-green-600 hover:text-green-800">https://thetoothfae.com</a> (the "Site") and our online and downloadable game The Tooth Fae (the "Game"), operated by the Tooth Fae Collective. By accessing the Site or using the Game, you agree to be bound by these Terms. If you disagree with any part of the terms, do not access the Site or use the Game.</p>
+            <p>Welcome to The Tooth Fae! These Terms of Service ("Terms") govern your use of our website located at <a href="https://thetoothfae.online" className="text-green-600 hover:text-green-800">https://thetoothfae.online</a> (the "Site") and our online and downloadable game The Tooth Fae (the "Game"), operated by the Tooth Fae Collective. By accessing the Site or using the Game, you agree to be bound by these Terms. If you disagree with any part of the terms, do not access the Site or use the Game.</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">2. Intellectual Property Rights</h2>
             <p>The Site and the Game, including all content, features, and functionality thereof, are owned by the Tooth Fae Collective and are protected by international copyright, trademark, trade secret, and other intellectual property laws.</p>

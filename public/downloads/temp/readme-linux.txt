@@ -5,4 +5,4 @@
 - 推荐在 Ubuntu 18.04+ 或等效发行版上运行，预留 500MB 空间。
 - 可开启 CLI 日志模式，记录每次钻孔节奏与三条状态条变化。
 
-更多情报请访问 https://thetoothfae.com
+更多情报请访问 https://thetoothfae.online

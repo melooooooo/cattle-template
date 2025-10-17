@@ -5,4 +5,4 @@
 - 支持 Apple Silicon 与 Intel 双架构，带有高分辨率牙柜素材。
 - 使用触控板或鼠标体验“钩开—撒尘—钻孔—拔牙”的完整节奏。
 
-更多情报请访问 https://thetoothfae.com
+更多情报请访问 https://thetoothfae.online

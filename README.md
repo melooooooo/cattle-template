@@ -64,7 +64,7 @@ Environment variables (`.env.local`):
 
 ```
 MONGODB_URI=your_mongodb_connection_string
-NEXT_PUBLIC_BASE_URL=https://thetoothfae.com
+NEXT_PUBLIC_BASE_URL=https://thetoothfae.online
 ```
 
 ## Deploying

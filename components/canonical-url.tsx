@@ -13,7 +13,7 @@ interface CanonicalProps {
  */
 export default function CanonicalUrl({ path }: CanonicalProps) {
   const pathname = usePathname();
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://thetoothfae.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://thetoothfae.online';
   
   // 使用提供的路径或当前路径
   const canonicalPath = path || pathname;

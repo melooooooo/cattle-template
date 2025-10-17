@@ -6,16 +6,15 @@ import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from 'next/link'
-import { Play, Download, Share2, Facebook, Twitter, Linkedin } from "lucide-react"
+import { Play, Share2, Facebook, Twitter, Linkedin } from "lucide-react"
 import Navigation from "@/components/navigation"
 import Head from 'next/head';
 import { defaultSeoConfig } from '@/lib/seo-config';
 
 export default function Home() {
   // Determine base URL for canonical links
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://thetoothfae.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://thetoothfae.online';
   
-  const [downloadStatus, setDownloadStatus] = useState<{[key: string]: boolean}>({});
   const [comments, setComments] = useState<any[]>([]);
   const [commentForm, setCommentForm] = useState({
     name: '',
@@ -27,6 +26,11 @@ export default function Home() {
   const [errorMessage, setErrorMessage] = useState('');
   const [sortOrder, setSortOrder] = useState('latest'); // 'latest', 'oldest', 'likes'
   const [voteStatus, setVoteStatus] = useState<{[key: string]: boolean}>({});
+
+  const shareTarget = process.env.NEXT_PUBLIC_BASE_URL || 'https://thetoothfae.online';
+  const encodedShareUrl = encodeURIComponent(shareTarget);
+  const shareText = encodeURIComponent('Descend into The Tooth Fae — harvest rare teeth while mortals sleep.');
+  const shareHeadline = encodeURIComponent('The Tooth Fae — Nocturnal Tooth Heist');
   const [replyingTo, setReplyingTo] = useState<{id: string, name: string} | null>(null);
 
   // Scroll helper for in-page navigation
@@ -255,40 +259,6 @@ export default function Home() {
     }
   };
 
-  const handleDownload = async (platform: string) => {
-    const apiUrl = `/api/download?platform=${platform}`;
-    
-    if (downloadStatus[platform]) {
-      return; // Prevent repeated clicks
-    }
-
-    setDownloadStatus(prev => ({ ...prev, [platform]: true }));
-    
-    try {
-      // First get download link from API
-      const response = await fetch(apiUrl);
-      
-      if (!response.ok) {
-        throw new Error(`Server error (${response.status}), please try again later`);
-      }
-      
-      const data = await response.json();
-      
-      // Create download link
-      const link = document.createElement('a');
-      link.href = data.url;
-      link.download = data.filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error('Download failed:', error);
-      alert(error instanceof Error ? error.message : 'Download failed, please try again later');
-    } finally {
-      setDownloadStatus(prev => ({ ...prev, [platform]: false }));
-    }
-  };
-
   return (
     <main className="flex min-h-screen flex-col items-center">
       {/* Top Grassland Section */}
@@ -312,12 +282,15 @@ export default function Home() {
                 href="https://html.itch.zone/html/15168109/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-fuchsia-500/90 to-violet-500/90 px-7 py-4 text-white font-semibold text-lg shadow-[0_28px_60px_-22px_rgba(239,147,219,0.85)] hover:from-fuchsia-500 hover:to-violet-500 transition"
+                className="group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-r from-rose-500/90 via-fuchsia-500/90 to-indigo-500/90 px-8 py-4 text-white font-semibold text-lg shadow-[0_30px_60px_-22px_rgba(239,147,219,0.85)] transition-transform duration-300 hover:scale-[1.03]"
               >
-                <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30">
-                  <Play className="h-5 w-5" />
+                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.22),_transparent_65%)]" />
+                <span className="flex items-center justify-center gap-3 relative z-10">
+                  <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30 shadow-[0_0_35px_rgba(255,255,255,0.25)] transition duration-300 group-hover:bg-white/25">
+                    <Play className="h-5 w-5" />
+                  </span>
+                  <span className="tracking-[0.05em]">Play Game</span>
                 </span>
-                <span>Play Game</span>
               </a>
             </div>
           </div>
@@ -337,31 +310,36 @@ export default function Home() {
         {/* Social Share Buttons */}
         <div className="w-full max-w-6xl mx-auto mb-8">
           <div className="social-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthetoothfae.com%2F" target="_blank" rel="noopener noreferrer" className="social-button facebook">
+            <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedShareUrl}&quote=${shareText}`}
+              target="_blank" rel="noopener noreferrer" className="social-button facebook">
               <div className="flex justify-center items-center gap-2">
                 <Facebook className="h-4 w-4" />
                 <span className="hidden sm:inline">Facebook</span>
               </div>
             </a>
-            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fthetoothfae.com%2F&text=Learn%20the%20secrets%20of%20The%20Tooth%20Fae%20%E2%80%94%20the%20grim%20fairy%20heist%20adventure!" target="_blank" rel="noopener noreferrer" className="social-button twitter">
+            <a href={`https://twitter.com/intent/tweet?url=${encodedShareUrl}&text=${shareText}`}
+              target="_blank" rel="noopener noreferrer" className="social-button twitter">
               <div className="flex justify-center items-center gap-2">
                 <Twitter className="h-4 w-4" />
                 <span className="hidden sm:inline">Twitter</span>
               </div>
             </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fthetoothfae.com%2F" target="_blank" rel="noopener noreferrer" className="social-button linkedin">
+            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedShareUrl}&title=${shareHeadline}`}
+              target="_blank" rel="noopener noreferrer" className="social-button linkedin">
               <div className="flex justify-center items-center gap-2">
                 <Linkedin className="h-4 w-4" />
                 <span className="hidden sm:inline">LinkedIn</span>
               </div>
             </a>
-            <a href="https://api.whatsapp.com/send?text=Join%20me%20in%20The%20Tooth%20Fae%20%E2%80%94%20a%20dark%20fantasy%20tooth%20heist!%20https%3A%2F%2Fthetoothfae.com%2F" target="_blank" rel="noopener noreferrer" className="social-button whatsapp">
+            <a href={`https://api.whatsapp.com/send?text=${shareText}%0A${encodedShareUrl}`}
+              target="_blank" rel="noopener noreferrer" className="social-button whatsapp">
               <div className="flex justify-center items-center gap-2">
                 <Share2 className="h-4 w-4" />
                 <span className="hidden sm:inline">WhatsApp</span>
               </div>
             </a>
-            <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fthetoothfae.com%2F&title=The%20Tooth%20Fae%20%E2%80%94%20The%20Ultimate%20Tooth%20Collection%20Guide" target="_blank" rel="noopener noreferrer" className="social-button reddit">
+            <a href={`https://www.reddit.com/submit?url=${encodedShareUrl}&title=${shareHeadline}`}
+              target="_blank" rel="noopener noreferrer" className="social-button reddit">
               <div className="flex justify-center items-center gap-2">
                 <Share2 className="h-4 w-4" />
                 <span className="hidden sm:inline">Reddit</span>
@@ -378,7 +356,6 @@ export default function Home() {
             <a href="#play" onClick={(e) => scrollToSection(e as any, 'play')} className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">Play</a>
             <a href="#guide" onClick={(e) => scrollToSection(e as any, 'guide')} className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">Guide</a>
             
-            <a href="#download" onClick={(e) => scrollToSection(e as any, 'download')} className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">Download</a>
             <a href="#faq" onClick={(e) => scrollToSection(e as any, 'faq')} className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">FAQ</a>
             <a href="/blog" className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">Blog</a>
             <a href="#comments" onClick={(e) => scrollToSection(e as any, 'comments')} className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">Comments</a>
@@ -543,51 +520,6 @@ export default function Home() {
               </div>
             </section>
             
-
-            <section id="download" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
-              <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Download Training Builds</h2>
-              <p className="text-sm text-neutral-300 leading-relaxed mb-4">
-                The build bundles placeholder executables, meter drill scripts, and the latest trait intel—perfect for rehearsing night runs offline.
-              </p>
-              <div className="space-y-3">
-                {['windows', 'macos', 'linux'].map((platform) => {
-                  const labels = {
-                    windows: {
-                      title: 'Windows',
-                      desc: 'Includes Lucidity/Pain/Fear drill scripts',
-                    },
-                    macos: {
-                      title: 'macOS',
-                      desc: 'Native support for Intel and Apple Silicon',
-                    },
-                    linux: {
-                      title: 'Linux',
-                      desc: 'Ships with CLI logging and replay tools',
-                    },
-                  } as const
-                  const info = labels[platform as keyof typeof labels]
-                  return (
-                    <button
-                      key={platform}
-                      type="button"
-                      onClick={() => handleDownload(platform)}
-                      disabled={downloadStatus[platform]}
-                      className="relative flex items-center justify-between rounded-xl border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-4 py-3 text-left transition hover:border-rose-400/60 disabled:cursor-not-allowed disabled:opacity-60"
-                    >
-                      <div>
-                        <p className="text-sm font-semibold tracking-[0.2em] uppercase text-slate-100">{info.title}</p>
-                        <p className="text-xs text-neutral-400">{info.desc}</p>
-                      </div>
-                      {downloadStatus[platform] ? (
-                        <div className="h-5 w-5 animate-spin rounded-full border border-rose-400/40 border-t-transparent" />
-                      ) : (
-                        <Download className="h-5 w-5 text-rose-200" />
-                      )}
-                    </button>
-                  )
-                })}
-              </div>
-            </section>
 
             <section id="faq" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
               <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Frequently Asked Nightmares</h2>

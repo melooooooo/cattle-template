@@ -5,4 +5,4 @@
 - 通过 WASD 与鼠标操作熟悉采牙流程，练习“钻一点，撒尘一点”的节奏。
 - 记得携带额外麻醉针，应对 Tough 或多颗牙任务。
 
-更多情报请访问 https://thetoothfae.com
+更多情报请访问 https://thetoothfae.online

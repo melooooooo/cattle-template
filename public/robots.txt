@@ -6,4 +6,4 @@ Allow: /
 Crawl-delay: 10
 
 # Sitemap location
-Sitemap: https://thetoothfae.com/sitemap.xml 
+Sitemap: https://thetoothfae.online/sitemap.xml 

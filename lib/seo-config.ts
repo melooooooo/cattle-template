@@ -2,7 +2,7 @@
 
 // 获取基础URL - 生产环境应使用实际域名
 export const getBaseUrl = (): string => {
-  return process.env.NEXT_PUBLIC_BASE_URL || 'https://thetoothfae.com';
+  return process.env.NEXT_PUBLIC_BASE_URL || 'https://thetoothfae.online';
 };
 
 // 为页面创建规范URL

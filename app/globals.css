@@ -130,33 +130,41 @@ body {
   flex: 1;
   padding: 0.5rem;
   text-align: center;
-  color: #f8f5ff;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  color: #fdf8ff;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
 }
 
 .social-button:hover {
-  opacity: 0.95;
-  transform: translateY(-2px);
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -20px rgba(239, 147, 219, 0.9);
 }
 
 .facebook {
-  background: linear-gradient(135deg, #1b2548, #324786);
+  background: linear-gradient(125deg, rgba(88, 84, 255, 0.35), rgba(114, 97, 255, 0.6));
+  backdrop-filter: blur(6px);
 }
 
 .twitter {
-  background: linear-gradient(135deg, #0d223a, #1d4b70);
+  background: linear-gradient(125deg, rgba(86, 196, 255, 0.35), rgba(86, 133, 255, 0.6));
+  backdrop-filter: blur(6px);
 }
 
 .linkedin {
-  background: linear-gradient(135deg, #0c181f, #146b8f);
+  background: linear-gradient(125deg, rgba(77, 198, 221, 0.35), rgba(76, 159, 210, 0.6));
+  backdrop-filter: blur(6px);
 }
 
 .whatsapp {
-  background: linear-gradient(135deg, #10241d, #24705a);
+  background: linear-gradient(125deg, rgba(87, 208, 168, 0.35), rgba(94, 192, 164, 0.6));
+  backdrop-filter: blur(6px);
 }
 
 .reddit {
-  background: linear-gradient(135deg, #2c120d, #742b1a);
+  background: linear-gradient(125deg, rgba(236, 135, 118, 0.35), rgba(244, 101, 72, 0.6));
+  backdrop-filter: blur(6px);
 }
 
 .search-container {
