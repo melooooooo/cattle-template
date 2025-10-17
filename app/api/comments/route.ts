@@ -146,10 +146,8 @@ export async function GET(request: Request) {
       env: process.env.NODE_ENV
     });
 
-    // 连接到MongoDB
-    const client = await clientPromise;
-    const db = client.db('crazy-cattle');
-    const commentsCollection = db.collection('comments');
+    // 确保集合已就绪并包含初始化数据
+    const commentsCollection = await ensureCommentsCollection();
     
     // 定义排序条件
     let sortOptions = {} as any;
@@ -228,10 +226,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: '评论提交成功(内存)', id });
     }
     
-    // 连接到MongoDB
-    const client = await clientPromise;
-    const db = client.db('crazy-cattle');
-    const commentsCollection = db.collection('comments');
+    const commentsCollection = await ensureCommentsCollection();
     
     // 准备新评论数据
     const newComment = {
@@ -316,9 +311,7 @@ export async function PUT(request: Request) {
     }
     
     // 连接到MongoDB
-    const client = await clientPromise;
-    const db = client.db('crazy-cattle');
-    const commentsCollection = db.collection('comments');
+    const commentsCollection = await ensureCommentsCollection();
     
     // 准备更新条件
     let commentId;

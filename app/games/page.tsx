@@ -102,9 +102,7 @@ export default function GamesIndexPage() {
               {games.map((game) => (
                 <div
                   key={game.title}
-                  className={`group relative overflow-hidden rounded-lg border border-slate-700/60 bg-[#0d1117] transition hover:border-slate-600 hover:shadow-xl ${
-                    game.disabled ? "opacity-60" : ""
-                  }`}
+                  className="group relative overflow-hidden rounded-lg border border-slate-700/60 bg-[#0d1117] transition hover:border-slate-600 hover:shadow-xl"
                 >
                   <div className="relative">
                     {game.image ? (
