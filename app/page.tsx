@@ -361,8 +361,8 @@ export default function Home() {
 
       {/* Main Content Layout */}
       <div className="w-full py-12">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col gap-10 lg:flex-row">
-          <div className="lg:w-[70%] space-y-10">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col gap-10 lg:flex-row">
+          <div className="lg:w-[65%] space-y-10">
             <section id="guide" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
               <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Core Gameplay Guide</h2>
               <div className="space-y-6 text-neutral-300 text-sm leading-relaxed">
@@ -641,7 +641,7 @@ export default function Home() {
             </section>
           </div>
 
-          <aside id="comments" className="lg:w-[30%]">
+          <aside id="comments" className="lg:w-[35%]">
             <div className="lg:sticky lg:top-28">
               <div className="max-h-[calc(100vh-6rem)] overflow-y-auto rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0b0d16] p-6 space-y-6">
                 <div className="flex items-center justify-between">
