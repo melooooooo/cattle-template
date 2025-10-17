@@ -358,6 +358,20 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Game Content Sub‑Navigation */}
+      <div className="w-full py-4">
+        <div className="max-w-7xl mx-auto px-4">
+          <nav className="flex flex-wrap items-center gap-2 rounded-xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-2 shadow-[0_10px_24px_-18px_rgba(147,72,166,0.6)]">
+            <a href="#play" onClick={(e) => scrollToSection(e as any, 'play')} className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">Play</a>
+            <a href="#guide" onClick={(e) => scrollToSection(e as any, 'guide')} className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">Guide</a>
+            
+            <a href="#download" onClick={(e) => scrollToSection(e as any, 'download')} className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">Download</a>
+            <a href="#faq" onClick={(e) => scrollToSection(e as any, 'faq')} className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">FAQ</a>
+            <a href="/blog" className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">Blog</a>
+            <a href="#comments" onClick={(e) => scrollToSection(e as any, 'comments')} className="px-3 py-2 text-xs md:text-sm text-slate-100 rounded-lg bg-[#14141f] border border-[rgba(122,52,99,0.35)] hover:border-rose-400/60">Comments</a>
+          </nav>
+        </div>
+      </div>
 
       {/* Main Content Layout */}
       <div className="w-full py-12">
@@ -515,47 +529,7 @@ export default function Home() {
                 </div>
               </div>
             </section>
-            <section id="features" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
-              <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Systems That Keep You Alive</h2>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
-                    <BarChart className="h-4 w-4 text-rose-200" />
-                  </span>
-                  <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Meter-Oriented Stealth</h3>
-                    <p className="text-sm text-neutral-300 leading-relaxed">Lucidity, Pain, and Fear tug at each other—any greed snaps the sleeper awake.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
-                    <Shield className="h-4 w-4 text-rose-200" />
-                  </span>
-                  <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Living Floorplans</h3>
-                    <p className="text-sm text-neutral-300 leading-relaxed">Track creaking boards, patrolling pets, and cold drafts—the escape route matters more than the tools.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
-                    <Sparkles className="h-4 w-4 text-rose-200" />
-                  </span>
-                  <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Relentless Progression</h3>
-                    <p className="text-sm text-neutral-300 leading-relaxed">Every flawless pull unlocks new intel and targets; the Queen always hungers for rarer trophies.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
-                    <Gamepad2 className="h-4 w-4 text-rose-200" />
-                  </span>
-                  <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Loadout Tuning</h3>
-                    <p className="text-sm text-neutral-300 leading-relaxed">Tune dust potency, drill heat, and anesthetic dosage so you're ready for Tough or Eldritch encounters.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
+            
 
             <section id="download" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
               <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Download Training Builds</h2>
@@ -811,8 +785,8 @@ export default function Home() {
                     </a>
                   </li>
                   <li>
-                    <a href="https://thetoothfae.com/#features" onClick={(e) => scrollToSection(e, "features")} className="text-neutral-800 hover:text-green-600">
-                      Features
+                    <a href="https://thetoothfae.com/#guide" onClick={(e) => scrollToSection(e, "guide")} className="text-neutral-800 hover:text-green-600">
+                      Guide
                     </a>
                   </li>
                   <li>
