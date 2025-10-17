@@ -1,6 +1,6 @@
 "use client"
 
-import { Home as HomeIcon, Gamepad2 } from "lucide-react"
+import { Home as HomeIcon, Gamepad2, Search } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -19,19 +19,19 @@ export default function Navigation() {
       <div className="relative isolate border-b border-[rgba(122,52,99,0.35)] bg-gradient-to-r from-[#090918]/95 via-[#120a1b]/92 to-[#090918]/95 backdrop-blur-md shadow-[0_16px_42px_-24px_rgba(140,67,170,0.6)]">
         <div className="absolute inset-0 pointer-events-none opacity-60 bg-[radial-gradient(circle_at_top,_rgba(148,64,158,0.18),_transparent_60%)]" />
 
-        <div className="relative max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-          {/* Brand */}
+        <div className="relative max-w-7xl mx-auto flex items-center px-4 py-3 gap-4">
+          {/* Brand (unchanged position) */}
           <Link href="/" className="flex items-center gap-4 group select-none">
             <span className="relative flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-400/40 bg-[radial-gradient(ellipse_at_center,_rgba(239,147,219,0.20),_transparent_60%)] shadow-[0_0_24px_rgba(239,147,219,0.18)] overflow-hidden">
               <img src="/favicon_io/android-chrome-192x192.png" alt="The Tooth Fae" className="h-8 w-8 rounded" />
             </span>
-            <span className="text-2xl md:text-3xl font-extrabold uppercase leading-none tracking-[0.14em] bg-gradient-to-r from-indigo-100 via-fuchsia-100 to-rose-100 bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(233,200,255,0.25)]">
+            <span className="text-2xl md:text-3xl font-extrabold uppercase leading-tight tracking-[0.06em] bg-gradient-to-r from-indigo-100 via-fuchsia-100 to-rose-100 bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(233,200,255,0.25)]">
               The Tooth Fae
             </span>
           </Link>
 
-          {/* Primary items */}
-          <nav className="flex items-center gap-2">
+          {/* Primary nav moved beside brand */}
+          <nav className="flex items-center gap-2 ml-4">
             <Link href="/" className={`${pillBase} ${isHome ? pillActive : ""}`}>
               <HomeIcon className="h-4 w-4" />
               <span>Home</span>
@@ -41,6 +41,15 @@ export default function Navigation() {
               <span>All Games</span>
             </Link>
           </nav>
+
+          {/* Search button in original right slot */}
+          <Link
+            href="/games"
+            className="ml-auto hidden md:inline-flex items-center gap-2 rounded-xl bg-[#14141f] px-4 py-2 text-[13px] text-slate-100/85 ring-1 ring-[rgba(122,52,99,0.35)] hover:ring-rose-400/60 hover:text-white transition"
+          >
+            <Search className="h-4 w-4" />
+            <span>Search Games</span>
+          </Link>
         </div>
       </div>
 

@@ -268,7 +268,7 @@ export default function Home() {
 
         {/* Play CTA (center button, keep original area size) */}
         <div id="play" className="w-full max-w-6xl mx-auto p-4 game-container rounded-md my-2">
-          <div className="relative overflow-hidden rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] shadow-[0_24px_60px_-24px_rgba(147,72,166,0.6)]">
+          <div className="relative overflow-hidden rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] shadow-[0_24px_60px_-24px_rgba(147,72,166,0.6)]" id="global-game-search">
             {/* Maintain 16:9 area */}
             <div className="w-full" style={{ paddingTop: '56.25%' }} />
             {/* Background screenshot */}
@@ -282,14 +282,14 @@ export default function Home() {
                 href="https://html.itch.zone/html/15168109/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-r from-rose-500/90 via-fuchsia-500/90 to-indigo-500/90 px-8 py-4 text-white font-semibold text-lg shadow-[0_30px_60px_-22px_rgba(239,147,219,0.85)] transition-transform duration-300 hover:scale-[1.03]"
+                className="group relative inline-flex items-center overflow-hidden rounded-lg bg-gradient-to-r from-red-900/90 to-red-800/90 px-8 py-4 text-white font-semibold text-lg border border-red-700/40 shadow-[0_20px_40px_-15px_rgba(185,28,28,0.6)] transition-all duration-300 hover:scale-105 hover:shadow-[0_25px_50px_-12px_rgba(185,28,28,0.8)] hover:border-red-600/60"
               >
-                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.22),_transparent_65%)]" />
+                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1),_transparent_70%)]" />
                 <span className="flex items-center justify-center gap-3 relative z-10">
-                  <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30 shadow-[0_0_35px_rgba(255,255,255,0.25)] transition duration-300 group-hover:bg-white/25">
+                  <span className="relative flex h-10 w-10 items-center justify-center rounded-md bg-red-950/40 border border-red-800/40 transition duration-300 group-hover:bg-red-950/60 group-hover:border-red-700/60">
                     <Play className="h-5 w-5" />
                   </span>
-                  <span className="tracking-[0.05em]">Play Game</span>
+                  <span className="tracking-wide">Play Game</span>
                 </span>
               </a>
             </div>
@@ -298,8 +298,8 @@ export default function Home() {
 
         {/* Title + subtitle and tags */}
         <div className="w-full max-w-6xl mx-auto px-4 mb-8">
-          <h1 className="mt-2 text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-100 via-fuchsia-100 to-rose-100 bg-clip-text text-transparent">The Tooth Fae</h1>
-          <p className="mt-2 text-lg text-neutral-300">Don't let her take your teeth.</p>
+          <h1 className="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-100 via-fuchsia-100 to-rose-100 bg-clip-text text-transparent">The Tooth Fae</h1>
+          <p className="mt-2 text-base text-neutral-300">Don't let her take your teeth.</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {['Stealth Horror', 'Tooth Collection', 'Eldritch Encounters'].map(tag => (
               <span key={tag} className="inline-flex items-center rounded-full border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-3 py-1 text-xs text-slate-100">{tag}</span>

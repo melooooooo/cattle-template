@@ -18,13 +18,7 @@ const games = [
     title: "The Tooth Fae",
     description: "Stealth horror heists, trait hunting, and an eldritch trophy cabinet.",
     href: "/",
-    image: "/images/warpdoor/1-banner.png",
-  },
-  {
-    title: "Shard Atlas (Coming Soon)",
-    description: "Rogue shards, shifting maps, and co-op extraction. Wishlist today.",
-    href: "#",
-    disabled: true,
+    image: "/images/warpdoor/image.png",
   },
 ];
 
