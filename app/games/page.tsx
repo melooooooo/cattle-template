@@ -133,14 +133,10 @@ export default function GamesIndexPage() {
                         <span>KB+M</span>
                       </div>
                       <Link
-                        href={game.disabled ? "#" : game.href}
-                        className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition ${
-                          game.disabled
-                            ? "cursor-not-allowed bg-slate-800/50 text-slate-600"
-                            : "bg-slate-700/60 text-slate-200 hover:bg-slate-600 hover:text-white"
-                        }`}
+                        href={game.href}
+                        className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition bg-slate-700/60 text-slate-200 hover:bg-slate-600 hover:text-white"
                       >
-                        {game.disabled ? "Wishlist" : "Launch"}
+                        Launch
                         <ArrowUpRight className="h-3 w-3" />
                       </Link>
                     </div>
