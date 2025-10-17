@@ -28,7 +28,7 @@ import Head from 'next/head';
 import { defaultSeoConfig } from '@/lib/seo-config';
 
 export default function Home() {
-  // 用于规范URL的基础URL
+  // Determine base URL for canonical links
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://thetoothfae.com';
   
   const [downloadStatus, setDownloadStatus] = useState<{[key: string]: boolean}>({});
@@ -45,7 +45,7 @@ export default function Home() {
   const [sortOrder, setSortOrder] = useState('latest'); // 'latest', 'oldest', 'likes'
   const [voteStatus, setVoteStatus] = useState<{[key: string]: boolean}>({});
 
-  // 添加滚动到指定区域的函数
+  // Scroll helper for in-page navigation
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
@@ -57,17 +57,17 @@ export default function Home() {
   // Fetch comments
   const fetchComments = async (currentSortOrder = sortOrder) => {
     try {
-      console.log('获取评论列表，排序方式:', currentSortOrder);
+      console.log('Fetching comments with order:', currentSortOrder);
       const response = await fetch(`/api/comments?sortBy=${currentSortOrder}`);
       if (response.ok) {
         const data = await response.json();
-        console.log('获取到评论:', data.length, '条');
+        console.log('Fetched comments:', data.length);
         setComments(data);
       } else {
-        console.error('获取评论失败:', response.statusText);
+        console.error('Failed to fetch comments:', response.statusText);
       }
     } catch (error) {
-      console.error('获取评论时发生错误:', error);
+      console.error('Error while fetching comments:', error);
     }
   };
 
@@ -163,22 +163,22 @@ export default function Home() {
 
   // Handle like/dislike
   const handleVote = async (id: string | number, action: 'like' | 'dislike') => {
-    // 将ID统一转为字符串，确保一致的比较
+    // Normalize IDs to strings for consistent comparison
     const stringId = String(id);
     
-    // 阻止重复点击
+    // Prevent duplicate clicks
     const voteKey = `${stringId}-${action}`;
     if (voteStatus[voteKey]) {
       return;
     }
     
-    // 设置加载状态
+    // Set loading state
     setVoteStatus(prev => ({ ...prev, [voteKey]: true }));
     
     try {
-      console.log(`尝试${action === 'like' ? '点赞' : '踩'} 评论ID: ${stringId}`);
+      console.log(`Attempting ${action === 'like' ? 'like' : 'dislike'} on comment ID: ${stringId}`);
       
-      // 乐观更新UI - 立即更新点赞数，让用户感觉更快
+      // Optimistic UI update for faster feedback
       setComments(prevComments => 
         prevComments.map(comment => 
           String(comment.id) === stringId
@@ -190,7 +190,7 @@ export default function Home() {
         )
       );
       
-      // 发送请求到后端
+      // Send request to backend
       const response = await fetch('/api/comments', {
         method: 'PUT',
         headers: {
@@ -202,9 +202,9 @@ export default function Home() {
       const data = await response.json();
       
       if (response.ok) {
-        console.log('点赞/踩操作成功:', data);
+        console.log('Vote operation succeeded:', data);
         
-        // 用服务器返回的实际数据更新UI
+        // Update UI with server response
         if (data.comment) {
           setComments(prevComments => 
             prevComments.map(comment => 
@@ -219,8 +219,8 @@ export default function Home() {
           );
         }
       } else {
-        console.error('点赞/踩操作失败:', data.error || response.statusText);
-        // 恢复UI显示的点赞数
+        console.error('Vote operation failed:', data.error || response.statusText);
+        // Revert optimistic update
         setComments(prevComments => 
           prevComments.map(comment => 
             String(comment.id) === stringId
@@ -232,16 +232,16 @@ export default function Home() {
           )
         );
         
-        // 使用更友好的错误提示
-        if (data.error === '找不到该评论') {
-          alert('无法为此评论点赞，该评论可能已被删除');
+        // Provide user-friendly error alerts
+        if (data.error === 'Comment not found') {
+          alert('Unable to like this comment; it may have been removed.');
         } else {
-          alert(`操作失败: ${data.error || '请稍后再试'}`);
+          alert(`Operation failed: ${data.error || 'Please try again later'}`);
         }
       }
     } catch (error) {
-      console.error('处理点赞/踩时发生错误:', error);
-      // 恢复UI显示的点赞数
+      console.error('Error while handling vote:', error);
+      // Revert optimistic update
       setComments(prevComments => 
         prevComments.map(comment => 
           String(comment.id) === stringId
@@ -252,12 +252,12 @@ export default function Home() {
             : comment
         )
       );
-      alert('操作失败，请稍后再试');
+      alert('Operation failed, please try again later');
     } finally {
-      // 清除加载状态
+      // Clear loading state
       setTimeout(() => {
         setVoteStatus(prev => ({ ...prev, [voteKey]: false }));
-      }, 500); // 短暂延迟，防止用户快速多次点击
+      }, 500); // Short delay to prevent rapid repeat clicks
     }
   };
 
@@ -363,97 +363,201 @@ export default function Home() {
       <div className="w-full py-12">
         <div className="max-w-6xl mx-auto px-4 flex flex-col gap-10 lg:flex-row">
           <div className="lg:w-[70%] space-y-10">
-            <section className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
-              <div className="flex flex-col gap-6 lg:flex-row">
-                <div className="lg:w-1/2 space-y-4">
-                  <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100">Briefing Room</h2>
-                  <p className="text-sm text-neutral-300 leading-relaxed">
-                    Slip through darkened hallways as the Queen’s favored collector. Every house is a heist; every tooth is a whispered relic.
-                    Study traits, plan the pull, and disappear before the mortals stir.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <Button asChild className="bg-rose-500/80 hover:bg-rose-500 text-white tracking-[0.28em] uppercase px-5 py-2">
-                      <a href="/play">立即开局</a>
-                    </Button>
-                    <Button
-                      asChild
-                      className="bg-transparent border border-rose-500/60 text-rose-200 hover:bg-rose-500/10 tracking-[0.28em] uppercase px-5 py-2"
-                    >
-                      <a href="/download" onClick={(e) => scrollToSection(e, 'download')}>下载训练包</a>
-                    </Button>
+            <section id="guide" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
+              <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Core Gameplay Guide</h2>
+              <div className="space-y-6 text-neutral-300 text-sm leading-relaxed">
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100 mb-2">Getting Started</h3>
+                  <p className="text-sm text-neutral-300 leading-relaxed">Welcome to the grim, enchanting world of The Tooth Fae. Forget the quarters under the pillow; your job is far more hands-on. You are a collector, an agent of the Queen, tasked with harvesting teeth from sleeping mortals. Your objective is simple: fill the Queen's “Perfect Lovelies” cabinet with all 16 unique teeth.</p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100 mb-2">Controls</h3>
+                  <p className="text-xs text-neutral-400 mb-2">Standard keyboard & mouse bindings (browser build). Actual controls may vary.</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-sm text-neutral-200 border border-[rgba(122,52,99,0.35)] bg-[#14141f]">
+                      <thead className="bg-[rgba(147,53,120,0.35)] text-slate-100 uppercase tracking-[0.18em]">
+                        <tr>
+                          <th className="px-3 py-2 font-semibold">Action / Purpose</th>
+                          <th className="px-3 py-2 font-semibold">Key(s) / Gesture</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Move Forward</td>
+                          <td className="px-3 py-2 text-rose-200">W</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Move Backward</td>
+                          <td className="px-3 py-2 text-rose-200">S</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Move Left</td>
+                          <td className="px-3 py-2 text-rose-200">A</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Move Right</td>
+                          <td className="px-3 py-2 text-rose-200">D</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Crouch / Sneak</td>
+                          <td className="px-3 py-2 text-rose-200">C or Left Ctrl</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Interact / Pick Up</td>
+                          <td className="px-3 py-2 text-rose-200">E or Left Mouse Click</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Look Around</td>
+                          <td className="px-3 py-2 text-rose-200">Mouse Movement</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-                <div className="lg:w-1/2">
-                  <div
-                    className="relative w-full overflow-hidden rounded-xl border border-[rgba(122,52,99,0.35)] bg-[#14141f]"
-                    style={{ paddingTop: "56.25%" }}
-                  >
-                    <iframe
-                      src="https://www.youtube.com/embed/GmfED4NCbSc"
-                      className="absolute top-0 left-0 h-full w-full border-0"
-                      title="The Tooth Fae"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    ></iframe>
+
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100 mb-2">Interface &amp; Meters</h3>
+                  <p>Lucidity (wake-up risk), Pain (shock), and Fear (accelerates Lucidity) are your vital gauges. The tool tray carries:</p>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li><span className="font-semibold text-rose-200">Fairy Dust</span> – suppresses Lucidity and Fear, your primary stabilizer.</li>
+                    <li><span className="font-semibold text-rose-200">Hook</span> – opens the mouth and starts every job, raising Lucidity slightly.</li>
+                    <li><span className="font-semibold text-rose-200">Anesthetic Syringe</span> – drop Pain spikes before long drills or multi-tooth runs.</li>
+                    <li><span className="font-semibold text-rose-200">Dental Drill</span> – loosens the prize but stresses all meters; pulse it.</li>
+                    <li><span className="font-semibold text-rose-200">Forceps</span> – finish once the tooth is loose and meters are stable.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100 mb-2">All Secrets and Endings: The Perfect Collection</h3>
+                  <p className="text-sm text-neutral-300 leading-relaxed">
+                    The "ending" of The Tooth Fae is achieving 100% completion of your tooth collection. Once you've acquired all 16 unique teeth, your collection is complete. There is no final cutscene; the "My Perfect Lovelies" collection screen filled with your trophies is the ultimate reward.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100 mb-2">Trait Counterplay</h3>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li><span className="font-semibold text-rose-200">Heavy Sleeper</span> – generous Lucidity window; ideal for practicing longer drill cycles.</li>
+                    <li><span className="font-semibold text-rose-200">Tough</span> – Pain skyrockets; alternate dust and anesthetic around the 70–80% mark.</li>
+                    <li><span className="font-semibold text-rose-200">Night Owl / Insomniac</span> – Lucidity starts high. Tap the drill, dust immediately, never linger.</li>
+                    <li><span className="font-semibold text-rose-200">Fragile / Brittle</span> – teeth shatter easily; keep drill bursts ultra short.</li>
+                    <li><span className="font-semibold text-rose-200">Vampire / Ancient / Eldritch</span> – unique mechanics, from ultra-fast Lucidity to UI distortion. Enter stocked with dust and a spare syringe.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100 mb-2">The 16 Unique Teeth &amp; How to Get Them</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-sm text-neutral-200 border border-[rgba(122,52,99,0.35)] bg-[#14141f]">
+                      <thead className="bg-[rgba(147,53,120,0.35)] text-slate-100 uppercase tracking-[0.18em]">
+                        <tr>
+                          <th className="px-3 py-2 font-semibold">Tooth Name</th>
+                          <th className="px-3 py-2 font-semibold">Type</th>
+                          <th className="px-3 py-2 font-semibold">How to Obtain</th>
+                          <th className="px-3 py-2 font-semibold">In-Game Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Cracked</td>
+                          <td className="px-3 py-2">Worthless</td>
+                          <td className="px-3 py-2">Fail an extraction on a "Fragile" or normal tooth by applying too much stress.</td>
+                          <td className="px-3 py-2">"Fractured and ruined."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Dirty</td>
+                          <td className="px-3 py-2">Worthless</td>
+                          <td className="px-3 py-2">From a homeowner with the "Doesn't Brush" trait.</td>
+                          <td className="px-3 py-2">"Looks filthy for our touches."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Decayed</td>
+                          <td className="px-3 py-2">Worthless</td>
+                          <td className="px-3 py-2">Found randomly, very easy to extract.</td>
+                          <td className="px-3 py-2">"Rotten to the core."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Wooden</td>
+                          <td className="px-3 py-2">Worthless</td>
+                          <td className="px-3 py-2">Found on an "Ancient" homeowner.</td>
+                          <td className="px-3 py-2">"A poor imitation."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Adult</td>
+                          <td className="px-3 py-2">Common</td>
+                          <td className="px-3 py-2">From any adult homeowner.</td>
+                          <td className="px-3 py-2">"So many in the wild, hardly notable."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Baby</td>
+                          <td className="px-3 py-2">Common</td>
+                          <td className="px-3 py-2">From any child homeowner.</td>
+                          <td className="px-3 py-2">"Full of naivety and distant dreams."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Crowned</td>
+                          <td className="px-3 py-2">Common</td>
+                          <td className="px-3 py-2">A tooth with a dental crown, found randomly.</td>
+                          <td className="px-3 py-2">"Crudely repaired by clumsy hands."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Aged</td>
+                          <td className="px-3 py-2">Common</td>
+                          <td className="px-3 py-2">From any elder homeowner.</td>
+                          <td className="px-3 py-2">"Wise but not wisdom."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Sparkling</td>
+                          <td className="px-3 py-2">Rare</td>
+                          <td className="px-3 py-2">From a child with the "Fragile" trait.</td>
+                          <td className="px-3 py-2">"A delight for our hands. So smooth, so lovely."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Glass</td>
+                          <td className="px-3 py-2">Rare</td>
+                          <td className="px-3 py-2">From a teen with the "Brittle" trait.</td>
+                          <td className="px-3 py-2">"What manner of mortal gnaws with such a thing?"</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Silver</td>
+                          <td className="px-3 py-2">Rare</td>
+                          <td className="px-3 py-2">Found randomly in donors' mouths.</td>
+                          <td className="px-3 py-2">"Don't let the fools know it's iron, not silver. To ward off our embrace?"</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Gold</td>
+                          <td className="px-3 py-2">Rare</td>
+                          <td className="px-3 py-2">Found randomly in donors' mouths.</td>
+                          <td className="px-3 py-2">"Ostentatious, just like their race that covers our lands."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Sharp</td>
+                          <td className="px-3 py-2">Unearthly</td>
+                          <td className="px-3 py-2">From a homeowner with the "Vampire" trait.</td>
+                          <td className="px-3 py-2">"Do not let the others know you have such a dangerous keepsake."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Gemini</td>
+                          <td className="px-3 py-2">Unearthly</td>
+                          <td className="px-3 py-2">From an adult with both "Fragile" and "Brittle" traits.</td>
+                          <td className="px-3 py-2">"Twinned and tangled, tied tenderly twixt."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Watcher</td>
+                          <td className="px-3 py-2">Unearthly</td>
+                          <td className="px-3 py-2">From an "Ancient" homeowner; these teeth have faces.</td>
+                          <td className="px-3 py-2">"Unearthly Watcher Tooth."</td>
+                        </tr>
+                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
+                          <td className="px-3 py-2">Key</td>
+                          <td className="px-3 py-2">Unearthly</td>
+                          <td className="px-3 py-2">From a child with the "Eldritch" trait.</td>
+                          <td className="px-3 py-2">"We shouldn't have this."</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </section>
-
-            <section id="how-to-play" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
-              <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Field Briefing</h2>
-              <p className="text-sm text-neutral-300 leading-relaxed mb-6">
-                管理三条仪表、挑选合适的目标并保持无声——这是成为女王心腹的唯一途径。
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Card className="bg-[#14141f] border border-[rgba(122,52,99,0.35)] p-4 shadow-none">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
-                      <Play className="h-4 w-4 text-rose-200" />
-                    </span>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Primary Directive</h3>
-                  </div>
-                  <p className="text-sm text-neutral-300 leading-relaxed">
-                    采集 16 枚稀有 “Perfect Lovelies” 牙齿。根据特质挑选目标，快速下手并在 Lucidity 爆表前撤离。
-                  </p>
-                </Card>
-                <Card className="bg-[#14141f] border border-[rgba(122,52,99,0.35)] p-4 shadow-none">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
-                      <Gamepad2 className="h-4 w-4 text-rose-200" />
-                    </span>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Interface &amp; Meters</h3>
-                  </div>
-                  <p className="text-sm text-neutral-300 leading-relaxed">
-                    Lucidity 是警报、Pain 代表休克风险、Fear 会推动醒来速度。保持节奏：短促钻孔、立刻撒粉、疼痛 80% 前注射麻醉。
-                  </p>
-                </Card>
-                <Card className="bg-[#14141f] border border-[rgba(122,52,99,0.35)] p-4 shadow-none">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
-                      <Award className="h-4 w-4 text-rose-200" />
-                    </span>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Essential Toolkit</h3>
-                  </div>
-                  <p className="text-sm text-neutral-300 leading-relaxed">
-                    钩子开口、尘粉镇定、麻醉压痛、短促钻孔配合镊子收尾。记住黄金法则：Drill a bit, Dust a bit。
-                  </p>
-                </Card>
-                <Card className="bg-[#14141f] border border-[rgba(122,52,99,0.35)] p-4 shadow-none">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
-                      <Zap className="h-4 w-4 text-rose-200" />
-                    </span>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Trait Intel</h3>
-                  </div>
-                  <p className="text-sm text-neutral-300 leading-relaxed">
-                    Heavy Sleeper 适合练手，Insomniac 必须点到即止，Vampire 与 Eldritch 会扭曲仪表——保持 Dust 随时待命。
-                  </p>
-                </Card>
-              </div>
-            </section>
-
             <section id="features" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
               <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Systems That Keep You Alive</h2>
               <div className="space-y-4">
@@ -463,7 +567,7 @@ export default function Home() {
                   </span>
                   <div>
                     <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Meter-Oriented Stealth</h3>
-                    <p className="text-sm text-neutral-300 leading-relaxed">Lucidity、Pain、Fear 彼此牵制，任何贪心都会直接惊醒目标。</p>
+                    <p className="text-sm text-neutral-300 leading-relaxed">Lucidity, Pain, and Fear tug at each other—any greed snaps the sleeper awake.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -472,7 +576,7 @@ export default function Home() {
                   </span>
                   <div>
                     <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Living Floorplans</h3>
-                    <p className="text-sm text-neutral-300 leading-relaxed">记住地板的嘎吱声、宠物的巡逻路线以及窗缝的冷风，路线比工具更重要。</p>
+                    <p className="text-sm text-neutral-300 leading-relaxed">Track creaking boards, patrolling pets, and cold drafts—the escape route matters more than the tools.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -481,7 +585,7 @@ export default function Home() {
                   </span>
                   <div>
                     <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Relentless Progression</h3>
-                    <p className="text-sm text-neutral-300 leading-relaxed">每次完美拔牙都会解锁新的情报与目标，女王永远渴望更稀有的收藏品。</p>
+                    <p className="text-sm text-neutral-300 leading-relaxed">Every flawless pull unlocks new intel and targets; the Queen always hungers for rarer trophies.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -490,7 +594,7 @@ export default function Home() {
                   </span>
                   <div>
                     <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Loadout Tuning</h3>
-                    <p className="text-sm text-neutral-300 leading-relaxed">调配尘粉浓度、钻头温度、麻醉剂量，提前为 Tough 或 Eldritch 场景拟定方案。</p>
+                    <p className="text-sm text-neutral-300 leading-relaxed">Tune dust potency, drill heat, and anesthetic dosage so you're ready for Tough or Eldritch encounters.</p>
                   </div>
                 </div>
               </div>
@@ -499,22 +603,22 @@ export default function Home() {
             <section id="download" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
               <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Download Training Builds</h2>
               <p className="text-sm text-neutral-300 leading-relaxed mb-4">
-                训练包包含占位可执行文件、仪表练习脚本以及最新特质情报，适合离线预演夜巡流程。
+                The build bundles placeholder executables, meter drill scripts, and the latest trait intel—perfect for rehearsing night runs offline.
               </p>
               <div className="space-y-3">
                 {['windows', 'macos', 'linux'].map((platform) => {
                   const labels = {
                     windows: {
                       title: 'Windows',
-                      desc: '含 Lucidity/Pain/Fear 练习脚本',
+                      desc: 'Includes Lucidity/Pain/Fear drill scripts',
                     },
                     macos: {
                       title: 'macOS',
-                      desc: '原生支持 Intel / Apple Silicon',
+                      desc: 'Native support for Intel and Apple Silicon',
                     },
                     linux: {
                       title: 'Linux',
-                      desc: '附带 CLI 日志与回放工具',
+                      desc: 'Ships with CLI logging and replay tools',
                     },
                   } as const
                   const info = labels[platform as keyof typeof labels]
@@ -546,34 +650,34 @@ export default function Home() {
               <Accordion type="single" collapsible className="space-y-2">
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="rounded-lg bg-[#14141f] px-4 py-3 text-slate-100 hover:text-rose-200">
-                    这款游戏适合小朋友吗？
+                    Is this game meant for kids?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm text-neutral-300 leading-relaxed px-4">
-                    The Tooth Fae 聚焦潜行与恐怖氛围，更适合喜欢紧张节奏与资源管理的玩家。准备好在深夜保持绝对冷静。
+                    The Tooth Fae leans into stealth horror—perfect for players who crave tense pacing and resource pressure. Be ready to stay calm long past midnight.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                   <AccordionTrigger className="rounded-lg bg-[#14141f] px-4 py-3 text-slate-100 hover:text-rose-200">
-                    离线可以练习吗？
+                    Can I practice offline?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm text-neutral-300 leading-relaxed px-4">
-                    主线与训练合同完全离线可玩，联网只用于下载更新或上传排行榜成绩。
+                    The core campaign and training contracts are fully offline; you only need a connection for updates or leaderboard submissions.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                   <AccordionTrigger className="rounded-lg bg-[#14141f] px-4 py-3 text-slate-100 hover:text-rose-200">
-                    推荐的硬件配置？
+                    What hardware do I need?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm text-neutral-300 leading-relaxed px-4">
-                    Windows 10 / macOS 10.14 / Ubuntu 18.04，i3 或 Ryzen3 级别 CPU、4GB 内存以及 1GB 显存的 GPU 即可，SSD 能明显缩短关卡载入。
+                    Windows 10 / macOS 10.14 / Ubuntu 18.04, an i3 or Ryzen 3-class CPU, 4GB RAM, and a 1GB VRAM GPU are enough. An SSD shortens load times.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
                   <AccordionTrigger className="rounded-lg bg-[#14141f] px-4 py-3 text-slate-100 hover:text-rose-200">
-                    会不会有氪金要素？
+                    Are there monetization traps?
                   </AccordionTrigger>
                   <AccordionContent className="text-sm text-neutral-300 leading-relaxed px-4">
-                    没有。只有装饰性的翅膀或陈列柜主题，核心玩法完全依靠你的操作与判断。
+                    No. Only optional decorative wings and cabinet themes—core progression is entirely skill-based.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -584,23 +688,23 @@ export default function Home() {
             <div className="lg:sticky lg:top-28">
               <div className="max-h-[calc(100vh-6rem)] overflow-y-auto rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0b0d16] p-6 space-y-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-100">玩家回响 ({comments.length})</h3>
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-100">Field Reports ({comments.length})</h3>
                   <div className="flex items-center gap-2 text-[11px] text-neutral-400">
-                    <span>排序</span>
+                    <span>Sort</span>
                     <select
                       value={sortOrder}
                       onChange={(e) => handleSortChange(e.target.value)}
                       className="rounded border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-2 py-1 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-400/40"
                     >
-                      <option value="latest">最新</option>
-                      <option value="oldest">最早</option>
-                      <option value="likes">点赞最多</option>
+                      <option value="latest">Latest</option>
+                      <option value="oldest">Oldest</option>
+                      <option value="likes">Most Liked</option>
                     </select>
                   </div>
                 </div>
 
                 {comments.length === 0 ? (
-                  <div className="py-10 text-center text-neutral-400">暂时没有评论，抢先分享你的夜巡经历。</div>
+                  <div className="py-10 text-center text-neutral-400">No reports yet—share your latest night raid.</div>
                 ) : (
                   <div className="space-y-5">
                     {comments.map((comment) => (
@@ -620,7 +724,7 @@ export default function Home() {
                                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
                                 </svg>
-                                <span>回复</span>
+                                <span>Reply</span>
                               </button>
                               <div className="flex items-center gap-3">
                                 <button
@@ -669,14 +773,14 @@ export default function Home() {
                     type="button"
                     className="w-full rounded-md bg-rose-500/80 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white hover:bg-rose-500"
                   >
-                    加载更多
+                    Load More
                   </button>
                 )}
 
                 <form onSubmit={handleCommentSubmit} className="space-y-4">
                   {submitSuccess === true && (
                     <div className="rounded-md border border-emerald-400/40 bg-[#13211d] px-4 py-3 text-sm text-emerald-200">
-                      评论提交成功！
+                      Comment submitted successfully!
                     </div>
                   )}
 
@@ -719,14 +823,14 @@ export default function Home() {
                       onChange={handleCheckboxChange}
                       className="accent-rose-400"
                     />
-                    我已阅读并同意条款。
+                    I have read and agree to the terms.
                   </label>
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="w-full rounded-md bg-rose-500/80 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white hover:bg-rose-500 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {isSubmitting ? '提交中…' : '提交评论'}
+                    {isSubmitting ? 'Submitting…' : 'Submit Comment'}
                   </button>
                 </form>
               </div>
