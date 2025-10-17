@@ -17,62 +17,65 @@ export default function PrivacyPage() {
       <div className="w-full white-section py-12">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-          
-          <div className="prose prose-green max-w-none">
-            <p className="mb-4">Last updated: October 17, 2024</p>
 
-            <h2 className="text-xl font-semibold mt-8 mb-4">1. Introduction</h2>
-            <p>The Tooth Fae Collective ("we," "our," or "us") respects your privacy and is committed to protecting it through this Privacy Policy. This policy describes the types of information we may collect from you or that you may provide when you visit our website <a href="https://thetoothfae.online" className="text-green-600 hover:text-green-800">https://thetoothfae.online</a> (the "Site") or play our game The Tooth Fae (the "Game") and our practices for collecting, using, maintaining, protecting, and disclosing that information.</p>
+          <div className="prose prose-green max-w-none">
+            <p className="mb-4">Last updated: October 17, 2025</p>
+
+            <h2 className="text-xl font-semibold mt-8 mb-4">1. How We Treat Your Data</h2>
+            <p>The Tooth Fae Collective (“we,” “our,” or “us”) respects the mortals who visit <a href="https://thetoothfae.online" className="text-green-600 hover:text-green-800">https://thetoothfae.online</a> and play The Tooth Fae (collectively, the “Services”). This Privacy Policy explains what information we collect, how we use it, and the choices you have. If you do not agree, please refrain from using the Services.</p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">2. Information We Collect</h2>
-            <p>We collect several types of information from and about users of our Site and Game, including information:</p>
+            <p>We collect information in three ways: directly from you, automatically through the Services, and from trusted partners. Examples include:</p>
             <ul className="list-disc ml-6 my-4">
-              <li>By which you may be personally identified, such as name, email address, or any other identifier by which you may be contacted online or offline ("personal information");</li>
-              <li>About your internet connection, the equipment you use to access our Site or Game and usage details;</li>
-              <li>Non-personal information such as game statistics, scores, and achievements.</li>
-            </ul>
-            <p>We collect this information:</p>
-            <ul className="list-disc ml-6 my-4">
-              <li>Directly from you when you provide it to us.</li>
-              <li>Automatically as you navigate through the Site or play the Game.</li>
-              <li>From third parties, for example, our business partners.</li>
+              <li><strong>Account &amp; contact data:</strong> email address, display name, support requests, and preferences you share.</li>
+              <li><strong>Gameplay telemetry:</strong> session timestamps, level completion, cabinet progress, trait combinations encountered, crash logs, and device identifiers (such as approximate location by IP, browser version, hardware specs).</li>
+              <li><strong>Community interactions:</strong> comments, bug reports, or other content you submit, along with moderation notes.</li>
+              <li><strong>Payment touchpoints:</strong> If we ever sell merch or premium content, transactions are processed by third-party processors; we receive limited billing confirmations, not your full card details.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold mt-8 mb-4">3. How We Use Your Information</h2>
-            <p>We use information that we collect about you or that you provide to us, including any personal information:</p>
+            <h2 className="text-xl font-semibold mt-8 mb-4">3. How We Use Information</h2>
+            <p>We rely on the data above to:</p>
             <ul className="list-disc ml-6 my-4">
-              <li>To present our Site and Game and its contents to you.</li>
-              <li>To provide you with information, products, or services that you request from us.</li>
-              <li>To fulfill any other purpose for which you provide it.</li>
-              <li>To carry out our obligations and enforce our rights arising from any contracts entered into between you and us.</li>
-              <li>To notify you about changes to our Site or Game.</li>
-              <li>To improve our Site and Game.</li>
-              <li>In any other way we may describe when you provide the information.</li>
-              <li>For any other purpose with your consent.</li>
+              <li>Operate and maintain the Services, including matchmaking, leaderboards, and cabinet syncing.</li>
+              <li>Balance traits, identify bugs, and analyze how players interact with mechanics.</li>
+              <li>Respond to support tickets, community reports, and legal requests.</li>
+              <li>Send essential communications such as patch notes, downtime notices, or security alerts. Promotional messages will always include an opt-out.</li>
+              <li>Protect against fraud, cheating, or unauthorized access.</li>
+              <li>Comply with legal obligations and enforce our Terms of Service.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold mt-8 mb-4">4. Disclosure of Your Information</h2>
-            <p>We may disclose aggregated information about our users, and information that does not identify any individual, without restriction. We may disclose personal information that we collect or you provide as described in this privacy policy:</p>
+            <h2 className="text-xl font-semibold mt-8 mb-4">4. Cookies & Analytics</h2>
+            <p>We use cookies, local storage, and similar technologies to remember session preferences, keep you logged in, and understand aggregate traffic patterns. Analytics partners (for example, privacy-focused tools like Plausible or Simple Analytics) receive pseudonymized information such as page views, approximate location, and device type; they are contractually prohibited from combining this data with other datasets for profiling.</p>
+
+            <h2 className="text-xl font-semibold mt-8 mb-4">5. When We Share Information</h2>
+            <p>We do not sell your personal data. We share information only with:</p>
             <ul className="list-disc ml-6 my-4">
-              <li>To our subsidiaries and affiliates.</li>
-              <li>To contractors, service providers, and other third parties we use to support our business.</li>
-              <li>To a buyer or other successor in the event of a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of the Tooth Fae Collective's assets.</li>
-              <li>To fulfill the purpose for which you provide it.</li>
-              <li>For any other purpose disclosed by us when you provide the information.</li>
-              <li>With your consent.</li>
+              <li>Service providers who help us host servers, send email, analyze crashes, or moderate community content. They access data solely to perform services on our behalf.</li>
+              <li>Legal authorities, if required by law or to protect the rights, property, or safety of the Tooth Fae Collective, our players, or the public.</li>
+              <li>Successors in the event we merge, sell, or transfer the Services. We will notify you before your data becomes subject to a different privacy policy.</li>
+              <li>Others, when you explicitly direct us to share—such as linking a third-party account or participating in a co-marketed event.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold mt-8 mb-4">5. Data Security</h2>
-            <p>We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure. Unfortunately, the transmission of information via the internet is not completely secure. Although we do our best to protect your personal information, we cannot guarantee the security of your personal information transmitted to our Site or Game. Any transmission of personal information is at your own risk. We are not responsible for circumvention of any privacy settings or security measures contained on the Site or Game.</p>
+            <h2 className="text-xl font-semibold mt-8 mb-4">6. Retention & Deletion</h2>
+            <p>We retain personal data for as long as it supports active gameplay, community records, or legitimate business purposes. Telemetry is typically aggregated or anonymized within 18 months. You may request deletion of your personal data by emailing <a href="mailto:privacy@thetoothfae.online" className="text-green-600 hover:text-green-800">privacy@thetoothfae.online</a>; we will honor the request unless we must keep certain records for legal, security, or anti-fraud reasons.</p>
 
-            <h2 className="text-xl font-semibold mt-8 mb-4">6. Children Under the Age of 13</h2>
-            <p>Our Site and Game are not intended for children under 13 years of age. No one under age 13 may provide any information to or on the Site or Game. We do not knowingly collect personal information from children under 13. If you are under 13, do not use or provide any information on this Site or through the Game. If we learn we have collected or received personal information from a child under 13 without verification of parental consent, we will delete that information.</p>
+            <h2 className="text-xl font-semibold mt-8 mb-4">7. Security</h2>
+            <p>We employ industry-standard safeguards—encryption in transit, access controls, regular security reviews—to protect the data we collect. No system is perfectly secure, so we cannot promise absolute protection. Please use unique passwords and notify us immediately of any suspected account compromise.</p>
 
-            <h2 className="text-xl font-semibold mt-8 mb-4">7. Changes to Our Privacy Policy</h2>
-            <p>It is our policy to post any changes we make to our privacy policy on this page. If we make material changes to how we treat our users' personal information, we will notify you through a notice on the Site home page. The date the privacy policy was last revised is identified at the top of the page. You are responsible for ensuring we have an up-to-date active and deliverable email address for you, and for periodically visiting our Site and this privacy policy to check for any changes.</p>
+            <h2 className="text-xl font-semibold mt-8 mb-4">8. Players Under 13</h2>
+            <p>The Services are not directed to children under 13 (or the minimum age required by local law). We do not knowingly collect personal data from children. If we learn a child has provided personal information, we will delete it and may close the related account.</p>
 
-            <h2 className="text-xl font-semibold mt-8 mb-4">8. Contact Information</h2>
-            <p>To ask questions or comment about this privacy policy and our privacy practices, contact us at: <a href="mailto:privacy@thetoothfae.online" className="text-green-600 hover:text-green-800">privacy@thetoothfae.online</a></p>
+            <h2 className="text-xl font-semibold mt-8 mb-4">9. International Players</h2>
+            <p>Our servers are located in the United States. By using the Services you understand that your information may be transferred to, stored, and processed in the United States or other countries where we or our partners operate. When required, we use standard contractual clauses or similar safeguards for cross-border transfers.</p>
+
+            <h2 className="text-xl font-semibold mt-8 mb-4">10. Your Rights & Choices</h2>
+            <p>Depending on where you live, you may have rights to access, correct, delete, or restrict certain processing of your personal data. You can exercise these rights by contacting us. You may also opt out of promotional emails via the unsubscribe link and adjust cookie settings through your browser.</p>
+
+            <h2 className="text-xl font-semibold mt-8 mb-4">11. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy to reflect new features, regulatory requirements, or feedback. When we make material changes we will post a notice on the Site or notify you by email before the changes take effect. Review this page regularly to stay informed.</p>
+
+            <h2 className="text-xl font-semibold mt-8 mb-4">12. Contact</h2>
+            <p>If you have privacy questions, data requests, or would like to appeal a previous response, email <a href="mailto:privacy@thetoothfae.online" className="text-green-600 hover:text-green-800">privacy@thetoothfae.online</a>. We aim to respond within 30 days.</p>
           </div>
 
           <div className="mt-10">

@@ -728,7 +728,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <footer className="w-full rounded-lg">
             <div className="border-t border-[rgba(255,255,255,0.2)] pt-6 text-center text-sm">
-              <p>© 2025 The Tooth Fae. All rights reserved.</p>
+              <p className="flex flex-row flex-wrap items-center justify-center gap-3 text-neutral-100/90">
+                <span>© 2025 The Tooth Fae. All rights reserved.</span>
+                <span className="text-neutral-500">•</span>
+                <Link href="/terms" className="text-neutral-100 hover:text-rose-200 transition">Terms of Service</Link>
+                <span className="text-neutral-500">•</span>
+                <Link href="/privacy" className="text-neutral-100 hover:text-rose-200 transition">Privacy Policy</Link>
+              </p>
             </div>
           </footer>
         </div>
