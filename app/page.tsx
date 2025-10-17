@@ -358,530 +358,383 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Welcome Section - White */}
-      <div className="w-full white-section py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          {/* Welcome Section */}
-          <section className="mb-12">
-            <h1 className="text-3xl font-bold mb-6 text-center text-slate-100">Welcome to The Tooth Fae</h1>
-            <div className="flex flex-col md:flex-row gap-8">
-              <div className="flex-1">
-                <p className="mb-4 text-neutral-200">
-                  Slip through darkened hallways as the Queen’s favored collector. Every home is a heist, every tooth a whispered
-                  relic waiting to be freed from mortal gums.
-                </p>
-                <p className="mb-6 text-neutral-200">
-                  The Tooth Fae blends stealth horror with tense resource management. Map donor traits, throttle Lucidity, Pain, and
-                  Fear, and feed the Queen’s cabinet with pristine trophies before the household stirs.
-                </p>
-                <div className="flex gap-4">
-                  <Button asChild className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-lg">
-                    <a href="/play">PLAY NOW</a>
-                  </Button>
-                  <Button asChild className="bg-green-700 hover:bg-green-800 text-white px-8 py-6 text-lg">
-                    <a href="/download" onClick={(e) => scrollToSection(e, "download")}>DOWNLOAD THE TOOTH FAE</a>
-                  </Button>
-                </div>
-              </div>
-              <div className="flex-1">
-                <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-                  <iframe
-                    src="https://www.youtube.com/embed/GmfED4NCbSc"
-                    className="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
-                    title="The Tooth Fae"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
 
-      {/* How to Play - Light Green */}
-      <div className="w-full light-green-section py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <section id="how-to-play">
-            <h2 className="text-3xl font-bold mb-6 text-center text-slate-100">Field Briefing: Surviving the Heist</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-white shadow-md border-gray-200 p-4">
-                <h3 className="text-xl font-semibold text-green-800 mb-2 flex items-center gap-2">
-                  <div className="bg-green-500 p-2 rounded-full">
-                    <Play className="h-4 w-4 text-white" />
+      {/* Main Content Layout */}
+      <div className="w-full py-12">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col gap-10 lg:flex-row">
+          <div className="lg:w-[70%] space-y-10">
+            <section className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
+              <div className="flex flex-col gap-6 lg:flex-row">
+                <div className="lg:w-1/2 space-y-4">
+                  <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100">Briefing Room</h2>
+                  <p className="text-sm text-neutral-300 leading-relaxed">
+                    Slip through darkened hallways as the Queen’s favored collector. Every house is a heist; every tooth is a whispered relic.
+                    Study traits, plan the pull, and disappear before the mortals stir.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <Button asChild className="bg-rose-500/80 hover:bg-rose-500 text-white tracking-[0.28em] uppercase px-5 py-2">
+                      <a href="/play">立即开局</a>
+                    </Button>
+                    <Button
+                      asChild
+                      className="bg-transparent border border-rose-500/60 text-rose-200 hover:bg-rose-500/10 tracking-[0.28em] uppercase px-5 py-2"
+                    >
+                      <a href="/download" onClick={(e) => scrollToSection(e, 'download')}>下载训练包</a>
+                    </Button>
                   </div>
-                  Primary Directive
-                </h3>
-                <p className="text-gray-700">
-                  Harvest 16 unique teeth to complete the Queen’s "Perfect Lovelies" cabinet.
-                  <br />
-                  Target donors whose traits align with rare drops—Sparkling, Gemini, Watcher, Key, and more.
-                  <br />
-                  Enter silently, extract quickly, and vanish before Lucidity peaks or shock kills the donor.
-                  <br />
-                  Failures leave cracked trophies and earn the Queen’s ire. Planning is survival.
-                </p>
-              </Card>
-              <Card className="bg-white shadow-md border-gray-200 p-4">
-                <h3 className="text-xl font-semibold text-green-800 mb-2 flex items-center gap-2">
-                  <div className="bg-green-500 p-2 rounded-full">
-                    <Gamepad2 className="h-4 w-4 text-white" />
+                </div>
+                <div className="lg:w-1/2">
+                  <div
+                    className="relative w-full overflow-hidden rounded-xl border border-[rgba(122,52,99,0.35)] bg-[#14141f]"
+                    style={{ paddingTop: "56.25%" }}
+                  >
+                    <iframe
+                      src="https://www.youtube.com/embed/GmfED4NCbSc"
+                      className="absolute top-0 left-0 h-full w-full border-0"
+                      title="The Tooth Fae"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
                   </div>
-                  Controls
-                </h3>
-                <ul className="text-gray-700 space-y-2">
-                  <li><span className="font-semibold">Glide Forward:</span> W</li>
-                  <li><span className="font-semibold">Drift Back:</span> S</li>
-                  <li><span className="font-semibold">Strafe Left / Right:</span> A / D</li>
-                  <li><span className="font-semibold">Creep (Silent Step):</span> C or Left Ctrl</li>
-                  <li><span className="font-semibold">Interact / Extract:</span> E or Left Mouse Click</li>
-                  <li><span className="font-semibold">Survey the Room:</span> Mouse movement</li>
-                </ul>
-              </Card>
-              <Card className="bg-white shadow-md border-gray-200 p-4">
-                <h3 className="text-xl font-semibold text-green-800 mb-2 flex items-center gap-2">
-                  <div className="bg-green-500 p-2 rounded-full">
-                    <Award className="h-4 w-4 text-white" />
-                  </div>
-                  Meter Management
-                </h3>
-                <p className="text-gray-700">
-                  Lucidity is the alarm—dust after every loud action to keep it low.
-                  <br />
-                  Pain feeds failure. Pulse the drill and inject anesthetic around the 75% mark.
-                  <br />
-                  Fear accelerates Lucidity. Never let it surge unchecked.
-                  <br />
-                  Repeat the mantra: “Drill a bit, dust a bit.” Greed wakes the room.
-                </p>
-              </Card>
-              <Card className="bg-white shadow-md border-gray-200 p-4">
-                <h3 className="text-xl font-semibold text-green-800 mb-2 flex items-center gap-2">
-                  <div className="bg-green-500 p-2 rounded-full">
-                    <Zap className="h-4 w-4 text-white" />
-                  </div>
-                  Trait Intel
-                </h3>
-                <p className="text-gray-700">
-                  Heavy Sleepers forgive longer drills; Night Owls wake if you hesitate.
-                  <br />
-                  Tough donors demand extra anesthetic. Fragile or Brittle teeth shatter under pressure.
-                  <br />
-                  Vampires, Eldritch, and Ancient households warp the meters—enter stocked with Dust.
-                  <br />
-                  Log every rare pull so the Queen trusts your progress through the collection.
-                </p>
-              </Card>
-            </div>
-            <div className="mt-4 p-4 bg-green-100 border border-green-300 rounded-md">
-              <p className="text-green-800 text-sm">
-                <strong>Field Note:</strong> Keep the rhythm tight—two seconds of drilling, dust, reassess. Let the meters dictate
-                your pace, not impatience. The only loud noise should be the latch closing as you disappear.
+                </div>
+              </div>
+            </section>
+
+            <section id="how-to-play" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
+              <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Field Briefing</h2>
+              <p className="text-sm text-neutral-300 leading-relaxed mb-6">
+                管理三条仪表、挑选合适的目标并保持无声——这是成为女王心腹的唯一途径。
               </p>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      {/* Discover the Magic - White */}
-      <div className="w-full white-section py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <section>
-            <h2 className="text-3xl font-bold mb-6 text-center text-slate-100">Why the Queen Sends You</h2>
-            <p className="text-xl text-center text-gray-600 mb-10 px-4">
-              Every corridor, every meter, every tooth—master them, and the Queen keeps your wings. Fail, and she sends another.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-green-50 shadow-md border-green-200 p-4 flex flex-col items-center text-center">
-                <div className="bg-green-600 p-3 rounded-full mb-3">
-                  <Sparkles className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-green-800 mb-2">Night Houses</h3>
-                <p className="text-gray-700">
-                  Each neighborhood reshapes itself nightly—creaking boards, whispering vents, wandering pets. Learn their patterns or lose your mark.
-                </p>
-              </Card>
-              <Card className="bg-green-50 shadow-md border-green-200 p-4 flex flex-col items-center text-center">
-                <div className="bg-green-600 p-3 rounded-full mb-3">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-green-800 mb-2">Donor Profiles</h3>
-                <p className="text-gray-700">
-                  Trait combos matter: Insomniac teens thrash at faint sounds, Eldritch children warp the UI, and Vampires open their eyes the moment you hesitate.
-                </p>
-              </Card>
-              <Card className="bg-green-50 shadow-md border-green-200 p-4 flex flex-col items-center text-center">
-                <div className="bg-green-600 p-3 rounded-full mb-3">
-                  <Shield className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-green-800 mb-2">Clean Exits</h3>
-                <p className="text-gray-700">
-                  Banish every trace of your visit—snuff the candles, slow the breathing, and leave only an empty pillowcase behind.
-                </p>
-              </Card>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      {/* Features - Medium Green */}
-      <div className="w-full medium-green-section py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <section id="features">
-            <h2 className="text-3xl font-bold mb-6 text-center text-slate-100">Systems That Keep You Alive</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-md">
-                <div className="bg-green-600 p-2 rounded-full shrink-0 mt-1">
-                  <BarChart className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Meter-Oriented Stealth</h3>
-                  <p className="text-gray-700 text-sm">
-                    Balance Lucidity, Pain, and Fear in real time. Push too far with the drill and the donor jerks awake; hesitate and your trophy rots.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-md">
-                <div className="bg-green-600 p-2 rounded-full shrink-0 mt-1">
-                  <Shield className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Living Floorplans</h3>
-                  <p className="text-gray-700 text-sm">
-                    Houses breathe, creak, and retaliate. Memorize escape routes, crawling pets, and creaky boards before committing to an extraction.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-md">
-                <div className="bg-green-600 p-2 rounded-full shrink-0 mt-1">
-                  <Sparkles className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Relentless Progression</h3>
-                  <p className="text-gray-700 text-sm">
-                    Each successful pull unlocks new intel, rare donor spawns, and harder heists. The Queen always hungers for rarer teeth.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-md">
-                <div className="bg-green-600 p-2 rounded-full shrink-0 mt-1">
-                  <Gamepad2 className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Loadout Tuning</h3>
-                  <p className="text-gray-700 text-sm">
-                    Swap Dust potency, drill bit temper, and anesthetic dosage to suit your target. Preparation is the quiet difference between art and failure.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-md">
-                <div className="bg-green-600 p-2 rounded-full shrink-0 mt-1">
-                  <Users className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">Trait Codex</h3>
-                  <p className="text-gray-700 text-sm">
-                    Maintain dossiers on Heavy Sleepers, Tough mortals, Insomniacs, Vampires, Ancients, and Eldritch children. Each changes the rhythm of extraction.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-md">
-                <div className="bg-green-600 p-2 rounded-full shrink-0 mt-1">
-                  <Play className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-green-800 mb-1">No Grind, Just Precision</h3>
-                  <p className="text-gray-700 text-sm">
-                    No paywalls, no gacha—only your mastery over the meters determines success. Practice, adapt, and bring home intact trophies.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      {/* Download Section - Dark Green */}
-      <div className="w-full dark-green-section py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <section id="download">
-            <h2 className="text-3xl font-bold mb-6 text-center text-slate-100">Download the Field Training Build</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Button 
-                className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center relative"
-                onClick={() => handleDownload('windows')}
-                disabled={downloadStatus['windows']}
-              >
-                {downloadStatus['windows'] ? (
-                  <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 rounded">
-                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-green-700"></div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Card className="bg-[#14141f] border border-[rgba(122,52,99,0.35)] p-4 shadow-none">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
+                      <Play className="h-4 w-4 text-rose-200" />
+                    </span>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Primary Directive</h3>
                   </div>
-                ) : (
-                  <>
-                    <Download className="h-6 w-6 mb-2" />
-                    <span className="text-lg font-semibold">Windows</span>
-                  </>
-                )}
-              </Button>
-              <Button 
-                className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center relative"
-                onClick={() => handleDownload('macos')}
-                disabled={downloadStatus['macos']}
-              >
-                {downloadStatus['macos'] ? (
-                  <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 rounded">
-                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-green-700"></div>
+                  <p className="text-sm text-neutral-300 leading-relaxed">
+                    采集 16 枚稀有 “Perfect Lovelies” 牙齿。根据特质挑选目标，快速下手并在 Lucidity 爆表前撤离。
+                  </p>
+                </Card>
+                <Card className="bg-[#14141f] border border-[rgba(122,52,99,0.35)] p-4 shadow-none">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
+                      <Gamepad2 className="h-4 w-4 text-rose-200" />
+                    </span>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Interface &amp; Meters</h3>
                   </div>
-                ) : (
-                  <>
-                    <Download className="h-6 w-6 mb-2" />
-                    <span className="text-lg font-semibold">macOS</span>
-                  </>
-                )}
-              </Button>
-              <Button 
-                className="bg-white text-green-700 hover:bg-gray-100 h-auto py-4 flex flex-col items-center relative"
-                onClick={() => handleDownload('linux')}
-                disabled={downloadStatus['linux']}
-              >
-                {downloadStatus['linux'] ? (
-                  <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 rounded">
-                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-green-700"></div>
+                  <p className="text-sm text-neutral-300 leading-relaxed">
+                    Lucidity 是警报、Pain 代表休克风险、Fear 会推动醒来速度。保持节奏：短促钻孔、立刻撒粉、疼痛 80% 前注射麻醉。
+                  </p>
+                </Card>
+                <Card className="bg-[#14141f] border border-[rgba(122,52,99,0.35)] p-4 shadow-none">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
+                      <Award className="h-4 w-4 text-rose-200" />
+                    </span>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Essential Toolkit</h3>
                   </div>
-                ) : (
-                  <>
-                    <Download className="h-6 w-6 mb-2" />
-                    <span className="text-lg font-semibold">Linux</span>
-                  </>
-                )}
-              </Button>
-            </div>
-            <p className="text-center text-green-100 text-sm mt-4">
-              Training zips mirror live builds but ship with placeholder binaries. Review the included readme for trait drills and
-              meter practice scenarios before stepping into a real neighborhood.
-            </p>
-          </section>
-        </div>
-      </div>
+                  <p className="text-sm text-neutral-300 leading-relaxed">
+                    钩子开口、尘粉镇定、麻醉压痛、短促钻孔配合镊子收尾。记住黄金法则：Drill a bit, Dust a bit。
+                  </p>
+                </Card>
+                <Card className="bg-[#14141f] border border-[rgba(122,52,99,0.35)] p-4 shadow-none">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
+                      <Zap className="h-4 w-4 text-rose-200" />
+                    </span>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Trait Intel</h3>
+                  </div>
+                  <p className="text-sm text-neutral-300 leading-relaxed">
+                    Heavy Sleeper 适合练手，Insomniac 必须点到即止，Vampire 与 Eldritch 会扭曲仪表——保持 Dust 随时待命。
+                  </p>
+                </Card>
+              </div>
+            </section>
 
-      {/* FAQ - White */}
-      <div className="w-full white-section py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <section id="faq">
-            <h2 className="text-3xl font-bold mb-6 text-center text-slate-100">Frequently Asked Nightmares</h2>
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-green-200">
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1" className="border-green-200">
-                  <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    Is The Tooth Fae meant for kids?
+            <section id="features" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
+              <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Systems That Keep You Alive</h2>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
+                    <BarChart className="h-4 w-4 text-rose-200" />
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Meter-Oriented Stealth</h3>
+                    <p className="text-sm text-neutral-300 leading-relaxed">Lucidity、Pain、Fear 彼此牵制，任何贪心都会直接惊醒目标。</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
+                    <Shield className="h-4 w-4 text-rose-200" />
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Living Floorplans</h3>
+                    <p className="text-sm text-neutral-300 leading-relaxed">记住地板的嘎吱声、宠物的巡逻路线以及窗缝的冷风，路线比工具更重要。</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
+                    <Sparkles className="h-4 w-4 text-rose-200" />
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Relentless Progression</h3>
+                    <p className="text-sm text-neutral-300 leading-relaxed">每次完美拔牙都会解锁新的情报与目标，女王永远渴望更稀有的收藏品。</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)]">
+                    <Gamepad2 className="h-4 w-4 text-rose-200" />
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">Loadout Tuning</h3>
+                    <p className="text-sm text-neutral-300 leading-relaxed">调配尘粉浓度、钻头温度、麻醉剂量，提前为 Tough 或 Eldritch 场景拟定方案。</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="download" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
+              <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Download Training Builds</h2>
+              <p className="text-sm text-neutral-300 leading-relaxed mb-4">
+                训练包包含占位可执行文件、仪表练习脚本以及最新特质情报，适合离线预演夜巡流程。
+              </p>
+              <div className="space-y-3">
+                {['windows', 'macos', 'linux'].map((platform) => {
+                  const labels = {
+                    windows: {
+                      title: 'Windows',
+                      desc: '含 Lucidity/Pain/Fear 练习脚本',
+                    },
+                    macos: {
+                      title: 'macOS',
+                      desc: '原生支持 Intel / Apple Silicon',
+                    },
+                    linux: {
+                      title: 'Linux',
+                      desc: '附带 CLI 日志与回放工具',
+                    },
+                  } as const
+                  const info = labels[platform as keyof typeof labels]
+                  return (
+                    <button
+                      key={platform}
+                      type="button"
+                      onClick={() => handleDownload(platform)}
+                      disabled={downloadStatus[platform]}
+                      className="relative flex items-center justify-between rounded-xl border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-4 py-3 text-left transition hover:border-rose-400/60 disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      <div>
+                        <p className="text-sm font-semibold tracking-[0.2em] uppercase text-slate-100">{info.title}</p>
+                        <p className="text-xs text-neutral-400">{info.desc}</p>
+                      </div>
+                      {downloadStatus[platform] ? (
+                        <div className="h-5 w-5 animate-spin rounded-full border border-rose-400/40 border-t-transparent" />
+                      ) : (
+                        <Download className="h-5 w-5 text-rose-200" />
+                      )}
+                    </button>
+                  )
+                })}
+              </div>
+            </section>
+
+            <section id="faq" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
+              <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Frequently Asked Nightmares</h2>
+              <Accordion type="single" collapsible className="space-y-2">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="rounded-lg bg-[#14141f] px-4 py-3 text-slate-100 hover:text-rose-200">
+                    这款游戏适合小朋友吗？
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-700 px-4 py-3">
-                    Not this briefing. The Tooth Fae leans into stealth horror—managing pain, fear, and the risk of waking donors. Expect tense
-                    scenarios, sudden failures, and unnerving lore rather than bedtime stories.
+                  <AccordionContent className="text-sm text-neutral-300 leading-relaxed px-4">
+                    The Tooth Fae 聚焦潜行与恐怖氛围，更适合喜欢紧张节奏与资源管理的玩家。准备好在深夜保持绝对冷静。
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-2" className="border-green-200">
-                  <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    Do I need to stay online during a heist?
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="rounded-lg bg-[#14141f] px-4 py-3 text-slate-100 hover:text-rose-200">
+                    离线可以练习吗？
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-700 px-4 py-3">
-                    The sole operative campaign and training contracts run offline. Connect only to pull down updates, share cabinet data, or
-                    submit leaderboard runs.
+                  <AccordionContent className="text-sm text-neutral-300 leading-relaxed px-4">
+                    主线与训练合同完全离线可玩，联网只用于下载更新或上传排行榜成绩。
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-3" className="border-green-200">
-                  <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    What hardware keeps the build stable?
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="rounded-lg bg-[#14141f] px-4 py-3 text-slate-100 hover:text-rose-200">
+                    推荐的硬件配置？
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-700 px-4 py-3">
-                    Windows 10/macOS 10.14/Ubuntu 18.04, an i3/Ryzen 3 class CPU, 4GB RAM, and any GPU with 1GB VRAM are enough. SSD storage
-                    shortens nightly load times. The browser build mirrors these requirements.
+                  <AccordionContent className="text-sm text-neutral-300 leading-relaxed px-4">
+                    Windows 10 / macOS 10.14 / Ubuntu 18.04，i3 或 Ryzen3 级别 CPU、4GB 内存以及 1GB 显存的 GPU 即可，SSD 能明显缩短关卡载入。
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-4" className="border-green-200">
-                  <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    Are there monetization traps?
+                <AccordionItem value="item-4">
+                  <AccordionTrigger className="rounded-lg bg-[#14141f] px-4 py-3 text-slate-100 hover:text-rose-200">
+                    会不会有氪金要素？
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-700 px-4 py-3">
-                    None. The Queen rewards precision, not wallets. Optional vanity wings and cabinet dioramas exist, but the extraction loop
-                    remains untouched.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-5" className="border-green-200">
-                  <AccordionTrigger className="text-green-800 hover:text-green-600 px-4 py-3 bg-green-50">
-                    How often are new heists added?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-700 px-4 py-3">
-                    Expect quarterly drops featuring new donor archetypes, tooth variants, and lore events. Hotfixes roll out as meter
-                    exploits or trait bugs surface.
+                  <AccordionContent className="text-sm text-neutral-300 leading-relaxed px-4">
+                    没有。只有装饰性的翅膀或陈列柜主题，核心玩法完全依靠你的操作与判断。
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-            </div>
-          </section>
-        </div>
-      </div>
+            </section>
+          </div>
 
-      {/* Player Reactions - Light Green */}
-      <div className="w-full light-green-section py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <section id="comments">
-            <div className="bg-green-50 p-6 rounded-lg shadow-sm">
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-xl font-semibold text-green-800">Comments ({comments.length})</h3>
-                    <div className="text-sm flex items-center">
-                      <span className="text-green-600 mr-2">Sort by:</span>
-                      <select 
-                        value={sortOrder} 
-                        onChange={(e) => handleSortChange(e.target.value)} 
-                        className="p-1 border rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-                      >
-                        <option value="latest">Latest</option>
-                        <option value="oldest">Oldest</option>
-                        <option value="likes">Most Liked</option>
-                      </select>
-                    </div>
+          <aside id="comments" className="lg:w-[30%]">
+            <div className="lg:sticky lg:top-28">
+              <div className="max-h-[calc(100vh-6rem)] overflow-y-auto rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0b0d16] p-6 space-y-6">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-100">玩家回响 ({comments.length})</h3>
+                  <div className="flex items-center gap-2 text-[11px] text-neutral-400">
+                    <span>排序</span>
+                    <select
+                      value={sortOrder}
+                      onChange={(e) => handleSortChange(e.target.value)}
+                      className="rounded border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-2 py-1 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-400/40"
+                    >
+                      <option value="latest">最新</option>
+                      <option value="oldest">最早</option>
+                      <option value="likes">点赞最多</option>
+                    </select>
                   </div>
-              
-              {comments.length === 0 ? (
-                <div className="text-center py-8 text-green-600">
-                  No comments yet. Be the first to comment!
                 </div>
-              ) : (
-                <>
-                                    {/* Comments list */}
-                  {comments.map((comment) => (
-                    <div key={comment.id} className="mb-6 pb-6 border-b border-green-200">
-                      <div className="flex items-start gap-3">
-                        <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                          {comment.name.charAt(0).toUpperCase()}
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="font-semibold text-green-800">{comment.name}</span>
-                            <span className="text-green-500 text-sm">{comment.date}</span>
+
+                {comments.length === 0 ? (
+                  <div className="py-10 text-center text-neutral-400">暂时没有评论，抢先分享你的夜巡经历。</div>
+                ) : (
+                  <div className="space-y-5">
+                    {comments.map((comment) => (
+                      <div key={comment.id} className="border-b border-[rgba(122,52,99,0.25)] pb-5 last:border-0">
+                        <div className="flex items-start gap-3">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(147,53,120,0.45)] text-sm font-semibold text-slate-100">
+                            {comment.name.charAt(0).toUpperCase()}
                           </div>
-                          <p className="text-green-700 mb-3">{comment.content}</p>
-                          <div className="flex items-center gap-5">
-                            <button className="flex items-center gap-1 text-green-600 hover:text-green-700">
-                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                              </svg>
-                              <span>Reply</span>
-                            </button>
-                            <div className="flex items-center gap-3">
-                              <button 
-                                className={`flex items-center gap-1 text-green-600 hover:text-green-800 transition-all ${voteStatus[`${comment.id}-like`] ? 'opacity-50' : ''}`}
-                                onClick={() => !voteStatus[`${comment.id}-like`] && handleVote(comment.id, 'like')}
-                                disabled={voteStatus[`${comment.id}-like`]}
-                              >
-                                <svg 
-                                  className={`w-5 h-5 transition-transform duration-200 ${voteStatus[`${comment.id}-like`] ? 'scale-110' : 'scale-100'}`} 
-                                  fill="none" 
-                                  stroke="currentColor" 
-                                  viewBox="0 0 24 24" 
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                          <div className="flex-1 space-y-2">
+                            <div className="flex items-center gap-2 text-[11px] text-neutral-400">
+                              <span className="font-semibold text-slate-100">{comment.name}</span>
+                              <span>{comment.date}</span>
+                            </div>
+                            <p className="text-sm text-neutral-200 leading-relaxed">{comment.content}</p>
+                            <div className="flex items-center gap-4 text-xs text-neutral-400">
+                              <button className="flex items-center gap-1 hover:text-slate-200">
+                                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
                                 </svg>
-                                <span>{comment.likes || 0}</span>
+                                <span>回复</span>
                               </button>
-                              <button 
-                                className={`flex items-center gap-1 text-green-600 hover:text-red-600 transition-all ${voteStatus[`${comment.id}-dislike`] ? 'opacity-50' : ''}`}
-                                onClick={() => !voteStatus[`${comment.id}-dislike`] && handleVote(comment.id, 'dislike')}
-                                disabled={voteStatus[`${comment.id}-dislike`]}
-                              >
-                                <svg 
-                                  className={`w-5 h-5 transition-transform duration-200 ${voteStatus[`${comment.id}-dislike`] ? 'scale-110' : 'scale-100'}`} 
-                                  fill="none" 
-                                  stroke="currentColor" 
-                                  viewBox="0 0 24 24" 
-                                  xmlns="http://www.w3.org/2000/svg"
+                              <div className="flex items-center gap-3">
+                                <button
+                                  className={`flex items-center gap-1 text-rose-200 hover:text-rose-100 transition ${voteStatus[`${comment.id}-like`] ? 'opacity-50' : ''}`}
+                                  onClick={() => !voteStatus[`${comment.id}-like`] && handleVote(comment.id, 'like')}
+                                  disabled={voteStatus[`${comment.id}-like`]}
                                 >
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2"></path>
-                                </svg>
-                                <span>{comment.dislikes || 0}</span>
-                              </button>
+                                  <svg
+                                    className={`h-4 w-4 transition-transform duration-200 ${voteStatus[`${comment.id}-like`] ? 'scale-110' : 'scale-100'}`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                  </svg>
+                                  <span>{comment.likes || 0}</span>
+                                </button>
+                                <button
+                                  className={`flex items-center gap-1 text-neutral-400 hover:text-rose-200 transition ${voteStatus[`${comment.id}-dislike`] ? 'opacity-50' : ''}`}
+                                  onClick={() => !voteStatus[`${comment.id}-dislike`] && handleVote(comment.id, 'dislike')}
+                                  disabled={voteStatus[`${comment.id}-dislike`]}
+                                >
+                                  <svg
+                                    className={`h-4 w-4 transition-transform duration-200 ${voteStatus[`${comment.id}-dislike`] ? 'scale-110' : 'scale-100'}`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2"></path>
+                                  </svg>
+                                  <span>{comment.dislikes || 0}</span>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
+                    ))}
+                  </div>
+                )}
+
+                {comments.length > 0 && (
+                  <button
+                    type="button"
+                    className="w-full rounded-md bg-rose-500/80 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white hover:bg-rose-500"
+                  >
+                    加载更多
+                  </button>
+                )}
+
+                <form onSubmit={handleCommentSubmit} className="space-y-4">
+                  {submitSuccess === true && (
+                    <div className="rounded-md border border-emerald-400/40 bg-[#13211d] px-4 py-3 text-sm text-emerald-200">
+                      评论提交成功！
                     </div>
-                  ))}
-                </>
-              )}
-              
-              {comments.length > 0 && (
-                <button className="w-full py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors">
-                  Load more comments
-                </button>
-              )}
-              
-              {/* Comment Form */}
-              <form onSubmit={handleCommentSubmit} className="mt-8">
-                {submitSuccess === true && (
-                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-                    Comment submitted successfully!
+                  )}
+
+                  {submitSuccess === false && errorMessage && (
+                    <div className="rounded-md border border-red-500/40 bg-[#2a1418] px-4 py-3 text-sm text-red-200">
+                      {errorMessage}
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <input
+                      type="text"
+                      name="name"
+                      value={commentForm.name}
+                      onChange={handleInputChange}
+                      placeholder="Name"
+                      className="w-full rounded-md border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-4 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-400/40"
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      value={commentForm.email}
+                      onChange={handleInputChange}
+                      placeholder="Email"
+                      className="w-full rounded-md border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-4 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-400/40"
+                    />
                   </div>
-                )}
-                
-                {submitSuccess === false && errorMessage && (
-                  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-                    {errorMessage}
-                  </div>
-                )}
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  <input 
-                    type="text" 
-                    name="name"
-                    value={commentForm.name}
+                  <textarea
+                    name="content"
+                    value={commentForm.content}
                     onChange={handleInputChange}
-                    placeholder="Name" 
-                    className="w-full px-4 py-2 bg-green-50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-300 placeholder-green-400"
-                  />
-                  <input 
-                    type="email" 
-                    name="email"
-                    value={commentForm.email}
-                    onChange={handleInputChange}
-                    placeholder="Email" 
-                    className="w-full px-4 py-2 bg-green-50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-300 placeholder-green-400"
-                  />
-                </div>
-                <textarea 
-                  name="content"
-                  value={commentForm.content}
-                  onChange={handleInputChange}
-                  placeholder="Comment content" 
-                  rows={5} 
-                  className="w-full px-4 py-2 bg-green-50 border border-green-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-300 mb-4 placeholder-green-400"
-                ></textarea>
-                <div className="flex items-center mb-4">
-                  <input 
-                    type="checkbox" 
-                    id="terms" 
-                    checked={commentForm.agreeToTerms}
-                    onChange={handleCheckboxChange}
-                    className="mr-2 accent-green-600"
-                  />
-                  <label htmlFor="terms" className="text-sm text-green-700">
-                    I have read and agree to the terms and conditions.
+                    placeholder="Comment content"
+                    rows={4}
+                    className="w-full rounded-md border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-4 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-400/40"
+                  ></textarea>
+                  <label className="flex items-center gap-2 text-xs text-neutral-400">
+                    <input
+                      type="checkbox"
+                      checked={commentForm.agreeToTerms}
+                      onChange={handleCheckboxChange}
+                      className="accent-rose-400"
+                    />
+                    我已阅读并同意条款。
                   </label>
-                </div>
-                <button 
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="px-6 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors disabled:bg-green-300"
-                >
-                  {isSubmitting ? 'Submitting...' : 'Submit Comment'}
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full rounded-md bg-rose-500/80 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white hover:bg-rose-500 disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {isSubmitting ? '提交中…' : '提交评论'}
+                  </button>
+                </form>
+              </div>
             </div>
-          </section>
+          </aside>
         </div>
       </div>
+
 
       {/* Footer - Dark Green */}
       <div className="w-full dark-green-section py-12">
