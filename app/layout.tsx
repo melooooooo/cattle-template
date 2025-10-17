@@ -18,16 +18,16 @@ export const metadata: Metadata = {
   robots: defaultSeoConfig.robots,
   icons: {
     icon: [
-      { url: '/favicon_io/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
-      { url: '/favicon_io/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon_io/android-chrome-192x192.png', type: 'image/png', sizes: '192x192' },
-      { url: '/favicon_io/android-chrome-512x512.png', type: 'image/png', sizes: '512x512' },
-      { url: '/favicon_io/favicon.ico' },
+      { url: '/favicon_io/favicon-16x16.png?v=2', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon_io/favicon-32x32.png?v=2', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon_io/android-chrome-192x192.png?v=2', type: 'image/png', sizes: '192x192' },
+      { url: '/favicon_io/android-chrome-512x512.png?v=2', type: 'image/png', sizes: '512x512' },
+      { url: '/favicon_io/favicon.ico?v=2' },
     ],
-    apple: '/favicon_io/apple-touch-icon.png',
-    shortcut: '/favicon_io/favicon.ico',
+    apple: '/favicon_io/apple-touch-icon.png?v=2',
+    shortcut: '/favicon_io/favicon.ico?v=2',
   },
-  manifest: '/favicon_io/site.webmanifest',
+  manifest: '/favicon_io/site.webmanifest?v=2',
   // 添加规范URL元数据
   metadataBase: new URL(baseUrl),
   alternates: {
@@ -71,12 +71,12 @@ export default function RootLayout({
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2660471109682751"
      crossOrigin="anonymous"></script>
-        {/* Favicons */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
-        <link rel="icon" href="/favicon_io/favicon.ico" />
-        <link rel="manifest" href="/favicon_io/site.webmanifest" />
+        {/* Favicons (cache-busted) */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png?v=2" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png?v=2" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png?v=2" />
+        <link rel="icon" href="/favicon_io/favicon.ico?v=2" />
+        <link rel="manifest" href="/favicon_io/site.webmanifest?v=2" />
         {/* 添加规范URL标签 */}
         <link rel="canonical" href={baseUrl} />
         

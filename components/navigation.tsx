@@ -22,9 +22,8 @@ export default function Navigation() {
         <div className="relative max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           {/* Brand */}
           <Link href="/" className="flex items-center gap-4 group select-none">
-            <span className="relative flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-400/40 bg-[radial-gradient(ellipse_at_center,_rgba(239,147,219,0.20),_transparent_60%)] shadow-[0_0_24px_rgba(239,147,219,0.18)]">
-              <span className="absolute inset-0 rounded-full border border-white/10" />
-              <span className="text-[13px] font-semibold tracking-[0.22em] text-rose-200">TF</span>
+            <span className="relative flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-rose-400/40 bg-[radial-gradient(ellipse_at_center,_rgba(239,147,219,0.20),_transparent_60%)] shadow-[0_0_24px_rgba(239,147,219,0.18)] overflow-hidden">
+              <img src="/favicon_io/android-chrome-192x192.png" alt="The Tooth Fae" className="h-8 w-8 rounded" />
             </span>
             <span className="text-2xl md:text-3xl font-extrabold uppercase leading-none tracking-[0.14em] bg-gradient-to-r from-indigo-100 via-fuchsia-100 to-rose-100 bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(233,200,255,0.25)]">
               The Tooth Fae
