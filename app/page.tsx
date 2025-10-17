@@ -6,23 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from 'next/link'
-import {
-  Search,
-  Play,
-  Download,
-  Award,
-  Zap,
-  Shield,
-  Gamepad2,
-  Users,
-  BarChart,
-  Sparkles,
-  Maximize,
-  Share2,
-  Facebook,
-  Twitter,
-  Linkedin,
-} from "lucide-react"
+import { Play, Download, Share2, Facebook, Twitter, Linkedin } from "lucide-react"
 import Navigation from "@/components/navigation"
 import Head from 'next/head';
 import { defaultSeoConfig } from '@/lib/seo-config';
@@ -312,25 +296,27 @@ export default function Home() {
         {/* Use the Navigation component */}
         <Navigation />
 
-        {/* Game Iframe */}
+        {/* Play CTA (center button, keep original area size) */}
         <div id="play" className="w-full max-w-6xl mx-auto p-4 game-container rounded-md my-2">
-          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-            <iframe
-              src="https://html.itch.zone/html/15168109/index.html"
-              className="absolute top-0 left-0 w-full h-full border-0"
-              title="The Tooth Fae Game"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-              allowFullScreen
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-              loading="lazy"
-            ></iframe>
-          </div>
-          <div className="flex justify-between items-center mt-2 text-sm text-gray-200">
-            <div>Click to start your magical tooth collection adventure!</div>
-            <Button variant="ghost" size="sm" className="text-gray-200 flex items-center gap-1">
-              <Maximize className="h-4 w-4" />
-              Fullscreen
-            </Button>
+          <div className="relative overflow-hidden rounded-2xl border border-[rgba(122,52,99,0.35)] bg-gradient-to-b from-[#171723] to-[#0f1018] shadow-[0_24px_60px_-24px_rgba(147,72,166,0.6)]">
+            {/* Maintain 16:9 area */}
+            <div className="w-full" style={{ paddingTop: '56.25%' }} />
+            {/* Subtle glow background */}
+            <div className="pointer-events-none absolute -inset-1 bg-[radial-gradient(1200px_320px_at_20%_-20%,rgba(239,147,219,0.12),transparent),radial-gradient(800px_200px_at_80%_-10%,rgba(148,64,158,0.12),transparent)]" />
+            {/* Centered CTA */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <a
+                href="https://html.itch.zone/html/15168109/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-fuchsia-500/90 to-violet-500/90 px-7 py-4 text-white font-semibold text-lg shadow-[0_28px_60px_-22px_rgba(239,147,219,0.85)] hover:from-fuchsia-500 hover:to-violet-500 transition"
+              >
+                <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/30">
+                  <Play className="h-5 w-5" />
+                </span>
+                <span>Play Game</span>
+              </a>
+            </div>
           </div>
         </div>
 

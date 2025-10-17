@@ -108,7 +108,7 @@ export default function HowToPlayPage() {
               <Link href="/">Return to Home</Link>
             </Button>
             <Button asChild className="bg-green-700 hover:bg-green-800 text-white">
-              <Link href="/play">Play Now</Link>
+              <a href="https://html.itch.zone/html/15168109/index.html" target="_blank" rel="noopener noreferrer">Play Now</a>
             </Button>
           </div>
         </div>
