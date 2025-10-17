@@ -298,11 +298,14 @@ export default function Home() {
 
         {/* Play CTA (center button, keep original area size) */}
         <div id="play" className="w-full max-w-6xl mx-auto p-4 game-container rounded-md my-2">
-          <div className="relative overflow-hidden rounded-2xl border border-[rgba(122,52,99,0.35)] bg-gradient-to-b from-[#171723] to-[#0f1018] shadow-[0_24px_60px_-24px_rgba(147,72,166,0.6)]">
+          <div className="relative overflow-hidden rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] shadow-[0_24px_60px_-24px_rgba(147,72,166,0.6)]">
             {/* Maintain 16:9 area */}
             <div className="w-full" style={{ paddingTop: '56.25%' }} />
-            {/* Subtle glow background */}
-            <div className="pointer-events-none absolute -inset-1 bg-[radial-gradient(1200px_320px_at_20%_-20%,rgba(239,147,219,0.12),transparent),radial-gradient(800px_200px_at_80%_-10%,rgba(148,64,158,0.12),transparent)]" />
+            {/* Background screenshot */}
+            <img src="/images/warpdoor/0-Animation-18.webp" alt="The Tooth Fae screenshot" className="absolute inset-0 h-full w-full object-cover opacity-70" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f1018]/40 to-[#0f1018]" />
+            {/* Glow */}
+            <div className="pointer-events-none absolute -inset-1 rounded-2xl shadow-[0_0_120px_20px_rgba(147,72,166,0.35)]" />
             {/* Centered CTA */}
             <div className="absolute inset-0 flex items-center justify-center">
               <a
@@ -317,6 +320,17 @@ export default function Home() {
                 <span>Play Game</span>
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Title + subtitle and tags */}
+        <div className="w-full max-w-6xl mx-auto px-4 mb-8">
+          <h1 className="mt-2 text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-100 via-fuchsia-100 to-rose-100 bg-clip-text text-transparent">The Tooth Fae</h1>
+          <p className="mt-2 text-lg text-neutral-300">Don't let her take your teeth.</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {['Stealth Horror', 'Tooth Collection', 'Eldritch Encounters'].map(tag => (
+              <span key={tag} className="inline-flex items-center rounded-full border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-3 py-1 text-xs text-slate-100">{tag}</span>
+            ))}
           </div>
         </div>
 
