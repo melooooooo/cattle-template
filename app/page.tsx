@@ -370,50 +370,7 @@ export default function Home() {
                   <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100 mb-2">Getting Started</h3>
                   <p className="text-sm text-neutral-300 leading-relaxed">Welcome to the grim, enchanting world of The Tooth Fae. Forget the quarters under the pillow; your job is far more hands-on. You are a collector, an agent of the Queen, tasked with harvesting teeth from sleeping mortals. Your objective is simple: fill the Queen's “Perfect Lovelies” cabinet with all 16 unique teeth.</p>
                 </div>
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100 mb-2">Controls</h3>
-                  <p className="text-xs text-neutral-400 mb-2">Standard keyboard & mouse bindings (browser build). Actual controls may vary.</p>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-left text-sm text-neutral-200 border border-[rgba(122,52,99,0.35)] bg-[#14141f]">
-                      <thead className="bg-[rgba(147,53,120,0.35)] text-slate-100 uppercase tracking-[0.18em]">
-                        <tr>
-                          <th className="px-3 py-2 font-semibold">Action / Purpose</th>
-                          <th className="px-3 py-2 font-semibold">Key(s) / Gesture</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
-                          <td className="px-3 py-2">Move Forward</td>
-                          <td className="px-3 py-2 text-rose-200">W</td>
-                        </tr>
-                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
-                          <td className="px-3 py-2">Move Backward</td>
-                          <td className="px-3 py-2 text-rose-200">S</td>
-                        </tr>
-                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
-                          <td className="px-3 py-2">Move Left</td>
-                          <td className="px-3 py-2 text-rose-200">A</td>
-                        </tr>
-                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
-                          <td className="px-3 py-2">Move Right</td>
-                          <td className="px-3 py-2 text-rose-200">D</td>
-                        </tr>
-                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
-                          <td className="px-3 py-2">Crouch / Sneak</td>
-                          <td className="px-3 py-2 text-rose-200">C or Left Ctrl</td>
-                        </tr>
-                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
-                          <td className="px-3 py-2">Interact / Pick Up</td>
-                          <td className="px-3 py-2 text-rose-200">E or Left Mouse Click</td>
-                        </tr>
-                        <tr className="border-t border-[rgba(122,52,99,0.35)]">
-                          <td className="px-3 py-2">Look Around</td>
-                          <td className="px-3 py-2 text-rose-200">Mouse Movement</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                
 
                 <div>
                   <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100 mb-2">Interface &amp; Meters</h3>
