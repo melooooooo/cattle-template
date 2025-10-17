@@ -17,10 +17,17 @@ export const metadata: Metadata = {
   generator: 'v0.dev',
   robots: defaultSeoConfig.robots,
   icons: {
-    icon: '/sheep-icon.svg',
-    shortcut: '/sheep-icon.svg',
-    apple: '/sheep-icon.svg',
+    icon: [
+      { url: '/favicon_io/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon_io/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon_io/android-chrome-192x192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/favicon_io/android-chrome-512x512.png', type: 'image/png', sizes: '512x512' },
+      { url: '/favicon_io/favicon.ico' },
+    ],
+    apple: '/favicon_io/apple-touch-icon.png',
+    shortcut: '/favicon_io/favicon.ico',
   },
+  manifest: '/favicon_io/site.webmanifest',
   // 添加规范URL元数据
   metadataBase: new URL(baseUrl),
   alternates: {
@@ -64,7 +71,12 @@ export default function RootLayout({
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2660471109682751"
      crossOrigin="anonymous"></script>
-        <link rel="icon" href="/sheep-icon.svg" sizes="any" />
+        {/* Favicons */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
+        <link rel="icon" href="/favicon_io/favicon.ico" />
+        <link rel="manifest" href="/favicon_io/site.webmanifest" />
         {/* 添加规范URL标签 */}
         <link rel="canonical" href={baseUrl} />
         
