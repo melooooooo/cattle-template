@@ -107,8 +107,8 @@ export default function Home() {
     e.preventDefault();
 
     // Validate form
-    if (!commentForm.name || !commentForm.email || !commentForm.content) {
-      setErrorMessage('Please fill in all required fields');
+    if (!commentForm.name || !commentForm.content) {
+      setErrorMessage('Please fill in name and comment');
       setSubmitSuccess(false);
       return;
     }
@@ -688,7 +688,7 @@ export default function Home() {
                       name="name"
                       value={commentForm.name}
                       onChange={handleInputChange}
-                      placeholder="Name"
+                      placeholder="Name *"
                       className="w-full rounded-md border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-4 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-400/40"
                     />
                     <input
@@ -696,7 +696,7 @@ export default function Home() {
                       name="email"
                       value={commentForm.email}
                       onChange={handleInputChange}
-                      placeholder="Email"
+                      placeholder="Email (optional)"
                       className="w-full rounded-md border border-[rgba(122,52,99,0.35)] bg-[#14141f] px-4 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-rose-400/40"
                     />
                   </div>
