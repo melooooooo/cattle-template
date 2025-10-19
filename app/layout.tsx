@@ -71,6 +71,24 @@ export default function RootLayout({
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2660471109682751"
      crossOrigin="anonymous"></script>
+        {/* Privacy-friendly analytics by Plausible */}
+        <script
+          async
+          src="https://plausible.io/js/pa-aQExlboQEE5J9jrc1hAde.js"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+  window.plausible = window.plausible || function () {
+    (plausible.q = plausible.q || []).push(arguments)
+  };
+  plausible.init = plausible.init || function (i) {
+    plausible.o = i || {};
+  };
+  plausible.init();
+`,
+          }}
+        />
         {/* Favicons (cache-busted) */}
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png?v=2" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png?v=2" />
