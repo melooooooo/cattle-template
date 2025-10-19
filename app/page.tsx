@@ -519,7 +519,41 @@ export default function Home() {
                 </div>
               </div>
             </section>
-            
+
+            <section
+              id="briefing-video"
+              className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)] space-y-4"
+            >
+              <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100">
+                YouTube Guide
+              </h2>
+              <p className="text-sm text-neutral-300 leading-relaxed">
+                Revisit the original field briefing to see how The Tooth Fae balances stealth tension with precision
+                tooth extractions. The video walks through trait scouting, meter management, and the tools you will rely
+                on during every nocturnal heist.
+              </p>
+              <div
+                className="relative w-full overflow-hidden rounded-xl border border-[rgba(122,52,99,0.35)] bg-[#14141f]"
+                style={{ paddingTop: '56.25%' }}
+              >
+                <iframe
+                  src="https://www.youtube.com/embed/GmfED4NCbSc"
+                  className="absolute top-0 left-0 h-full w-full border-0"
+                  title="The Tooth Fae - YouTube Guide"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <a
+                href="https://www.youtube.com/watch?v=GmfED4NCbSc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-rose-500/60 px-4 py-2 text-sm uppercase tracking-[0.24em] text-rose-200 transition-colors hover:bg-rose-500/10"
+              >
+                Watch on YouTube
+              </a>
+            </section>
 
             <section id="faq" className="rounded-2xl border border-[rgba(122,52,99,0.35)] bg-[#0f1018] p-6 shadow-[0_18px_36px_-24px_rgba(147,72,166,0.6)]">
               <h2 className="text-2xl font-semibold tracking-[0.28em] uppercase text-slate-100 mb-4">Frequently Asked Nightmares</h2>
