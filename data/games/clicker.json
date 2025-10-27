@@ -1,0 +1,681 @@
+[
+  {
+    "title": "About Us",
+    "href": "https://blood-money.io/about-us",
+    "image": "",
+    "description": "Welcome to BLOODMONEY!, the ultimate hub for discovering the most creative twists in clicker gameplay.",
+    "tags": [],
+    "slug": "about-us",
+    "contentPath": "data/games/content/about-us.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Action",
+    "href": "https://blood-money.io/action.games",
+    "image": "/assets/games/action.games.png",
+    "description": "",
+    "tags": [],
+    "slug": "action.games",
+    "contentPath": "data/games/content/action.games.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Adventure",
+    "href": "https://blood-money.io/adventure.games",
+    "image": "/assets/games/adventure.games.png",
+    "description": "",
+    "tags": [],
+    "slug": "adventure.games",
+    "contentPath": "data/games/content/adventure.games.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Astro Robot Clicker",
+    "href": "https://blood-money.io/astro-robot-clicker",
+    "image": "/assets/games/astro-robot-clicker.png",
+    "description": "Astro Robot Clicker is an exciting space robot clicker game. Click to generate energy, upgrade robots, unlock new powers, and conquer the space journey!",
+    "tags": [
+      "COLLECT",
+      "INCREMENTAL",
+      "IDLE",
+      "POINT AND CLICK"
+    ],
+    "fetchedAt": "2025-10-25T12:56:06.073Z",
+    "slug": "astro-robot-clicker",
+    "contentPath": "data/games/content/astro-robot-clicker.json"
+  },
+  {
+    "title": "BLOODMONEY 2",
+    "href": "https://blood-money.io/bloodmoney-2",
+    "image": "/assets/games/bloodmoney-2.png",
+    "description": "BLOODMONEY 2 is an immersive psychological simulation game where players’ choices shape Harvey’s fate. What kind of ending will you choose for him?",
+    "tags": [
+      "WEAPON",
+      "STRATEGY",
+      "INDIE"
+    ],
+    "slug": "bloodmoney-2",
+    "contentPath": "data/games/content/bloodmoney-2.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Bloodmoney Remake",
+    "href": "https://blood-money.io/bloodmoney-remake",
+    "image": "/assets/games/bloodmoney-remake.png",
+    "description": "Bloodmoney Remake is a unique clicker game where joy, sin, and greed blend together; every action reflects the player's true emotions. Have fun now!",
+    "tags": [
+      "STRATEGY",
+      "RPG",
+      "INCREMENTAL",
+      "COLLECT",
+      "POINT AND CLICK",
+      "HALLOWEEN"
+    ],
+    "slug": "bloodmoney-remake",
+    "contentPath": "data/games/content/bloodmoney-remake.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "BLOODMONEY!",
+    "href": "https://blood-money.io/bloodmoney",
+    "image": "/assets/games/bloodmoney.png",
+    "description": "Play BLOODMONEY!, a unique clicker horror game that combines dark humor with elements of horror. Collect $25,000 for surgery across three possible endings.",
+    "tags": [
+      "WEAPON",
+      "STRATEGY",
+      "INDIE"
+    ],
+    "slug": "bloodmoney",
+    "contentPath": "data/games/content/bloodmoney.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Brainrot Clicker",
+    "href": "https://blood-money.io/brainrot-clicker",
+    "image": "/assets/games/brainrot-clicker.jpg",
+    "description": "Ready to join in the crazy space with all the Italian Brainrot characters? Brainrot Clicker is a thrilling idle clicker game focusing on unlocking all memes?",
+    "tags": [
+      "ITALIAN BRAINROT",
+      "IDLE",
+      "POINT AND CLICK",
+      "UPGRADE"
+    ],
+    "slug": "brainrot-clicker",
+    "contentPath": "data/games/content/brainrot-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Casual",
+    "href": "https://blood-money.io/casual.games",
+    "image": "/assets/games/casual.games.png",
+    "description": "",
+    "tags": [],
+    "slug": "casual.games",
+    "contentPath": "data/games/content/casual.games.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Chicken Jockey Clicker",
+    "href": "https://blood-money.io/chicken-jockey-clicker",
+    "image": "/assets/games/chicken-jockey-clicker.jpg",
+    "description": "Chicken Jockey Clicker brings you a fun chicken race. Click nonstop, upgrade your power, and master every exciting track!",
+    "tags": [
+      "INCREMENTAL",
+      "IDLE",
+      "PIXEL",
+      "MINECRAFT"
+    ],
+    "slug": "chicken-jockey-clicker",
+    "contentPath": "data/games/content/chicken-jockey-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Chill Guy Clicker",
+    "href": "https://blood-money.io/chill-guy-clicker",
+    "image": "/assets/games/chill-guy-clicker.png",
+    "description": "Kick back and click in Chill Guy Clicker. Upgrade and dive into the chilling gameplay with the most famous meme in the world, Chill Guy!",
+    "tags": [
+      "IDLE",
+      "POINT AND CLICK",
+      "ANIMAL",
+      "UPGRADE"
+    ],
+    "slug": "chill-guy-clicker",
+    "contentPath": "data/games/content/chill-guy-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Chill Guy Clicker 3D",
+    "href": "https://blood-money.io/chill-guy-clicker-3d",
+    "image": "/assets/games/chill-guy-clicker-3d.png",
+    "description": "Chill Guy Clicker 3D is a fun and relaxing idle clicker game. Keep clicking to upgrade your rewards and enjoy the ultimate satisfaction!",
+    "tags": [
+      "INCREMENTAL",
+      "COLLECT",
+      "IDLE",
+      "POINT AND CLICK",
+      "3D"
+    ],
+    "fetchedAt": "2025-10-25T12:56:06.073Z",
+    "slug": "chill-guy-clicker-3d",
+    "contentPath": "data/games/content/chill-guy-clicker-3d.json"
+  },
+  {
+    "title": "Contact Us",
+    "href": "https://blood-money.io/contact-us",
+    "image": "",
+    "description": "Need assistance? We're available to help!",
+    "tags": [],
+    "slug": "contact-us",
+    "contentPath": "data/games/content/contact-us.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Corruptbox",
+    "href": "https://blood-money.io/corruptbox",
+    "image": "/assets/games/corruptbox.jpg",
+    "description": "Corruptbox brings a world of mystical glitch music, mysterious characters, and a creative experience you can’t put down. Join and play now!",
+    "tags": [
+      "SPRUNKI",
+      "COLLECT",
+      "MUSIC",
+      "DARK",
+      "RHYTHM"
+    ],
+    "slug": "corruptbox",
+    "contentPath": "data/games/content/corruptbox.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Corruptbox 3 x Sprunki",
+    "href": "https://blood-money.io/corruptbox-3-x-sprunki",
+    "image": "/assets/games/corruptbox-3-x-sprunki.jpg",
+    "description": "Corruptbox 3 x Sprunki is a chaotic music creation game where sound and visuals come together. Become a crazy music mixer now!",
+    "tags": [
+      "MUSIC",
+      "SKILL",
+      "SPRUNKI",
+      "RHYTHM"
+    ],
+    "fetchedAt": "2025-10-25T12:56:06.073Z",
+    "slug": "corruptbox-3-x-sprunki",
+    "contentPath": "data/games/content/corruptbox-3-x-sprunki.json"
+  },
+  {
+    "title": "Cuby Road Halloween",
+    "href": "https://blood-money.io/cuby-road-halloween",
+    "image": "/assets/games/cuby-road-halloween.jpg",
+    "description": "Cuby Road Halloween is a unique Halloween adventure game where you dodge spooky obstacles. Avoid traps, survive as long as possible, and break your record now!",
+    "tags": [
+      "ESCAPE",
+      "SURVIVAL",
+      "ANIMAL",
+      "FAST-PACED",
+      "HALLOWEEN"
+    ],
+    "slug": "cuby-road-halloween",
+    "contentPath": "data/games/content/cuby-road-halloween.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "DMCA",
+    "href": "https://blood-money.io/dmca",
+    "image": "",
+    "description": "We have implemented a procedure to address any concerns regarding potential copyright violations on the Site. ",
+    "tags": [],
+    "slug": "dmca",
+    "contentPath": "data/games/content/dmca.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Duck Clicker",
+    "href": "https://blood-money.io/duck-clicker",
+    "image": "/assets/games/duck-clicker.png",
+    "description": "Click your way to duck domination. Get ready to hatch ducks, earn all upgrades, and unlock chaos in Duck Clicker, the ultimate idle clicker game.",
+    "tags": [
+      "IDLE",
+      "POINT AND CLICK",
+      "ANIMAL",
+      "ONE BUTTON"
+    ],
+    "slug": "duck-clicker",
+    "contentPath": "data/games/content/duck-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "favicon-s512x512.png (512×512)",
+    "href": "https://blood-money.io/cache/data/image/options/favicon-s512x512.png",
+    "image": "",
+    "description": "",
+    "tags": [],
+    "slug": "favicon-s512x512.png",
+    "contentPath": "data/games/content/favicon-s512x512.png.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "favicon.ico (32×32)",
+    "href": "https://blood-money.io/favicon.ico?v=3",
+    "image": "",
+    "description": "",
+    "tags": [],
+    "slug": "favicon.ico",
+    "contentPath": "data/games/content/favicon.ico.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Horror",
+    "href": "https://blood-money.io/horror.games",
+    "image": "/assets/games/horror.games.png",
+    "description": "",
+    "tags": [],
+    "slug": "horror.games",
+    "contentPath": "data/games/content/horror.games.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Hot Games",
+    "href": "https://blood-money.io/hot-games",
+    "image": "/cache/data/image/menu/fire-1-m24x24.webp",
+    "description": "The collection of hot games on BLOODMONEY!",
+    "tags": [],
+    "slug": "hot-games",
+    "contentPath": "data/games/content/hot-games.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Human Expenditure Program",
+    "href": "https://blood-money.io/human-expenditure-program",
+    "image": "/assets/games/human-expenditure-program.jpg",
+    "description": "Take control of Harvey in the Human Expenditure Program, a unique simulation game where you decide the life of a digital human. Ready to experience his world?",
+    "tags": [
+      "WEAPON",
+      "STRATEGY",
+      "EMOTION",
+      "INDIE"
+    ],
+    "slug": "human-expenditure-program",
+    "contentPath": "data/games/content/human-expenditure-program.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "I’m Not a Robot",
+    "href": "https://blood-money.io/i-m-not-a-robot",
+    "image": "/assets/games/i-m-not-a-robot.jpg",
+    "description": "I’m Not a Robot is a challenging puzzle game that helps you improve observation and reflex skills. Try it now to prove you’re not a robot!",
+    "tags": [
+      "COLLECT",
+      "LOGIC",
+      "SKILL",
+      "DRAW"
+    ],
+    "fetchedAt": "2025-10-25T12:56:06.073Z",
+    "slug": "i-m-not-a-robot",
+    "contentPath": "data/games/content/i-m-not-a-robot.json"
+  },
+  {
+    "title": "Italian Brainrot Clicker 2",
+    "href": "https://blood-money.io/italian-brainrot-clicker-2",
+    "image": "/assets/games/italian-brainrot-clicker-2.jpg",
+    "description": "Experience Italian Brainrot Clicker 2—click to get rich, unlock brainrot characters, and climb the global leaderboard. Play now!",
+    "tags": [
+      "COLLECT",
+      "INCREMENTAL",
+      "IDLE",
+      "ANIMAL",
+      "ITALIAN BRAINROT"
+    ],
+    "fetchedAt": "2025-10-25T12:56:06.073Z",
+    "slug": "italian-brainrot-clicker-2",
+    "contentPath": "data/games/content/italian-brainrot-clicker-2.json"
+  },
+  {
+    "title": "Kick The Buddy",
+    "href": "https://blood-money.io/kick-the-buddy",
+    "image": "/assets/games/kick-the-buddy.jpg",
+    "description": "Kick The Buddy brings a unique relaxing experience: try out a variety of fun tools, tease Buddy, and release stress in the funniest way. Play now!",
+    "tags": [
+      "WEAPON",
+      "INCREMENTAL",
+      "IDLE"
+    ],
+    "fetchedAt": "2025-10-25T12:56:06.073Z",
+    "slug": "kick-the-buddy",
+    "contentPath": "data/games/content/kick-the-buddy.json"
+  },
+  {
+    "title": "Labubu Clicker",
+    "href": "https://blood-money.io/labubu-clicker",
+    "image": "/assets/games/labubu-clicker.png",
+    "description": "Ready to click your way through chaos in Labubu Clicker? Unlock all characters and upgrades and discover the weird world of this viral idle clicker game.",
+    "tags": [
+      "COLLECT",
+      "IDLE",
+      "POINT AND CLICK",
+      "ONE BUTTON",
+      "UPGRADE"
+    ],
+    "slug": "labubu-clicker",
+    "contentPath": "data/games/content/labubu-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Lizard Lizard Clicker",
+    "href": "https://blood-money.io/lizard-lizard-clicker",
+    "image": "/assets/games/lizard-lizard-clicker.png",
+    "description": "Ready to unlock all types of lizards in Lizard Lizard Clicker? Keep clicking and collecting all upgrades all the time for thrills!",
+    "tags": [
+      "COLLECT",
+      "IDLE",
+      "POINT AND CLICK",
+      "ANIMAL"
+    ],
+    "slug": "lizard-lizard-clicker",
+    "contentPath": "data/games/content/lizard-lizard-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "My favorite games",
+    "href": "https://blood-money.io/favorite-games",
+    "image": "/assets/games/favorite-games.png",
+    "description": "My favorite games on BLOODMONEY!",
+    "tags": [],
+    "slug": "favorite-games",
+    "contentPath": "data/games/content/favorite-games.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Mystfed",
+    "href": "https://blood-money.io/mystfed",
+    "image": "/assets/games/mystfed.png",
+    "description": "Slide into Mystfed to discover all mysteries while solving all abstract puzzles. Ready to play this horror clicker game and watch the world shift around you?",
+    "tags": [
+      "COLLECT",
+      "IDLE",
+      "POINT AND CLICK"
+    ],
+    "slug": "mystfed",
+    "contentPath": "data/games/content/mystfed.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "New Games",
+    "href": "https://blood-money.io/new-games",
+    "image": "/assets/games/new-games.png",
+    "description": "The collection of new games on BLOODMONEY!",
+    "tags": [],
+    "slug": "new-games",
+    "contentPath": "data/games/content/new-games.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Nightmare Nursery",
+    "href": "https://blood-money.io/nightmare-nursery",
+    "image": "/assets/games/nightmare-nursery.png",
+    "description": "Play Nightmare Nursery and prove your skills in managing and growing a mysterious garden. Collect all seeds and expand your trees to the highest profits.",
+    "tags": [
+      "COLLECT",
+      "INDIE",
+      "MANAGEMENT"
+    ],
+    "slug": "nightmare-nursery",
+    "contentPath": "data/games/content/nightmare-nursery.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "PG Coloring FNAF",
+    "href": "https://blood-money.io/pg-coloring-fnaf",
+    "image": "/assets/games/pg-coloring-fnaf.jpg",
+    "description": "PG Coloring Fun is a relaxing character coloring game. Choose your favorite characters, mix colors creatively, and create unique works of art. Play now!",
+    "tags": [
+      "COLLECT",
+      "SKILL",
+      "FNAF"
+    ],
+    "slug": "pg-coloring-fnaf",
+    "contentPath": "data/games/content/pg-coloring-fnaf.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Popular\n Games",
+    "href": "https://blood-money.io/top-popular",
+    "image": "/cache/data/image/menu/popularity-4-m24x24.webp",
+    "description": "The collection of popular games on BLOODMONEY!",
+    "tags": [],
+    "slug": "top-popular",
+    "contentPath": "data/games/content/top-popular.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Privacy Policy",
+    "href": "https://blood-money.io/privacy-policy",
+    "image": "",
+    "description": "At BLOODMONEY!, we are dedicated to safeguarding the privacy of all individuals who use our websites and applications, which are accessible globally.",
+    "tags": [],
+    "slug": "privacy-policy",
+    "contentPath": "data/games/content/privacy-policy.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Puppet Master",
+    "href": "https://blood-money.io/puppet-master",
+    "image": "/assets/games/puppet-master.jpg",
+    "description": "Puppet Master is an exciting ragdoll click-and-battle game. Unlock weapons and create combos for powerful attacks. Play now!",
+    "tags": [
+      "WEAPON",
+      "INCREMENTAL",
+      "IDLE",
+      "RAGDOLL"
+    ],
+    "fetchedAt": "2025-10-25T12:56:06.073Z",
+    "slug": "puppet-master",
+    "contentPath": "data/games/content/puppet-master.json"
+  },
+  {
+    "title": "Puzzle",
+    "href": "https://blood-money.io/puzzle.games",
+    "image": "/assets/games/puzzle.games.png",
+    "description": "",
+    "tags": [],
+    "slug": "puzzle.games",
+    "contentPath": "data/games/content/puzzle.games.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "right-click.png (128×128)",
+    "href": "https://blood-money.io//data/image/category/right-click.png",
+    "image": "",
+    "description": "",
+    "tags": [],
+    "slug": "right-click.png",
+    "contentPath": "data/games/content/right-click.png.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Room Invaders",
+    "href": "https://blood-money.io/room-invaders",
+    "image": "/assets/games/room-invaders.png",
+    "description": "Room Invaders is a fast-reflex arcade game where you protect your room from playful surprises inspired by everyday life. Play and unlock all secrets!",
+    "tags": [
+      "COLLECT",
+      "SURVIVAL",
+      "INVADERS",
+      "2D"
+    ],
+    "slug": "room-invaders",
+    "contentPath": "data/games/content/room-invaders.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Simulation",
+    "href": "https://blood-money.io/simulation.games",
+    "image": "/assets/games/simulation.games.png",
+    "description": "",
+    "tags": [],
+    "slug": "simulation.games",
+    "contentPath": "data/games/content/simulation.games.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Spacebar Clicker",
+    "href": "https://blood-money.io/spacebar-clicker",
+    "image": "/assets/games/spacebar-clicker.png",
+    "description": "Ready to put your skills to the test in Spacebar Clicker, a thrilling and addictive clicker game with the task only about clicking and upgrading?",
+    "tags": [
+      "IDLE",
+      "POINT AND CLICK",
+      "ONE BUTTON",
+      "UPGRADE"
+    ],
+    "slug": "spacebar-clicker",
+    "contentPath": "data/games/content/spacebar-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Sprunki Clicker",
+    "href": "https://blood-money.io/sprunki-clicker",
+    "image": "/assets/games/sprunki-clicker.png",
+    "description": "Sprunki Clicker is a crazy and weird clicker game. Click to earn points and unlock all upgrades while watching the madness on the screen.",
+    "tags": [
+      "SPRUNKI",
+      "UPGRADE",
+      "COLLECT",
+      "POINT AND CLICK",
+      "ONE BUTTON"
+    ],
+    "slug": "sprunki-clicker",
+    "contentPath": "data/games/content/sprunki-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Sprunki Phase 10",
+    "href": "https://blood-money.io/sprunki-phase-10",
+    "image": "/assets/games/sprunki-phase-10.jpg",
+    "description": "Sprunki Phase 10 is a game that combines music and horror elements to create your own soundtrack. Discover hidden sounds and create a creepy atmosphere now!",
+    "tags": [
+      "MUSIC",
+      "SPRUNKI",
+      "INCREDIBOX",
+      "DARK",
+      "RHYTHM"
+    ],
+    "fetchedAt": "2025-10-25T12:56:06.073Z",
+    "slug": "sprunki-phase-10",
+    "contentPath": "data/games/content/sprunki-phase-10.json"
+  },
+  {
+    "title": "Sprunki Phase 4",
+    "href": "https://blood-money.io/sprunki-phase-4",
+    "image": "/assets/games/sprunki-phase-4.jpg",
+    "description": "Experience Sprunki Phase 4—the newest chapter in the creative music series. Choose characters, mix sounds, and turn ideas into music!",
+    "tags": [
+      "MUSIC",
+      "SPRUNKI",
+      "RHYTHM"
+    ],
+    "fetchedAt": "2025-10-25T12:56:06.073Z",
+    "slug": "sprunki-phase-4",
+    "contentPath": "data/games/content/sprunki-phase-4.json"
+  },
+  {
+    "title": "Sprunki Phase 777",
+    "href": "https://blood-money.io/sprunki-phase-777",
+    "image": "/assets/games/sprunki-phase-777.png",
+    "description": "Sprunki Phase 777 is a bizarre music-creation game where you freely mix sounds. Try out effects and create your own chaotic, unique track. Play now!",
+    "tags": [
+      "IDLE",
+      "SPRUNKI",
+      "INCREDIBOX"
+    ],
+    "slug": "sprunki-phase-777",
+    "contentPath": "data/games/content/sprunki-phase-777.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Sprunki: Lights Out",
+    "href": "https://blood-money.io/sprunki-lights-out",
+    "image": "/assets/games/sprunki-lights-out.jpg",
+    "description": "Sprunki: Lights Out takes you on a unique musical journey where every click turns into rhythm, light, and unforgettable emotion. Play now!",
+    "tags": [
+      "MUSIC",
+      "SPRUNKI",
+      "DARK",
+      "RHYTHM"
+    ],
+    "fetchedAt": "2025-10-25T12:56:06.073Z",
+    "slug": "sprunki-lights-out",
+    "contentPath": "data/games/content/sprunki-lights-out.json"
+  },
+  {
+    "title": "style.min.css",
+    "href": "https://blood-money.io/themes/blood-money.io_v2/resources/css/style.min.css?v=1",
+    "image": "",
+    "description": "",
+    "tags": [],
+    "slug": "style.min.css",
+    "contentPath": "data/games/content/style.min.css.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "swiper.css",
+    "href": "https://blood-money.io/themes/blood-money.io_v2/resources/css/swiper.css",
+    "image": "",
+    "description": "",
+    "tags": [],
+    "slug": "swiper.css",
+    "contentPath": "data/games/content/swiper.css.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Terms of Service",
+    "href": "https://blood-money.io/terms-of-service",
+    "image": "",
+    "description": "The following Terms of Service (the ",
+    "tags": [],
+    "slug": "terms-of-service",
+    "contentPath": "data/games/content/terms-of-service.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Titans Clicker",
+    "href": "https://blood-money.io/titans-clicker",
+    "image": "/assets/games/titans-clicker.png",
+    "description": "Ready to smash all massive monsters in Titans Clicker, a thrilling idle clicker game full of upgrades and challenges to pass. Ready to join?",
+    "tags": [
+      "POINT AND CLICK",
+      "MONSTER",
+      "ONE BUTTON",
+      "UPGRADE"
+    ],
+    "slug": "titans-clicker",
+    "contentPath": "data/games/content/titans-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "Tung Sahur Clicker",
+    "href": "https://blood-money.io/tung-sahur-clicker",
+    "image": "/assets/games/tung-sahur-clicker.jpg",
+    "description": "Tung Sahur Clicker is a fun clicker game. Click to earn coins, unlock skins, upgrade items, and compete on the global leaderboard. Start now!",
+    "tags": [
+      "COLLECT",
+      "INCREMENTAL",
+      "IDLE"
+    ],
+    "slug": "tung-sahur-clicker",
+    "contentPath": "data/games/content/tung-sahur-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "What Lurks Below",
+    "href": "https://blood-money.io/what-lurks-below",
+    "image": "/assets/games/what-lurks-below.png",
+    "description": "Dive into the shadows in What Lurks Below, a thrilling exploration puzzle game where every step leads you closer to hidden secrets.",
+    "tags": [
+      "STRATEGY",
+      "COLLECT",
+      "INCREMENTAL"
+    ],
+    "slug": "what-lurks-below",
+    "contentPath": "data/games/content/what-lurks-below.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "slug": "contact-us",
+  "href": "https://blood-money.io/contact-us",
+  "title": "Contact Us",
+  "description": "Need assistance? We're available to help!",
+  "image": "",
+  "tags": [],
+  "content": {
+    "html": "<div class=\"h-full\"><div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12\"><div class=\"light:bg-light-800/30 dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative overflow-hidden text-gray-600 dark:text-gray-300 \"><h1 class=\"text-3xl font-bold bg-gradient-to-r from-[#007b43] to-[#009152] dark:from-[#00a65c] dark:to-[#00c06b] bg-clip-text text-highlight font-heading\">Contact Us</h1><div class=\"mt-2 w-20 h-1 divider rounded-full\"></div><div class=\"page-content\"><p><span style=\"font-weight: 400;\">Need assistance? We're available to help!</span></p><p><strong><span style=\"font-weight: 400;\">In case you have any inquiries, comments, or proposals on how we can improve our platform, don't hesitate to contact us. You can drop us a line at </span><strong>wereba432ckbone@gmail.com</strong><span style=\"font-weight: 400;\">, and we'll make every effort to reply promptly.</span></strong></p> </div></div></div></div>",
+    "sections": []
+  },
+  "fetchedAt": "2025-10-25T13:02:52.411Z"
+}

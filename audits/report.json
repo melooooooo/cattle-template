@@ -1,0 +1,958 @@
+[
+  {
+    "slug": "about-us",
+    "url": "http://localhost:3001/games/about-us",
+    "ok": true,
+    "notes": [],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 2626,
+      "imgCount": 1,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 0,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/about-us.png"
+  },
+  {
+    "slug": "action.games",
+    "url": "http://localhost:3001/games/action.games",
+    "ok": true,
+    "notes": [],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 278049,
+      "imgCount": 34,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io//data/image/category/action-2.png",
+          "w": 974,
+          "h": 511,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/i-am-not-infected/i-am-not-infected-m186x186.webp",
+          "w": 952,
+          "h": 24,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/among-us-online-edition/among-us-online-edition-1-m186x186.webp",
+          "w": 952,
+          "h": 24,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/creep-house/creep-house-m186x186.webp",
+          "w": 952,
+          "h": 24,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 8,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/action.games.png"
+  },
+  {
+    "slug": "adventure.games",
+    "url": "http://localhost:3001/games/adventure.games",
+    "ok": true,
+    "notes": [],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 276394,
+      "imgCount": 33,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io//data/image/category/adventure-game-1.png",
+          "w": 974,
+          "h": 511,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/cat-and-granny/cat-and-granny-m186x186.webp",
+          "w": 952,
+          "h": 24,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/dinosaur-game/dinosaur-game-m186x186.webp",
+          "w": 952,
+          "h": 24,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/schoolboy-runaway/schoolboy-runaway-m186x186.webp",
+          "w": 952,
+          "h": 24,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 8,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/adventure.games.png"
+  },
+  {
+    "slug": "astro-robot-clicker",
+    "url": "http://localhost:3001/games/astro-robot-clicker",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 54070,
+      "imgCount": 45,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/astro-robot-clicker/astro-robot-clicker.png",
+          "w": 1200,
+          "h": 1200,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/astro-robot-clicker/astro-robot-clicker-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 140,
+          "h": 48,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/astro-robot-clicker.png"
+  },
+  {
+    "slug": "bloodmoney-2",
+    "url": "http://localhost:3001/games/bloodmoney-2",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 49855,
+      "imgCount": 43,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/bloodmoney-2.png",
+          "w": 974,
+          "h": 511,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/bloodmoney-2-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 140,
+          "h": 48,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/bloodmoney-2.png"
+  },
+  {
+    "slug": "bloodmoney-remake",
+    "url": "http://localhost:3001/games/bloodmoney-remake",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 52859,
+      "imgCount": 43,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/bloodmoney-remake/bloodmoney-remake.png",
+          "w": 1200,
+          "h": 1200,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/bloodmoney-remake/bloodmoney-remake-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 140,
+          "h": 48,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/bloodmoney-remake.png"
+  },
+  {
+    "slug": "bloodmoney",
+    "url": "http://localhost:3001/games/bloodmoney",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 71395,
+      "imgCount": 51,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/bloodmoney/bloodmoney.png",
+          "w": 974,
+          "h": 511,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/bloodmoney/bloodmoney-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 140,
+          "h": 48,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 15,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/bloodmoney.png"
+  },
+  {
+    "slug": "brainrot-clicker",
+    "url": "http://localhost:3001/games/brainrot-clicker",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 52872,
+      "imgCount": 44,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/brainrot-clicker/brainrot-clicker-1.jpg",
+          "w": 974,
+          "h": 511,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/brainrot-clicker/brainrot-clicker-1-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/brainrot-clicker.png"
+  },
+  {
+    "slug": "casual.games",
+    "url": "http://localhost:3001/games/casual.games",
+    "ok": true,
+    "notes": [],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 276482,
+      "imgCount": 33,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io//data/image/category/arrows.png",
+          "w": 974,
+          "h": 511,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/dinosaur-game/dinosaur-game-m186x186.webp",
+          "w": 952,
+          "h": 24,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/corruptbox-3-x-sprunki-m186x186.webp",
+          "w": 952,
+          "h": 24,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/puppet-master/puppet-master-m186x186.webp",
+          "w": 952,
+          "h": 24,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 8,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/casual.games.png"
+  },
+  {
+    "slug": "chicken-jockey-clicker",
+    "url": "http://localhost:3001/games/chicken-jockey-clicker",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 53410,
+      "imgCount": 45,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/chicken-jockey-clicker/chicken-jockey-clicker.jpg",
+          "w": 832,
+          "h": 832,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/chicken-jockey-clicker/chicken-jockey-clicker-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/chicken-jockey-clicker.png"
+  },
+  {
+    "slug": "chill-guy-clicker",
+    "url": "http://localhost:3001/games/chill-guy-clicker",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 52470,
+      "imgCount": 43,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/chill-guy-clicker/chill-guy-clicker.png",
+          "w": 974,
+          "h": 511,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/chill-guy-clicker/chill-guy-clicker-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 140,
+          "h": 48,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/chill-guy-clicker.png"
+  },
+  {
+    "slug": "chill-guy-clicker-3d",
+    "url": "http://localhost:3001/games/chill-guy-clicker-3d",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 283392,
+      "imgCount": 45,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/chill-guy-clicker-3d/chill-guy-clicker-3d.png",
+          "w": 974,
+          "h": 511,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/chill-guy-clicker-3d/chill-guy-clicker-3d-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 140,
+          "h": 48,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/chill-guy-clicker-3d.png"
+  },
+  {
+    "slug": "contact-us",
+    "url": "http://localhost:3001/games/contact-us",
+    "ok": true,
+    "notes": [],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 1005,
+      "imgCount": 1,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 0,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/contact-us.png"
+  },
+  {
+    "slug": "corruptbox",
+    "url": "http://localhost:3001/games/corruptbox",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 53691,
+      "imgCount": 45,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/corruptbox/corruptbox2.jpg",
+          "w": 974,
+          "h": 511,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/corruptbox/corruptbox2-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 140,
+          "h": 48,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/corruptbox.png"
+  },
+  {
+    "slug": "corruptbox-3-x-sprunki",
+    "url": "http://localhost:3001/games/corruptbox-3-x-sprunki",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 64156,
+      "imgCount": 45,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/corruptbox-3-x-sprunki.jpg",
+          "w": 1088,
+          "h": 1088,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/corruptbox-3-x-sprunki-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 140,
+          "h": 48,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/corruptbox-3-x-sprunki.png"
+  },
+  {
+    "slug": "cuby-road-halloween",
+    "url": "http://localhost:3001/games/cuby-road-halloween",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 54111,
+      "imgCount": 45,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/cuby-road-halloween/cuby-road-halloween.jpg",
+          "w": 960,
+          "h": 960,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/cuby-road-halloween/cuby-road-halloween-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 140,
+          "h": 48,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/cuby-road-halloween.png"
+  },
+  {
+    "slug": "dmca",
+    "url": "http://localhost:3001/games/dmca",
+    "ok": true,
+    "notes": [],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 2854,
+      "imgCount": 1,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 0,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/dmca.png"
+  },
+  {
+    "slug": "duck-clicker",
+    "url": "http://localhost:3001/games/duck-clicker",
+    "ok": false,
+    "notes": [
+      "Many overflowing elements detected"
+    ],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 282181,
+      "imgCount": 45,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/data/image/game/duck-clicker/duck-clicker.png",
+          "w": 512,
+          "h": 512,
+          "display": "block"
+        },
+        {
+          "src": "/cache/data/image/game/duck-clicker/duck-clicker-m186x186.webp",
+          "w": 0,
+          "h": 0,
+          "display": "block"
+        },
+        {
+          "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACCCAYAAAADm4eUAAABCUlEQVR42u3TMQEAAAQAMF4ZNNT/V8Dv2TosK6YDOKUgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIAgoAgIAgIAoKAICAICAKCAIKAICAICAKCgCAgCAgCgoAggCAgCAgCgoAgIAgIAoKAIIAgIAgIAoKAICAICAKCgCAgCCAICAKCgCAgCAgCgoAgIAgIIggIAoKAICAICAKCgCAgCAgCCAKCgCAgCAgCgoAgIAgIAoIIAoKAICAICAKCgCAgCAgCggCCgCAgCAgCgoAgIAgIAoKAIIAgIAgIAoLAtwXRREoljqc3BAAAAABJRU5ErkJggg==",
+          "w": 200,
+          "h": 130,
+          "display": "block"
+        },
+        {
+          "src": "/cache/themes/blood-money.io_v2/resources/images/placeholder-m186x186.webp",
+          "w": 140,
+          "h": 48,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 14,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/duck-clicker.png"
+  },
+  {
+    "slug": "favicon-s512x512.png",
+    "url": "http://localhost:3001/games/favicon-s512x512.png",
+    "ok": true,
+    "notes": [],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 255,
+      "imgCount": 2,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/cache/data/image/options/favicon-s512x512.png",
+          "w": 512,
+          "h": 512,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 0,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/favicon-s512x512.png.png"
+  },
+  {
+    "slug": "favicon.ico",
+    "url": "http://localhost:3001/games/favicon.ico",
+    "ok": true,
+    "notes": [],
+    "metrics": {
+      "status": 200,
+      "title": "The Tooth Fae - Nocturnal Tooth Heist Experience",
+      "hasMain": true,
+      "hasArticle": true,
+      "contentLen": 225,
+      "imgCount": 2,
+      "imgInfo": [
+        {
+          "src": "/favicon_io/android-chrome-192x192.png",
+          "w": 192,
+          "h": 192,
+          "display": "block"
+        },
+        {
+          "src": "https://blood-money.io/favicon.ico?v=3",
+          "w": 32,
+          "h": 32,
+          "display": "block"
+        }
+      ],
+      "overflowEls": 0,
+      "viewport": {
+        "w": 1366,
+        "h": 900
+      }
+    },
+    "screenshot": "audits/screenshots/favicon.ico.png"
+  }
+]

@@ -239,3 +239,54 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+
+/* --- Constrain injected game content from external pages --- */
+.game-content {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.game-content * {
+  box-sizing: border-box;
+}
+.game-content img,
+.game-content video,
+.game-content canvas,
+.game-content iframe,
+.game-content svg {
+  max-width: 100% !important;
+  height: auto !important;
+}
+.game-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+.game-content pre,
+.game-content code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/* Prevent huge fixed/absolute overlays from source site */
+.game-content [style*="position:fixed"],
+.game-content .fixed,
+.game-content [class*="sticky"],
+.game-content [class*="modal"],
+.game-content [class*="overlay"],
+.game-content [class*="drawer"] {
+  position: static !important;
+  inset: auto !important;
+  max-width: 100% !important;
+}
+/* Strip body-level paddings/margins that leak in */
+.game-content body,
+.game-content main,
+.game-content header,
+.game-content footer,
+.game-content section,
+.game-content article,
+.game-content div[role="main"] {
+  margin: 0 !important;
+  padding: 0 !important;
+}
