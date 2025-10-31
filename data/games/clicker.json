@@ -1,35 +1,5 @@
 [
   {
-    "title": "About Us",
-    "href": "https://blood-money.io/about-us",
-    "image": "",
-    "description": "Welcome to BLOODMONEY!, the ultimate hub for discovering the most creative twists in clicker gameplay.",
-    "tags": [],
-    "slug": "about-us",
-    "contentPath": "data/games/content/about-us.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "Action",
-    "href": "https://blood-money.io/action.games",
-    "image": "/assets/games/action.games.png",
-    "description": "",
-    "tags": [],
-    "slug": "action.games",
-    "contentPath": "data/games/content/action.games.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "Adventure",
-    "href": "https://blood-money.io/adventure.games",
-    "image": "/assets/games/adventure.games.png",
-    "description": "",
-    "tags": [],
-    "slug": "adventure.games",
-    "contentPath": "data/games/content/adventure.games.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
     "title": "Astro Robot Clicker",
     "href": "https://blood-money.io/astro-robot-clicker",
     "image": "/assets/games/astro-robot-clicker.png",
@@ -40,9 +10,9 @@
       "IDLE",
       "POINT AND CLICK"
     ],
-    "fetchedAt": "2025-10-25T12:56:06.073Z",
     "slug": "astro-robot-clicker",
-    "contentPath": "data/games/content/astro-robot-clicker.json"
+    "contentPath": "data/games/content/astro-robot-clicker.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
     "title": "BLOODMONEY 2",
@@ -77,6 +47,20 @@
   },
   {
     "title": "BLOODMONEY!",
+    "href": "https://blood-money.io/",
+    "image": "/assets/games/game.png",
+    "description": "Play BLOODMONEY!, a unique clicker horror game that combines dark humor with elements of horror. Collect $25,000 for surgery across three possible endings.",
+    "tags": [
+      "WEAPON",
+      "STRATEGY",
+      "INDIE"
+    ],
+    "slug": "game",
+    "contentPath": "data/games/content/game.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
+  },
+  {
+    "title": "BLOODMONEY!",
     "href": "https://blood-money.io/bloodmoney",
     "image": "/assets/games/bloodmoney.png",
     "description": "Play BLOODMONEY!, a unique clicker horror game that combines dark humor with elements of horror. Collect $25,000 for surgery across three possible endings.",
@@ -102,16 +86,6 @@
     ],
     "slug": "brainrot-clicker",
     "contentPath": "data/games/content/brainrot-clicker.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "Casual",
-    "href": "https://blood-money.io/casual.games",
-    "image": "/assets/games/casual.games.png",
-    "description": "",
-    "tags": [],
-    "slug": "casual.games",
-    "contentPath": "data/games/content/casual.games.json",
     "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
@@ -156,18 +130,8 @@
       "POINT AND CLICK",
       "3D"
     ],
-    "fetchedAt": "2025-10-25T12:56:06.073Z",
     "slug": "chill-guy-clicker-3d",
-    "contentPath": "data/games/content/chill-guy-clicker-3d.json"
-  },
-  {
-    "title": "Contact Us",
-    "href": "https://blood-money.io/contact-us",
-    "image": "",
-    "description": "Need assistance? We're available to help!",
-    "tags": [],
-    "slug": "contact-us",
-    "contentPath": "data/games/content/contact-us.json",
+    "contentPath": "data/games/content/chill-guy-clicker-3d.json",
     "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
@@ -197,9 +161,9 @@
       "SPRUNKI",
       "RHYTHM"
     ],
-    "fetchedAt": "2025-10-25T12:56:06.073Z",
     "slug": "corruptbox-3-x-sprunki",
-    "contentPath": "data/games/content/corruptbox-3-x-sprunki.json"
+    "contentPath": "data/games/content/corruptbox-3-x-sprunki.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
     "title": "Cuby Road Halloween",
@@ -218,16 +182,6 @@
     "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
-    "title": "DMCA",
-    "href": "https://blood-money.io/dmca",
-    "image": "",
-    "description": "We have implemented a procedure to address any concerns regarding potential copyright violations on the Site. ",
-    "tags": [],
-    "slug": "dmca",
-    "contentPath": "data/games/content/dmca.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
     "title": "Duck Clicker",
     "href": "https://blood-money.io/duck-clicker",
     "image": "/assets/games/duck-clicker.png",
@@ -240,46 +194,6 @@
     ],
     "slug": "duck-clicker",
     "contentPath": "data/games/content/duck-clicker.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "favicon-s512x512.png (512×512)",
-    "href": "https://blood-money.io/cache/data/image/options/favicon-s512x512.png",
-    "image": "",
-    "description": "",
-    "tags": [],
-    "slug": "favicon-s512x512.png",
-    "contentPath": "data/games/content/favicon-s512x512.png.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "favicon.ico (32×32)",
-    "href": "https://blood-money.io/favicon.ico?v=3",
-    "image": "",
-    "description": "",
-    "tags": [],
-    "slug": "favicon.ico",
-    "contentPath": "data/games/content/favicon.ico.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "Horror",
-    "href": "https://blood-money.io/horror.games",
-    "image": "/assets/games/horror.games.png",
-    "description": "",
-    "tags": [],
-    "slug": "horror.games",
-    "contentPath": "data/games/content/horror.games.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "Hot Games",
-    "href": "https://blood-money.io/hot-games",
-    "image": "/cache/data/image/menu/fire-1-m24x24.webp",
-    "description": "The collection of hot games on BLOODMONEY!",
-    "tags": [],
-    "slug": "hot-games",
-    "contentPath": "data/games/content/hot-games.json",
     "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
@@ -308,9 +222,9 @@
       "SKILL",
       "DRAW"
     ],
-    "fetchedAt": "2025-10-25T12:56:06.073Z",
     "slug": "i-m-not-a-robot",
-    "contentPath": "data/games/content/i-m-not-a-robot.json"
+    "contentPath": "data/games/content/i-m-not-a-robot.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
     "title": "Italian Brainrot Clicker 2",
@@ -324,9 +238,9 @@
       "ANIMAL",
       "ITALIAN BRAINROT"
     ],
-    "fetchedAt": "2025-10-25T12:56:06.073Z",
     "slug": "italian-brainrot-clicker-2",
-    "contentPath": "data/games/content/italian-brainrot-clicker-2.json"
+    "contentPath": "data/games/content/italian-brainrot-clicker-2.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
     "title": "Kick The Buddy",
@@ -338,9 +252,9 @@
       "INCREMENTAL",
       "IDLE"
     ],
-    "fetchedAt": "2025-10-25T12:56:06.073Z",
     "slug": "kick-the-buddy",
-    "contentPath": "data/games/content/kick-the-buddy.json"
+    "contentPath": "data/games/content/kick-the-buddy.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
     "title": "Labubu Clicker",
@@ -374,16 +288,6 @@
     "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
-    "title": "My favorite games",
-    "href": "https://blood-money.io/favorite-games",
-    "image": "/assets/games/favorite-games.png",
-    "description": "My favorite games on BLOODMONEY!",
-    "tags": [],
-    "slug": "favorite-games",
-    "contentPath": "data/games/content/favorite-games.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
     "title": "Mystfed",
     "href": "https://blood-money.io/mystfed",
     "image": "/assets/games/mystfed.png",
@@ -395,16 +299,6 @@
     ],
     "slug": "mystfed",
     "contentPath": "data/games/content/mystfed.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "New Games",
-    "href": "https://blood-money.io/new-games",
-    "image": "/assets/games/new-games.png",
-    "description": "The collection of new games on BLOODMONEY!",
-    "tags": [],
-    "slug": "new-games",
-    "contentPath": "data/games/content/new-games.json",
     "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
@@ -436,26 +330,6 @@
     "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
-    "title": "Popular\n Games",
-    "href": "https://blood-money.io/top-popular",
-    "image": "/cache/data/image/menu/popularity-4-m24x24.webp",
-    "description": "The collection of popular games on BLOODMONEY!",
-    "tags": [],
-    "slug": "top-popular",
-    "contentPath": "data/games/content/top-popular.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "Privacy Policy",
-    "href": "https://blood-money.io/privacy-policy",
-    "image": "",
-    "description": "At BLOODMONEY!, we are dedicated to safeguarding the privacy of all individuals who use our websites and applications, which are accessible globally.",
-    "tags": [],
-    "slug": "privacy-policy",
-    "contentPath": "data/games/content/privacy-policy.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
     "title": "Puppet Master",
     "href": "https://blood-money.io/puppet-master",
     "image": "/assets/games/puppet-master.jpg",
@@ -466,28 +340,8 @@
       "IDLE",
       "RAGDOLL"
     ],
-    "fetchedAt": "2025-10-25T12:56:06.073Z",
     "slug": "puppet-master",
-    "contentPath": "data/games/content/puppet-master.json"
-  },
-  {
-    "title": "Puzzle",
-    "href": "https://blood-money.io/puzzle.games",
-    "image": "/assets/games/puzzle.games.png",
-    "description": "",
-    "tags": [],
-    "slug": "puzzle.games",
-    "contentPath": "data/games/content/puzzle.games.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "right-click.png (128×128)",
-    "href": "https://blood-money.io//data/image/category/right-click.png",
-    "image": "",
-    "description": "",
-    "tags": [],
-    "slug": "right-click.png",
-    "contentPath": "data/games/content/right-click.png.json",
+    "contentPath": "data/games/content/puppet-master.json",
     "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
@@ -503,16 +357,6 @@
     ],
     "slug": "room-invaders",
     "contentPath": "data/games/content/room-invaders.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "Simulation",
-    "href": "https://blood-money.io/simulation.games",
-    "image": "/assets/games/simulation.games.png",
-    "description": "",
-    "tags": [],
-    "slug": "simulation.games",
-    "contentPath": "data/games/content/simulation.games.json",
     "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
@@ -558,9 +402,9 @@
       "DARK",
       "RHYTHM"
     ],
-    "fetchedAt": "2025-10-25T12:56:06.073Z",
     "slug": "sprunki-phase-10",
-    "contentPath": "data/games/content/sprunki-phase-10.json"
+    "contentPath": "data/games/content/sprunki-phase-10.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
     "title": "Sprunki Phase 4",
@@ -572,9 +416,9 @@
       "SPRUNKI",
       "RHYTHM"
     ],
-    "fetchedAt": "2025-10-25T12:56:06.073Z",
     "slug": "sprunki-phase-4",
-    "contentPath": "data/games/content/sprunki-phase-4.json"
+    "contentPath": "data/games/content/sprunki-phase-4.json",
+    "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {
     "title": "Sprunki Phase 777",
@@ -601,38 +445,8 @@
       "DARK",
       "RHYTHM"
     ],
-    "fetchedAt": "2025-10-25T12:56:06.073Z",
     "slug": "sprunki-lights-out",
-    "contentPath": "data/games/content/sprunki-lights-out.json"
-  },
-  {
-    "title": "style.min.css",
-    "href": "https://blood-money.io/themes/blood-money.io_v2/resources/css/style.min.css?v=1",
-    "image": "",
-    "description": "",
-    "tags": [],
-    "slug": "style.min.css",
-    "contentPath": "data/games/content/style.min.css.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "swiper.css",
-    "href": "https://blood-money.io/themes/blood-money.io_v2/resources/css/swiper.css",
-    "image": "",
-    "description": "",
-    "tags": [],
-    "slug": "swiper.css",
-    "contentPath": "data/games/content/swiper.css.json",
-    "fetchedAt": "2025-10-25T12:56:06.073Z"
-  },
-  {
-    "title": "Terms of Service",
-    "href": "https://blood-money.io/terms-of-service",
-    "image": "",
-    "description": "The following Terms of Service (the ",
-    "tags": [],
-    "slug": "terms-of-service",
-    "contentPath": "data/games/content/terms-of-service.json",
+    "contentPath": "data/games/content/sprunki-lights-out.json",
     "fetchedAt": "2025-10-25T12:56:06.073Z"
   },
   {

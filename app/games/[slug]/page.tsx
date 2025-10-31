@@ -16,8 +16,8 @@ async function readGameContent(slug: string) {
   }
 }
 
-export default async function GameDetailPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function GameDetailPage(props: { params: { slug: string } }) {
+  const { slug } = props.params;
   const data = await readGameContent(slug);
   if (!data) return notFound();
 

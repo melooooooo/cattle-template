@@ -63,33 +63,42 @@ async function scrapeList(page) {
   } catch (e) {
     console.warn('List navigation timeout or error, continuing with whatever is loaded:', e.message);
   }
-  // Wait for likely container
-  await page.waitForTimeout(800); // loosened for resilience
+  await page.waitForTimeout(800);
 
-  // Try to select cards robustly. Adjust selectors as the site evolves.
-  const cards = await page.$$('[href*="/"], a');
+  const EXCLUDED_SLUGS = new Set([
+    'about-us', 'contact-us', 'privacy-policy', 'dmca', 'terms-of-service',
+    'hot-games', 'new-games', 'top-popular', 'favorite-games',
+    'action.games', 'adventure.games', 'casual.games', 'horror.games', 'puzzle.games', 'simulation.games',
+  ]);
+
+  const cards = await page.$$('[href]');
   const results = [];
 
   for (const card of cards) {
     try {
-      const href = await card.getAttribute('href');
+      let href = await card.getAttribute('href');
       if (!href) continue;
-      // Skip non-game links
-      if (!/blood-money\.io\/.+/.test(href) && !href.startsWith('/')) continue;
-      const absoluteHref = href.startsWith('/') ? `https://blood-money.io${href}` : href;
-      if (!/blood-money\.io\//.test(absoluteHref)) continue;
-      // Try to read title/text and image in context
+
+      // Normalize to absolute URL
+      if (href.startsWith('/')) href = `https://blood-money.io${href}`;
+
+      const slug = slugFromHref(href);
+      const lower = href.toLowerCase();
+      const isCategory = /\.games(\/?|#|\?|$)/.test(lower);
+      if (EXCLUDED_SLUGS.has(slug) || isCategory) continue;
+      if (slug.endsWith('.png') || slug.endsWith('.ico') || slug.endsWith('.css') || slug.endsWith('.js')) continue;
+
       const title = (await card.textContent())?.trim() || '';
       const imgEl = await card.$('img');
       const image = imgEl ? (await imgEl.getAttribute('src')) : '';
 
-      // Heuristics: only keep items that look like game entries
-      if (!absoluteHref || absoluteHref.endsWith('/clicker.games')) continue;
-      results.push({ title, href: absoluteHref, image, description: '', tags: [] });
+      // Keep only links that look like cards (have image or non-trivial title)
+      if (title.length < 2 && !image) continue;
+
+      results.push({ title, href, image, description: '', tags: [] });
     } catch {}
   }
 
-  // Deduplicate by href
   const seen = new Set();
   const deduped = [];
   for (const r of results) {
@@ -98,13 +107,22 @@ async function scrapeList(page) {
     deduped.push(r);
   }
 
-  // Filter obviously irrelevant
-  return deduped.filter(r => /blood-money\.io\/.+/.test(r.href));
+  return deduped;
 }
 
 async function scrapeDetail(page, href) {
   await page.goto(href, { waitUntil: 'domcontentloaded', timeout: 20000 });
   await page.waitForTimeout(500);
+
+  // Determine if this looks like a playable game page
+  const hasLaunchText = await page.locator('a,button', { hasText: 'Launch' }).first().count().catch(() => 0);
+  const hasPlayText = await page.locator('a,button', { hasText: 'Play' }).first().count().catch(() => 0);
+  const iframeCount = await page.locator('iframe').count().catch(() => 0);
+  const playable = (hasLaunchText > 0) || (hasPlayText > 0) || (iframeCount > 0);
+
+  if (!playable) {
+    return { invalid: true };
+  }
 
   // Basic fields
   const title = (await page.title()) || '';
@@ -140,7 +158,6 @@ async function scrapeDetail(page, href) {
 
     const root = pickContentRoot().cloneNode(true);
 
-    // remove obvious site-wide chrome and ads/overlays
     const removeSel = [
       'script', 'style', 'link', 'noscript', 'meta',
       'header', 'footer', 'nav',
@@ -150,7 +167,6 @@ async function scrapeDetail(page, href) {
     ].join(',');
     root.querySelectorAll(removeSel).forEach((n) => n.remove());
 
-    // remove elements with fixed/sticky positioning
     Array.from(root.querySelectorAll('*')).forEach((el) => {
       const cs = el.getAttribute('style') || '';
       if (/position\s*:\s*fixed/i.test(cs) || /position\s*:\s*sticky/i.test(cs)) {
@@ -158,14 +174,12 @@ async function scrapeDetail(page, href) {
       }
     });
 
-    // normalize media sizing
     Array.from(root.querySelectorAll('img, video, canvas, iframe, svg')).forEach((el) => {
       el.removeAttribute('width');
       el.removeAttribute('height');
       el.setAttribute('style', (el.getAttribute('style') || '').replace(/max-width:\s*[^;]+/gi, ''));
     });
 
-    // prune extremely long nav lists if present
     Array.from(root.querySelectorAll('ul,ol')).forEach((list) => {
       if (list.children.length > 200) list.remove();
     });
@@ -201,6 +215,10 @@ async function main() {
   for (const item of list) {
     const slug = slugFromHref(item.href);
     const detail = await scrapeDetail(page, item.href).catch(() => null);
+    if (!detail || detail.invalid) {
+      // Skip non-playable pages
+      continue;
+    }
     const merged = {
       title: detail?.title || item.title || slug,
       href: item.href,
@@ -229,7 +247,8 @@ async function main() {
     enriched.push(merged);
   }
 
-  const finalList = mergeByHref(existing, enriched)
+  // Do not merge with existing; replace to clean prior bad entries
+  const finalList = enriched
     // keep only unique by href
     .filter((v, i, arr) => arr.findIndex(x => x.href === v.href) === i)
     // sort by title for stability
