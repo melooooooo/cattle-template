@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Navigation from "@/components/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Search, Grid2x2, Flame, Star, Clock3, Heart, ArrowUpRight } from "lucide-react";
 import scraped from "@/data/games/clicker.json";
@@ -185,14 +186,16 @@ export default function GamesIndexPage() {
                   >
                     <div className="relative">
                       {game.image ? (
-                        <div className="overflow-hidden">
-                          <img
+                        <div className="relative h-36 sm:h-32 w-full overflow-hidden">
+                          <Image
                             src={game.image}
                             alt={game.title}
-                            width={372}
-                            height={128}
+                            fill
+                            sizes="372px"
                             loading="lazy"
-                            className="h-32 w-full object-cover transition duration-300 group-hover:scale-105"
+                            unoptimized
+                            className="object-cover transition duration-300 group-hover:scale-105"
+                            style={{ objectPosition: '50% 30%' }}
                           />
                         </div>
                       ) : (
