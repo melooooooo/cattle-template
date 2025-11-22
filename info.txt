@@ -1,0 +1,5 @@
+MONGODB_URI=mongodb+srv://1092106874_db_user:GWnrfXGMhh1ZCJkC@cluster0.smnilqk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+MONGODB_URI=mongodb+srv://1092106874_db_user:GWnrfXGMhh1ZCJkC@cluster0.smnilqk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+NEXT_PUBLIC_SUPABASE_URL=https://ujlgurqaunmcxtugyhgc.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqbGd1cnFhdW5tY3h0dWd5aGdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkxOTEwNTMsImV4cCI6MjA3NDc2NzA1M30.LURyMDDYbW2QBxYCTWgTCpGUhihIn1HmxzRiPwGJjl8

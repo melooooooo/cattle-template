@@ -92,3 +92,89 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Scoped reset for imported game HTML to prevent layout breakage */
+.game-content {
+  --gc-radius: 12px;
+}
+.game-content * {
+  box-sizing: border-box;
+}
+.game-content img,
+.game-content video {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: var(--gc-radius);
+  display: block;
+}
+.game-content iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  aspect-ratio: 16/9;
+  height: auto !important;
+  min-height: clamp(260px, 55vh, 740px) !important;
+  border: 0 !important;
+  border-radius: var(--gc-radius);
+  background: #000;
+}
+/* Normalize containers from scraped HTML */
+.game-content .frame-box-game,
+.game-content #frame-container,
+.game-content .game-frame,
+.game-content #game-code,
+.game-content #game-code-mobile {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: unset !important;
+}
+.game-content .game-preview { display: none !important; }
+/* Kill external ad blocks and extraneous toolbars */
+.game-content .ads,
+.game-content .banner-row,
+.game-content ins.adsbygoogle,
+.game-content .goog-rtopics,
+.game-content [class*="google-anno"],
+.game-content .player__footer,
+.game-content .footer__button,
+.game-content .player-footer,
+.game-content .player-footer__inner { display: none !important; }
+/* Remove overflow/scrollbars from legacy wrappers */
+.game-content [style*="position: fixed"],
+.game-content [style*="z-index: 9999"],
+.game-content [style*="z-index:10000"] { display: none !important; }
+/* Ensure long words don’t overflow */
+.game-content { word-break: break-word; overflow-wrap: anywhere; }
+
+
+/* Extra overrides for bloated scraped layouts */
+.game-content .games-home-promotion-slide,
+.game-content .page-content-right,
+.game-content .comment-area,
+.game-content .page-content-left__bottom,
+.game-content .swiper,
+.game-content .swiper-container,
+.game-content .swiper-wrapper,
+.game-content .swiper-slide,
+.game-content .list_category,
+.game-content .title-game,
+.game-content .thumb-card,
+.game-content .px-3,
+.game-content .px-3.md\:px-12 {
+  display: none !important;
+}
+.game-content .page-content,
+.game-content .page-content-left,
+.game-content .content-inner,
+.game-content .game-description {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+/* Undo inline overflow:hidden or fixed heights that clip content */
+.game-content [style*="overflow:hidden"] { overflow: visible !important; }
+.game-content [style*="height:740px"],
+.game-content [style*="height:745px"],
+.game-content [style*="min-height:520px"],
+.game-content [style*="min-height: 520px"] { height: auto !important; min-height: unset !important; }

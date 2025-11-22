@@ -16,15 +16,58 @@ async function readGameContent(slug: string) {
   }
 }
 
-export default async function GameDetailPage(props: { params: { slug: string } }) {
-  const { slug } = props.params;
+function sanitizeEmbeddedHtml(raw: string): string {
+  if (!raw) return "";
+  let out = raw;
+  // Remove scripts and noscripts completely
+  out = out.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "");
+  out = out.replace(/<noscript[\s\S]*?>[\s\S]*?<\/noscript>/gi, "");
+  // Remove google ads containers and known ad/promo/slider/comment blocks entirely
+  const blockClasses = [
+    'adsbygoogle', 'banner-row', 'ads', 'goog-rtopics',
+    'games-home-promotion-slide', 'swiper', 'swiper-container', 'swiper-wrapper', 'swiper-slide',
+    'comment-area', 'page-content-right', 'thumb-card', 'list_category', 'title-game',
+    'player__footer', 'player-footer', 'footer__button'
+  ];
+  for (const cls of blockClasses) {
+    const divRegex = new RegExp(`<div[^>]*class=[\"'][^\"']*${cls}[^\"']*[\"'][\\s\\S]*?<\\/div>`, 'gi');
+    out = out.replace(divRegex, '');
+    const insRegex = new RegExp(`<ins[^>]*class=[\"'][^\"']*${cls}[^\"']*[\"'][\\s\\S]*?<\\/ins>`, 'gi');
+    out = out.replace(insRegex, '');
+  }
+  // Remove inline on* handlers
+  out = out.replace(/ on[a-z]+="[^"]*"/gi, "");
+  // Soften hardcoded heights/widths that break layout
+  out = out.replace(/(?:min-)?height:\s*\d+px!?;?/gi, "");
+  out = out.replace(/width:\s*\d+px!?;?/gi, "width:100%!important;");
+  // Ensure iframes have no frameborder/scrolling attributes issues
+  out = out.replace(/<iframe/gi, '<iframe loading="lazy" referrerpolicy="no-referrer"');
+  return out;
+}
+
+function pickMainSections(cleanHtml: string): string {
+  if (!cleanHtml) return "";
+  // Extract first iframe (game embed)
+  const iframeMatch = cleanHtml.match(/<iframe[\s\S]*?<\/iframe>/i);
+  const iframe = iframeMatch?.[0] ?? "";
+  // Extract main article text inside .game-description if present
+  const descMatch = cleanHtml.match(/<div[^>]*class=["'][^"']*game-description[^"']*["'][^>]*>([\s\S]*?)<\/div>/i);
+  const desc = descMatch?.[1] ?? "";
+  // Fallback to whole cleaned HTML when description not found
+  const body = desc || cleanHtml;
+  // Compose
+  return `${iframe ? `<div class=\"embed\">${iframe}</div>` : ""}${body}`;
+}
+
+export default async function GameDetailPage(props: { params: Promise<{ slug: string }> }) {
+  const { slug } = await props.params;
   const data = await readGameContent(slug);
   if (!data) return notFound();
 
   const title: string = data.title || slug;
   const description: string = data.description || "";
   const image: string | undefined = data.image;
-  const html: string = data.content?.html || "";
+  const html: string = pickMainSections(sanitizeEmbeddedHtml(data.content?.html || ""));
   const tags: string[] = Array.isArray(data.tags) ? data.tags : [];
 
   return (
